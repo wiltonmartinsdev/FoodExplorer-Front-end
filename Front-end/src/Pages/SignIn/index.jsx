@@ -1,7 +1,12 @@
 import Container from "./styles";
+import Header from "../../components/Header";
 
 function SignIn() {
-	return <Container>Hello World!</Container>;
+	return (
+		<Container>
+			<Header />
+		</Container>
+	);
 }
 
 export default SignIn;
