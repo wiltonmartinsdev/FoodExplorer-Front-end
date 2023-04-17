@@ -12,7 +12,7 @@ export default createGlobalStyle`
     }
     
     body{
-        background-color: darkgray;
+        background-color: #1E1E1E;
 
         color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
    
@@ -40,6 +40,8 @@ export default createGlobalStyle`
     
     a{
         text-decoration: none;
+        color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+
     }
 
     button, a{

@@ -8,6 +8,15 @@ function SignIn() {
 			<Logo />
 
 			<form>
+				<label htmlFor="name">Seu nome</label>
+				<input
+					type="text"
+					name=""
+					id="name"
+					placeholder="Exemplo: Maria da Silva"
+					required
+				/>
+
 				<label htmlFor="email">Email</label>
 				<input
 					type="email"
@@ -27,11 +36,11 @@ function SignIn() {
 					required
 				/>
 
-				<Button title="Entrar" />
+				<Button title="Criar conta" />
 			</form>
 
 			<div>
-				<a href="">Criar uma conta</a>
+				<a href="">Já tenho uma conta</a>
 			</div>
 		</Container>
 	);

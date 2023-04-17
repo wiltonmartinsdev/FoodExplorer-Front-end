@@ -1,4 +1,4 @@
-import { Container, Content, Brand } from "./styles";
+import { Container, Content } from "./styles";
 
 function Header() {
 	return (
@@ -6,8 +6,9 @@ function Header() {
 			<Content>
 				<img
 					src="src\assets\Menu.svg"
-					alt=""
+					alt="Ícone do Menu com opções"
 				/>
+
 				<Brand>
 					<img
 						src="src\assets\Polygon 1.svg"
@@ -18,7 +19,7 @@ function Header() {
 				</Brand>
 				<img
 					src="src\assets\request.svg"
-					alt=""
+					alt="Ícone de notificações de pedidos "
 				/>
 			</Content>
 		</Container>
