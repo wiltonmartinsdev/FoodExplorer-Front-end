@@ -18,28 +18,21 @@ const Container = styled.div`
 
 		margin-bottom: 3.2rem;
 
-		label {
+		h4 {
+			font-weight: 400;
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
+
 			margin-bottom: 0.8rem;
 		}
 
-		input {
-			height: 4.8rem;
-
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_500};
-
-			border: none;
-			border-radius: 0.8rem;
-
-			padding: 1.2rem 1.4rem;
+		div {
 			margin-bottom: 3.2rem;
 		}
 	}
 
-	 div {
+	div {
 		width: 31.6rem;
-        text-align: center;
+		text-align: center;
 	}
 `;
 

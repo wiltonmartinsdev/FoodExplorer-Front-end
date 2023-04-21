@@ -1,6 +1,7 @@
 import { Container } from "./styles";
 import Logo from "../../components/Logo";
 import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 function SignIn() {
 	return (
@@ -8,29 +9,23 @@ function SignIn() {
 			<Logo />
 
 			<form>
-				<label htmlFor="name">Seu nome</label>
-				<input
+				<h4>Seu nome</h4>
+				<Input
 					type="text"
-					name=""
-					id="name"
 					placeholder="Exemplo: Maria da Silva"
 					required
 				/>
 
-				<label htmlFor="email">Email</label>
-				<input
+				<h4>Email</h4>
+				<Input
 					type="email"
-					name=""
-					id="email"
 					placeholder="Exemplo: exemplo@exemplo.com.br"
 					required
 				/>
 
-				<label htmlFor="password">Senha</label>
-				<input
+				<h4>Senha</h4>
+				<Input
 					type="password"
-					name="password"
-					id="password"
 					placeholder="No mínimo 6 caracteres"
 					minLength={6}
 					required
@@ -40,7 +35,7 @@ function SignIn() {
 			</form>
 
 			<div>
-				<a href="">Já tenho uma conta</a>
+				<a href="#">Já tenho uma conta</a>
 			</div>
 		</Container>
 	);

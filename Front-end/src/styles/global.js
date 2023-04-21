@@ -24,6 +24,9 @@ export default createGlobalStyle`
         font-weight: 400;
         font-size: 1.6rem;
 
+        color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+
+
         line-height: 1.6rem;
         
         outline: none;
