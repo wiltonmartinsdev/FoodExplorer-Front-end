@@ -6,7 +6,7 @@ function Logo() {
 		<Container>
 			<img
 				src={Polygon}
-				alt="logo em forma de polígono do food explorer"
+				alt="Logo em forma de polígono do food explorer"
 			/>
 
 			<h1>food explorer</h1>
