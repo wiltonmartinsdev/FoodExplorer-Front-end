@@ -37,6 +37,15 @@ const Content = styled.div`
 	height: 67.7rem;
 
 	margin: 3.6rem 2.8rem 1.357rem;
+
+	#buttonText {
+		margin-top: 3.6rem;
+		padding: 1rem;
+
+		border-bottom: 1px solid #192227;
+
+		line-height: 3.36rem;
+	}
 `;
 
 export { Container, Content };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.header`
 	width: 28rem;
 
 	display: flex;
@@ -9,7 +9,7 @@ const Container = styled.div`
 
 	margin-bottom: 7.3rem;
 
-	> img {
+	img {
 		width: 4.331rem;
 		height: 4.331rem;
 	}

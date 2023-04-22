@@ -33,6 +33,10 @@ const Container = styled.div`
 	div {
 		width: 31.6rem;
 		text-align: center;
+
+		a {
+			font-size: 1.4rem;
+		}
 	}
 `;
 

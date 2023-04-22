@@ -1,7 +1,14 @@
+// Imports Global
 import { Container, Content } from "./styles";
-import Input from "../../../components/Input";
-import { Divide as Hamburger } from "hamburger-react";
 import { HiOutlineSearch } from "react-icons/hi";
+
+// Imports of Components
+import Input from "../../../components/Input";
+import ButtonText from "../../../components/ButtonText";
+import Footer from "../../../components/Footer";
+
+// Imports External
+import { Divide as Hamburger } from "hamburger-react";
 
 function Menu() {
 	return (
@@ -18,7 +25,12 @@ function Menu() {
 					placeholder="Busque por pratos ou ingredientes"
 					icon={HiOutlineSearch}
 				/>
+
+				<div id="buttonText">
+					<ButtonText title="Sair" />
+				</div>
 			</Content>
+			<Footer />
 		</Container>
 	);
 }

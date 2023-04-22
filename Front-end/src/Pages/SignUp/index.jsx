@@ -1,9 +1,12 @@
-import { Container } from "./styles";
+// Imports Global
+import Container from "./styles";
+
+// Imports of Components
 import Logo from "../../components/Logo";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-function SignIn() {
+function SignUp() {
 	return (
 		<Container>
 			<Logo />
@@ -41,4 +44,4 @@ function SignIn() {
 	);
 }
 
-export default SignIn;
+export default SignUp;
