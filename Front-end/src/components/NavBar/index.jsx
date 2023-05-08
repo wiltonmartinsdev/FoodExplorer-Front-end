@@ -1,16 +1,17 @@
 // Imports Global
-import { Container, Content } from "./styles";
+import { Container, Content, Brand } from "./styles";
 
 // Imports of Images
 import Menu from "../../assets/menu.svg";
 import Polygon from "../../assets/polygon.svg";
-import Request from "../../assets/request.svg";
+import NotificationIcon from "../../assets/notificationIcon.svg";
 
-function Header() {
+function NavBar() {
 	return (
 		<Container>
 			<Content>
 				<img
+					className="menu"
 					src={Menu}
 					alt="Ícone do Menu com opções"
 				/>
@@ -24,7 +25,8 @@ function Header() {
 					<h1>food explorer</h1>
 				</Brand>
 				<img
-					src={Request}
+					className="menu"
+					src={NotificationIcon}
 					alt="Ícone de notificações de pedidos "
 				/>
 			</Content>
@@ -32,4 +34,4 @@ function Header() {
 	);
 }
 
-export default Header;
+export default NavBar;

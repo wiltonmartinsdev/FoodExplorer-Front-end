@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.header`
+const Container = styled.nav`
 	width: 42.8rem;
 	height: 11.4rem;
 
@@ -13,7 +13,11 @@ const Container = styled.header`
 
 const Content = styled.div`
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+
+	img.menu {
+		cursor: pointer;
+	}
 `;
 
 const Brand = styled.div`
