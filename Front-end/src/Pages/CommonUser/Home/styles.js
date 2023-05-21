@@ -40,8 +40,8 @@ const Container = styled.div`
 	}
 
 	img#imgDescription {
-		position: relative;
-		bottom: 21.1rem;
+		position: absolute;
+		top: 12.9rem;
 		left: 0.6rem;
 	}
 `;

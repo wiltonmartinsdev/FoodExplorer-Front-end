@@ -2,22 +2,34 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 40.4rem;
-	height: 100%;
 
-	display: flex;
-	align-items: center;
+	/* display: flex;
+	align-items: center; */
 
 	/* border: 1px solid red; */
+
+	h1 {
+		font-family: Poppins, sans-serif;
+		font-size: 1.8rem;
+		font-weight: 400;
+		line-height: 2.52rem;
+
+		margin-left: 2.4rem;
+	}
 
 	.mySwiper {
 		width: 100%;
 		/* height: 100%; */
+
+		margin-bottom: 2.4rem;
 
 		/* border: 1px solid red; */
 	}
 
 	.swiper-slide {
 		/* width: 100%; */
+
+		/* border: 1px solid red; */
 	}
 
 	.swiper-slide img {

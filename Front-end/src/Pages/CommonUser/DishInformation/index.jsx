@@ -9,7 +9,7 @@ import Tags from "../../../components/Tags";
 import Footer from "../../../components/Footer";
 
 // Imports of Images
-import MaskGroup from "../../../assets/Mask group.png";
+import MaskGroup from "../../../assets/maskGroup.png";
 import leftArrow from "../../../assets/leftArrow.svg";
 
 function Dish() {
