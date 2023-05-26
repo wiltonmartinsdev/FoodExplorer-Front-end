@@ -38,8 +38,16 @@ const Content = styled.div`
 
 	margin: 3.6rem 2.8rem 1.357rem;
 
-	div#buttonText {
+	div#newDish {
 		margin-top: 3.6rem;
+		padding: 1rem;
+
+		border-bottom: 1px solid #192227;
+
+		line-height: 3.36rem;
+	}
+
+	div#exit {
 		padding: 1rem;
 
 		border-bottom: 1px solid #192227;

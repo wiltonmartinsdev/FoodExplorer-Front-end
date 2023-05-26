@@ -18,27 +18,7 @@ function IngredientsSection({ children }) {
 
 			<div id="tags">{children}</div>
 
-			<div id="addRequest">
-				<img
-					src={Minus}
-					alt="Sinal de menos para tirar um prato"
-				/>
 
-				<span>01</span>
-
-				<img
-					src={Plus}
-					alt="Sinal de menos para adicionar um prato"
-				/>
-
-				<button>
-					<img
-						src={Icon}
-						alt="Ícone de pedidos"
-					/>
-					pedir <span id="point">.</span> R$ <span> 25,00</span>
-				</button>
-			</div>
 		</Container>
 	);
 }

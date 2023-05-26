@@ -19,7 +19,7 @@ function NavBar() {
 				<Brand>
 					<img
 						src={Polygon}
-						alt=""
+						alt="Ícone de um polígono na cor azul"
 					/>
 
 					<h1>food explorer</h1>
