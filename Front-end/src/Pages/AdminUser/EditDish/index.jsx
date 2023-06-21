@@ -14,7 +14,7 @@ import Footer from "../../../components/Footer";
 import leftArrow from "../../../assets/leftArrow.svg";
 import UploadImg from "../../../assets/uploadImg.svg";
 
-function NewDish() {
+function EditDish() {
 	return (
 		<Container>
 			<NavBar />
@@ -28,7 +28,7 @@ function NewDish() {
 					<ButtonText title="voltar" />
 				</div>
 
-				<h1>Novo prato</h1>
+				<h1>Editar prato</h1>
 
 				<form>
 					<label
@@ -41,7 +41,7 @@ function NewDish() {
 								alt="Ícone de uma seta para cima para fazer upload de uma imagem"
 							/>
 
-							<p>Selecione imagem</p>
+							<p>Selecione a imagem para alterá-la</p>
 						</div>
 						<input
 							type="file"
@@ -86,18 +86,25 @@ function NewDish() {
 					<label htmlFor="textArea">Descrição</label>
 					<TextAreaDescription
 						id="textArea"
-						placeholder="Fale brevemente sobre o prato, seus ingredientes e composição."
+						placeholder="A Salada César é uma opção refrescante para o verão."
 					/>
 				</form>
 
-				<Button
-					id="save"
-					title="Salvar alterações"
-				/>
+				<div id="buttonOption">
+					<Button
+						id="delete"
+						title="Excluir prato"
+					/>
+
+					<Button
+						id="save"
+						title="Salvar alterações"
+					/>
+				</div>
 			</Content>
 			<Footer />
 		</Container>
 	);
 }
 
-export default NewDish;
+export default EditDish;
