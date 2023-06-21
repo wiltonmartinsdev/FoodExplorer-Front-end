@@ -1,10 +1,10 @@
 // Imports Global
 import Container from "./styles";
 
-function Input({ icon: Icon, ...rest }) {
+function Input({ img: Img, ...rest }) {
 	return (
 		<Container typeof="input">
-			{Icon && <Icon size={24} />}
+			{Img && <Img />}
 
 			<input {...rest} />
 		</Container>

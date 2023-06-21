@@ -27,6 +27,7 @@ const Container = styled.div`
 			color: #7c7c8a;
 		}
 	}
+
 	svg {
 		margin-left: 1.6rem;
 		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};

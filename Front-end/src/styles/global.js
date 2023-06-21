@@ -20,7 +20,7 @@ export default createGlobalStyle`
     }
 
     body, input, textarea{
-        font-family: Roboto, serif;
+        font-family: Roboto, sans-serif;
         font-weight: 400;
         font-size: 1.6rem;
 
