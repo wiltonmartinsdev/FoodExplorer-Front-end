@@ -1,20 +1,18 @@
 // Imports Global
 import { Container, Content, Brand } from "./styles";
 
+// Imports of Components
+import MobileUserMenu from "../MobileUserMenu";
+
 // Imports of Images
-import Menu from "../../assets/menu.svg";
 import Polygon from "../../assets/polygon.svg";
 import NotificationIcon from "../../assets/notificationIcon.svg";
 
-function NavBar() {
+function NavBarUser() {
 	return (
 		<Container>
 			<Content>
-				<img
-					className="menu"
-					src={Menu}
-					alt="Ícone do Menu com opções"
-				/>
+				<MobileUserMenu />
 
 				<Brand>
 					<img
@@ -34,4 +32,4 @@ function NavBar() {
 	);
 }
 
-export default NavBar;
+export default NavBarUser;

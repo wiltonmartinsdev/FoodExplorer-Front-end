@@ -19,9 +19,8 @@ function DishInformation() {
 	return (
 		<Container>
 			<NavBar />
-
 			<Content>
-				<div>
+				<div >
 					<div id="backButton">
 						<img
 							id="leftArrow"

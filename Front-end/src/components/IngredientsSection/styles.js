@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.section`
+    text-align: center;
+
 	h1 {
 		font-family: Poppins, sans-serif;
 		font-weight: 500;

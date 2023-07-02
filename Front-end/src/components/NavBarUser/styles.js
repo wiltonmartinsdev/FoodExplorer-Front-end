@@ -7,17 +7,20 @@ const Container = styled.nav`
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
 	margin: auto;
-
 	padding: 5.6rem 2.8rem 2.4rem;
+
+	position: relative;
+
+	z-index: 9999;
+
+	@media screen and (min-width: 430px) and (max-width: 768px) {
+		width: 76.8rem;
+	}
 `;
 
 const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
-
-	img.menu {
-		cursor: pointer;
-	}
 `;
 
 const Brand = styled.div`
@@ -26,6 +29,10 @@ const Brand = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
+
+	img {
+		width: 2.4rem;
+	}
 
 	> h1 {
 		font-size: 2.116rem;

@@ -18,6 +18,7 @@ function NewDish() {
 	return (
 		<Container>
 			<NavBar />
+
 			<Content>
 				<div id="backButton">
 					<img
@@ -95,6 +96,7 @@ function NewDish() {
 					title="Salvar alterações"
 				/>
 			</Content>
+
 			<Footer />
 		</Container>
 	);

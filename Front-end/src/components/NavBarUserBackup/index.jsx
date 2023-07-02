@@ -2,16 +2,15 @@
 import { Container, Content, Brand } from "./styles";
 
 // Imports of Images
-import MobileUserAdmin from "../MobileAdminMenu";
+import MenuDropDown from "../MenuDropDown";
 import Polygon from "../../assets/polygon.svg";
+import NotificationIcon from "../../assets/notificationIcon.svg";
 
-function NavBarAdmin() {
+function NavBar() {
 	return (
 		<Container>
 			<Content>
-			<div>
-            <MobileUserAdmin />
-            </div>
+				<MenuDropDown />
 
 				<Brand>
 					<img
@@ -20,12 +19,15 @@ function NavBarAdmin() {
 					/>
 
 					<h1>food explorer</h1>
-
-					<p>admin</p>
 				</Brand>
+				<img
+					className="menu"
+					src={NotificationIcon}
+					alt="Ícone de notificações de pedidos "
+				/>
 			</Content>
 		</Container>
 	);
 }
 
-export default NavBarAdmin;
+export default NavBar;

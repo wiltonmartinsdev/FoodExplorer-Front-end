@@ -24,6 +24,10 @@ const Container = styled.div`
 		margin-bottom: 2.4rem;
 
 		/* border: 1px solid red; */
+
+		@media screen and (min-width: 430px) and (max-width: 768px) {
+			width: 76.8rem;
+		}
 	}
 
 	.swiper-slide {

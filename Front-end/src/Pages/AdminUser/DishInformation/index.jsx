@@ -13,10 +13,11 @@ import Footer from "../../../components/Footer";
 import MaskGroup from "../../../assets/maskGroup01.png";
 import leftArrow from "../../../assets/leftArrow.svg";
 
-function Dish() {
+function DishInformation() {
 	return (
 		<Container>
 			<NavBar />
+
 			<Content>
 				<div>
 					<div id="backButton">
@@ -35,20 +36,32 @@ function Dish() {
 					/>
 				</div>
 
-				<IngredientsSection>
-					<Tags title="alface" />
-					<Tags title="cebola" />
-					<Tags title="pão naan" />
-					<Tags title="pepino" />
-					<Tags title="rabanete" />
-					<Tags title="tomate" />
-				</IngredientsSection>
+				<div id="ingredientsSection">
+					<IngredientsSection
+						title="Salada Ravanello"
+						ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.">
+                        <div id="tags">
+                        <Tags title="alface" />
+						<Tags title="cebola" />
+						<Tags title="pão naan" />
+						<Tags title="pepino" />
+						<Tags title="rabanete" />
+						<Tags title="tomate" />
+						<Tags title="alho" />
+						<Tags title="gergelim" />
+					
+					
+                        </div>
+					</IngredientsSection>
 
-				<Button title="Editar prato" />
+					<Button title="Editar prato" />
+				</div>
 			</Content>
+
 			<Footer />
 		</Container>
 	);
 }
 
-export default Dish;
+export default DishInformation;

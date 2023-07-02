@@ -1,9 +1,9 @@
 // Imports Global
 import Container from "./styles";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Imports of Components
-import CardsSection from "../CardsSection";
+import CardsSection from "../UserCards";
 
 // Imports External
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 // Import of Required Swiper Modules
 import { Autoplay, Navigation } from "swiper";
 
-function Carousel({
+function UserCarousel({
 	title,
 	subTitle1,
 	subTitle2,
@@ -30,6 +30,30 @@ function Carousel({
 	price3,
 	price4,
 }) {
+
+    const [slidesPerView, setSlidesPerView] = useState(2);
+    const [spaceBetween, setSpaceBetween] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 430) {
+                setSlidesPerView(3);
+                setSpaceBetween(25)
+            } else {
+                setSlidesPerView(2);
+                setSpaceBetween(0)
+            }
+        };
+    
+        window.addEventListener("resize", handleResize);
+    
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+
+
 	return (
 		<Container>
 			<h1>{title}</h1>
@@ -37,11 +61,11 @@ function Carousel({
 				className="mySwiper"
 				navigation={true}
 				modules={[Navigation, Autoplay]}
-				slidesPerView={2}
-				// spaceBetween={-2}
+				slidesPerView={slidesPerView}
+				spaceBetween={spaceBetween}
 				grabCursor={true}
 				autoplay={{
-					delay: 3000,
+					delay: 30000000,
 					disableOnInteraction: false,
 				}}>
 				<SwiperSlide>
@@ -80,4 +104,4 @@ function Carousel({
 	);
 }
 
-export default Carousel;
+export default UserCarousel;

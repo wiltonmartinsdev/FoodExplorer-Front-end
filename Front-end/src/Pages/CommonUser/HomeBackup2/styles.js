@@ -2,27 +2,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 42.8rem;
+	height: 151.1rem;
+
+	position: relative;
 
 	margin: auto;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
-
-	display: grid;
-	justify-content: center;
-	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
-
-	/* border: 1px solid red; */
-`;
-
-const Content = styled.main`
-	grid-area: main;
-
-	position: relative;
 
 	div#descriptionOfFlavors {
 		width: 37.6rem;
@@ -86,7 +72,7 @@ const Content = styled.main`
 
 	img#imgDescription {
 		position: absolute;
-		top: 1.5rem;
+		top: 12.9rem;
 		left: 0.6rem;
 
 		/* border: 1px solid red; */
@@ -101,4 +87,4 @@ const Content = styled.main`
 	}
 `;
 
-export { Container, Content };
+export default Container;

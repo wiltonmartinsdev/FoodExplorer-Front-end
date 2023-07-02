@@ -2,16 +2,24 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 42.8rem;
-	height: 116.8rem;
 
 	margin: auto;
 
-	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
+	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
+
+	display: grid;
+	justify-content: center;
+	grid-template-areas: "navbar" "main" "footer";
+	grid-template-rows: 11.4rem auto 7.7rem;
+
+	@media screen and (min-width: 430px) and (max-width: 768px) {
+		width: 76.8rem;
+	}
 `;
 
 const Content = styled.main`
-	width: 36.4rem;
-	height: 92.3rem;
+	/* width: 36.4rem;
+	height: 92.3rem; */
 
 	/* border: 1px solid red; */
 
@@ -162,6 +170,12 @@ const Content = styled.main`
 
 	button#save {
 		background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_400};
+	}
+
+	@media screen and (min-width: 430px) and (max-width: 768px) {
+		textarea {
+			width: 100%;
+		}
 	}
 `;
 

@@ -18,6 +18,7 @@ function EditDish() {
 	return (
 		<Container>
 			<NavBar />
+
 			<Content>
 				<div id="backButton">
 					<img
@@ -102,6 +103,7 @@ function EditDish() {
 					/>
 				</div>
 			</Content>
+
 			<Footer />
 		</Container>
 	);

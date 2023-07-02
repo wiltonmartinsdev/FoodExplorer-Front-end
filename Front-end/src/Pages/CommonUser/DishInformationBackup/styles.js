@@ -3,26 +3,31 @@ import styled from "styled-components";
 const Container = styled.div`
 	width: 42.8rem;
 
+	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
+
 	margin: auto;
 
-	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
-
-	display: grid;
-	justify-content: center;
-	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
+    @media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
+
+   	}
+
+	div#footer {
+		top: 143.5rem;
+
+		height: 7.7rem;
+
+		padding: 0;
 	}
 `;
 
 const Content = styled.main`
-	grid-area: main;
+	width: 31.6rem;
+	height: 67.7rem;
 
-	padding: 1.6rem 5.6rem 3.357rem;
+	margin: 4.257rem auto 0;
 
-	/* border: 1px solid red; */
+	text-align: center;
 
 	div#backButton {
 		display: flex;
@@ -38,18 +43,9 @@ const Content = styled.main`
 	}
 
 	img#dish {
-		position: relative;
-		left: 2.5rem;
-
 		width: 26.4rem;
 
 		margin: 1.6rem 0;
-
-		/* border: 1px solid red; */
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			left: 19.5rem;
-		}
 	}
 
 	div#addRequest {
@@ -95,17 +91,11 @@ const Content = styled.main`
 		}
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
+    @media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
-	}
 
-	/* div#footer {
-		top: 143.5rem;
+   	}
 
-		height: 7.7rem;
-
-		padding: 0;
-	} */
 `;
 
 export { Container, Content };

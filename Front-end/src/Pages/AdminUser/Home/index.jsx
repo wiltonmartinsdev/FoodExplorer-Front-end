@@ -2,8 +2,8 @@
 import { Container, Content } from "./styles";
 
 // Imports of Components
-import NavBar from "../../../components/NavBarUser";
-import Carousel from "../../../components/UserCarousel";
+import NavBar from "../../../components/NavBarAdmin";
+import Carousel from "../../../components/AdminCarousel";
 import Footer from "../../../components/Footer";
 
 // Imports of Images

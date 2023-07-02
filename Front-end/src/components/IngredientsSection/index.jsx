@@ -6,14 +6,13 @@ import Minus from "../../assets/minus.svg";
 import Plus from "../../assets/plus.svg";
 import Icon from "../../assets/Icon.svg";
 
-function IngredientsSection({ children }) {
+function IngredientsSection({title,ingredients, children }) {
 	return (
 		<Container>
-			<h1> Salada Ravanello</h1>
+			<h1> {title}</h1>
 
 			<p>
-				Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.
+				{ingredients}
 			</p>
 
 			<div id="tags">{children}</div>

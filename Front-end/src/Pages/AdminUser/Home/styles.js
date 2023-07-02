@@ -25,10 +25,7 @@ const Content = styled.main`
 	position: relative;
 
 	div#descriptionOfFlavors {
-		width: 37.6rem;
-		height: 12rem;
-
-		margin: 4.4rem 1.6rem 6.2rem 3.6rem;
+		margin: 4.4rem 3.5rem 6.2rem 3.6rem;
 		padding: 3.6rem 0.8rem 2.2rem 15.3rem;
 
 		background: ${({ theme }) => theme.COLORS.BACKGROUND_GRADIENTS_200};
@@ -52,8 +49,6 @@ const Content = styled.main`
 			line-height: 1.68rem;
 		}
 
-		/* border: 1px solid red; */
-
 		@media screen and (min-width: 430px) and (max-width: 768px) {
 			display: flex;
 			flex-direction: column;
@@ -63,6 +58,7 @@ const Content = styled.main`
 
 			width: 69.5rem;
 
+			margin: 6.2rem 3.5rem 4.4rem 3.6rem;
 			padding: 2.2rem 0.8rem 2.2rem 15.3rem;
 
 			h1 {
@@ -89,15 +85,9 @@ const Content = styled.main`
 		top: 1.5rem;
 		left: 0.6rem;
 
-		/* border: 1px solid red; */
-	}
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		width: 76.9rem;
+		@media screen and (min-width: 430px) and (max-width: 768px) {
+			top: 1.7rem;
+		}
 	}
 `;
 

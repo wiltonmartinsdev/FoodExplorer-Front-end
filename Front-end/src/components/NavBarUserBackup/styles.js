@@ -7,35 +7,25 @@ const Container = styled.nav`
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
 	margin: auto;
-	padding: 5.6rem 2.8rem 2.4rem;
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
+	padding: 5.6rem 2.8rem 2.4rem;
 `;
 
 const Content = styled.div`
 	display: flex;
+	justify-content: space-between;
 
-	/* border: 1px solid red; */
+	img.menu {
+		cursor: pointer;
+	}
 `;
 
 const Brand = styled.div`
-	width: 33.2rem;
+	width: 16rem;
 
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	gap: 0.8rem;
-
-	position: relative;
-	left: 0.6rem;
-
-    @media screen and (min-width: 430px) and (max-width: 768px) {
-        left: 15rem;
-	}
-
-	/* border: 1px solid red; */
 
 	> h1 {
 		font-size: 2.116rem;
@@ -43,13 +33,6 @@ const Brand = styled.div`
 		line-height: 2.48rem;
 
 		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
-	}
-
-	> p {
-		font-size: 1.2rem;
-		line-height: 1.92rem;
-
-		color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
 	}
 `;
 

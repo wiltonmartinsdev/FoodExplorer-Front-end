@@ -9,7 +9,7 @@ import Minus from "../../assets/minus.svg";
 import Plus from "../../assets/plus.svg";
 import HeartIcon from "../../assets/heartIcon.svg";
 
-function CardsSection({ title, img, price }) {
+function UserCards({ title, img, price }) {
 	return (
 		<Container>
 			<Content>
@@ -48,7 +48,7 @@ function CardsSection({ title, img, price }) {
 					<div id="heartIcon">
 						<img
 							src={HeartIcon}
-							alt="Símbolo de um coração para adicionar o prato aos favoritos"
+							alt="Ícone de um coração para adicionar o prato aos favoritos"
 							id="heart"
 						/>
 					</div>
@@ -58,4 +58,4 @@ function CardsSection({ title, img, price }) {
 	);
 }
 
-export default CardsSection;
+export default UserCards;
