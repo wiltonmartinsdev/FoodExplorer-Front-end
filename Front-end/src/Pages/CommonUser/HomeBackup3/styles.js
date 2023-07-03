@@ -18,6 +18,8 @@ const Container = styled.div`
 
 	@media screen and (min-width: 769px) and (max-width: 1440px) {
 		width: 144rem;
+
+        
 	}
 
 	/* border: 1px solid red; */

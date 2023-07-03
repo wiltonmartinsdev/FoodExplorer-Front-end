@@ -13,7 +13,7 @@ import MaskGroup from "../../../assets/maskGroup01.png";
 import leftArrow from "../../../assets/leftArrow.svg";
 import Minus from "../../../assets/minus.svg";
 import Plus from "../../../assets/plus.svg";
-import Icon from "../../../assets/icon.svg";
+import RequestsIcon from "../../../assets/requestsIcon.svg";
 
 function DishInformation() {
 	return (
@@ -53,20 +53,20 @@ function DishInformation() {
 				<div id="addRequest">
 					<img
 						src={Minus}
-						alt="Sinal de menos para tirar um prato"
+						alt="Ícone de menos para tirar um prato"
 					/>
 
 					<span>01</span>
 
 					<img
 						src={Plus}
-						alt="Sinal de menos para adicionar um prato"
+						alt="Ícone de menos para adicionar um prato"
 					/>
 
 					<button>
 						<img
-							src={Icon}
-							alt="Ícone de pedidos"
+							src={RequestsIcon}
+							alt="Ícone de comanda de pedidos"
 						/>
 						pedir <span id="point">.</span> R$ <span> 25,00</span>
 					</button>

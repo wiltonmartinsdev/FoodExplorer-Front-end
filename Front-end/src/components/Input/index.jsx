@@ -3,7 +3,9 @@ import Container from "./styles";
 
 function Input({ img: Img, ...rest }) {
 	return (
-		<Container typeof="input">
+		<Container
+			typeof="input"
+			{...rest}>
 			{Img && <Img />}
 
 			<input {...rest} />

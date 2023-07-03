@@ -9,10 +9,6 @@ const Container = styled.div`
 
 	margin-top: 0.5rem;
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		display: none;
-	}
-
 	.menuIcon {
 		display: flex;
 		flex-direction: column;
@@ -124,6 +120,8 @@ const Container = styled.div`
 		top: 24.5rem;
 
 		background-color: transparent;
+
+        border: 1px solid red;
 	}
 
 	hr#lineFavorites {
@@ -167,6 +165,10 @@ const Container = styled.div`
 		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 76.8rem;
 		}
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1440px) {
+		display: none;
 	}
 `;
 

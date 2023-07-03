@@ -11,6 +11,8 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 
+    position: relative;
+
 	input {
 		width: 100%;
 		height: 4.8rem;

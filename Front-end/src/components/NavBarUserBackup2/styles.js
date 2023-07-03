@@ -13,8 +13,8 @@ const Container = styled.nav`
 
 	z-index: 9999;
 
-	.input,
-	.button,
+	div[typeof="input"],
+	button,
 	img#iconSignOut {
 		display: none;
 	}
@@ -24,18 +24,24 @@ const Container = styled.nav`
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		.input,
-		.button,
+		width: 144rem;
+
+		padding: 2.4rem 9rem;
+
+		/* img.menu {
+			display: none;
+		}
+
+		div[typeof="input"],
+		button,
 		img#iconSignOut {
 			display: block;
 		}
 
+		border: 1px solid red; */
+
 		display: flex;
 		justify-content: center;
-
-		width: 144rem;
-
-		padding: 2.4rem 9rem;
 	}
 `;
 
@@ -44,42 +50,36 @@ const Content = styled.div`
 	justify-content: space-between;
 
 	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		img.menu {
-			display: none;
-		}
-
-		.input input {
-			padding: 0;
-		}
-
-		.input {
-			width: 70rem;
-
-			padding-left: 22.5rem;
-		}
-
-		.input svg {
-			position: absolute;
-			top: 1.6rem;
-			left: 18.5rem;
-		}
-
-		/* button {
-			width: 22.2rem;
-			height: 5.6rem;
-		} */
-
-		img#iconSignOut {
-			width: 3.2rem;
-		}
-
 		width: 144rem;
 
 		display: flex;
 		align-items: center;
+
+		img.menu {
+			display: none;
+		}
+
+		div[typeof="input"],
+		button,
+		img#iconSignOut {
+			display: block;
+		}
+
+		div[typeof="input"] {
+			width: 70rem;
+		}
+
+		button {
+			width: 22.2rem;
+			height: 5.6rem;
+		}
+
+		img#iconSignOut {
+			width: 3.2rem;
+		}
 	}
 
-	/* border: 1px solid yellow; */
+	border: 1px solid yellow;
 `;
 
 const Brand = styled.div`

@@ -2,16 +2,17 @@
 import { Container, Content, Brand } from "./styles";
 import { HiOutlineSearch } from "react-icons/hi";
 
+
 // Imports of Components
 import MobileUserMenu from "../MobileUserMenu";
 import Input from "../Input";
-import RequestsButton from "../RequestsButton";
+import Button from "../Button";
 
 // Imports of Images
 import Polygon from "../../assets/polygon.svg";
 import NotificationIcon from "../../assets/notificationIcon.svg";
 import IconSignOut from "../../assets/iconSignOut.svg";
-import RequestsIcon from "../../assets/requestsIcon.svg";
+
 
 function NavBarUser() {
 	return (
@@ -35,18 +36,11 @@ function NavBarUser() {
 				/>
 
 				<Input
-					className="input"
 					placeholder="Busque por pratos ou ingredientes"
-					img={HiOutlineSearch}
+					// img={HiOutlineSearch}
 				/>
 
-				<RequestsButton
-					className="button"
-                    
-                    image={RequestsIcon}
-
-					title="Pedidos"
-				/>
+				<Button title="Pedidos" />
 
 				<img
 					id="iconSignOut"
