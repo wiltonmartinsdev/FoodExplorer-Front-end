@@ -7,7 +7,25 @@ const Container = styled.section`
 	margin-left: 2.4rem;
 	margin-top: 2.4rem;
 
-	/* border: 1px solid red; */
+	/* border: 1px solid yellow; */
+
+	@media screen and (min-width: 769px) and (max-width: 1440px) {
+		margin-left: 10.2rem;
+
+		/* border: 1px solid red; */
+	}
+
+	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+		margin-left: 11rem;
+
+		/* border: 1px solid red; */
+	}
+
+	@media screen and (min-width: 1921px) and (max-width: 2560px) {
+		margin-left: 11rem;
+
+		/* border: 1px solid red; */
+	}
 `;
 
 const Content = styled.div`

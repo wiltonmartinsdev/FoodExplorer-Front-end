@@ -42,9 +42,7 @@ function NavBarUser() {
 
 				<RequestsButton
 					className="button"
-                    
-                    image={RequestsIcon}
-
+					image={RequestsIcon}
 					title="Pedidos"
 				/>
 

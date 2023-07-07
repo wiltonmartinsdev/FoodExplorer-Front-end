@@ -13,6 +13,10 @@ const Container = styled.div`
 		display: none;
 	}
 
+    @media screen and (min-width: 1441px) and (max-width: 2560px) {
+		display: none;
+	}
+
 	.menuIcon {
 		display: flex;
 		flex-direction: column;
@@ -91,7 +95,7 @@ const Container = styled.div`
 
 	p.menu {
 		position: absolute;
-		top: 6.7rem;
+		top: 5rem;
 		left: 6.4rem;
 
 		font-size: 2.1rem;

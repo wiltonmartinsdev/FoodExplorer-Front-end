@@ -5,6 +5,7 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
     }
 
     :root{
@@ -19,6 +20,8 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
    
         -webkit-font-smoothing: antialiased;
+
+        overflow-x: hidden;
 
     }
 
