@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 42.8rem;
+	width: 43rem;
 
 	margin: auto;
 
@@ -10,26 +10,52 @@ const Container = styled.div`
 	display: grid;
 	justify-content: center;
 	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
+	grid-template-rows: 11.4rem 74rem 7.7rem;
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1440px) {
+		width: 144rem;
+	}
+
+	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+		width: 192rem;
+	}
+
+	@media screen and (min-width: 1921px) {
+		width: 384rem;
+		height: 216rem;
+
+		grid-template-rows: 11.4rem 196.6rem 7.7rem;
 	}
 `;
 
 const Content = styled.main`
 	grid-area: main;
 
-	padding: 1.6rem 5.6rem 3.357rem;
+	padding: 3.5rem 5.6rem 0;
 
 	/* border: 1px solid red; */
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 	div#backButton {
 		display: flex;
 		align-items: center;
 		gap: 1.1rem;
 
+		width: 9.3rem;
+
 		cursor: pointer;
+
+		@media screen and (min-width: 430px) and (max-width: 768px) {
+			position: relative;
+			right: 11.7rem;
+		}
 	}
 
 	img#leftArrow {
@@ -37,9 +63,18 @@ const Content = styled.main`
 		height: 2.2rem;
 	}
 
+	div#ingredientsSection {
+		/* border: 1px solid red; */
+
+		width: 31.9rem;
+		height: 28.8rem;
+
+		overflow: auto;
+	}
+
 	img#dish {
-		position: relative;
-		left: 2.5rem;
+		/* position: relative;
+		left: 2.5rem; */
 
 		width: 26.4rem;
 
@@ -48,7 +83,6 @@ const Content = styled.main`
 		/* border: 1px solid red; */
 
 		@media screen and (min-width: 430px) and (max-width: 768px) {
-			left: 19.5rem;
 		}
 	}
 
@@ -97,6 +131,45 @@ const Content = styled.main`
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
+
+		div#ingredientsSection {
+			/* border: 1px solid red; */
+
+			width: 44.2rem;
+			height: 30.3rem;
+
+			overflow: auto;
+
+			/* position: relative;
+			left: 9.5rem; */
+		}
+
+		div#tags {
+			/* border: 1px solid red; */
+			width: 40.5rem;
+
+			position: relative;
+			left: 1rem;
+		}
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1440px) {
+		div#ingredientsSection {
+			/* border: 1px solid red; */
+
+			width: 44.2rem;
+
+			/* position: relative;
+			left: 9.5rem; */
+		}
+
+		div#tags {
+			/* border: 1px solid red; */
+			width: 38rem;
+
+			position: relative;
+			left: 2rem;
+		}
 	}
 
 	/* div#footer {

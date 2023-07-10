@@ -52,7 +52,30 @@ const Container = styled.nav`
 		padding: 2.4rem 9rem;
 	}
 
-    @media screen and (min-width: 1921px) and (max-width: 2560px) {
+	@media screen and (min-width: 1921px) {
+		::before {
+			content: "";
+			width: 384rem;
+			height: 11.4rem;
+			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+			position: absolute;
+			top: 0;
+			z-index: -1;
+		}
+
+		.input,
+		.button,
+		img#iconSignOut {
+			display: block;
+		}
+
+		width: 192rem;
+
+		/* padding: 2.4rem 9rem; */
+	}
+
+	/* @media screen and (min-width: 2561px){
 		.input,
 		.button,
 		img#iconSignOut {
@@ -62,9 +85,7 @@ const Container = styled.nav`
 		width: 256rem;
 
 		padding: 2.4rem 9rem;
-	}
-
-	/* border: 1px solid red; */
+	} */
 `;
 
 const Content = styled.div`
@@ -150,7 +171,40 @@ const Content = styled.div`
 		width: 150rem;
 	}
 
-    @media screen and (min-width: 1921px) and (max-width: 2560px) {
+	@media screen and (min-width: 1921px) {
+		img.menu {
+			display: none;
+		}
+
+		.input input {
+			padding: 0;
+		}
+
+		.input {
+			width: 70rem;
+
+			padding-left: 22.5rem;
+		}
+
+		.input svg {
+			position: absolute;
+			top: 1.6rem;
+			left: 18.5rem;
+		}
+
+		/* button {
+			width: 22.2rem;
+			height: 5.6rem;
+		} */
+
+		img#iconSignOut {
+			width: 3.2rem;
+		}
+
+		width: 150rem;
+	}
+
+	/* @media screen and (min-width: 2561px) {
 		img.menu {
 			display: none;
 		}
@@ -172,17 +226,14 @@ const Content = styled.div`
 			left: 51.5rem;
 		}
 
-		/* button {
-			width: 22.2rem;
-			height: 5.6rem;
-		} */
+	
 
 		img#iconSignOut {
 			width: 3.2rem;
 		}
 
 		width: 238rem;
-	}
+	} */
 
 	/* border: 1px solid yellow; */
 `;
@@ -222,7 +273,7 @@ const Brand = styled.div`
 		}
 	}
 
-    @media screen and (min-width: 1921px) and (max-width: 2560px) {
+	@media screen and (min-width: 1921px) {
 		width: 31.6rem;
 
 		img {
@@ -237,6 +288,22 @@ const Brand = styled.div`
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 		}
 	}
+
+	/* @media screen and (min-width: 2561px){
+		width: 31.6rem;
+
+		img {
+			width: 4.5rem;
+		}
+
+		> h1 {
+			font-size: 4rem;
+			font-weight: 700;
+			line-height: 2.48rem;
+
+			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+		}
+	} */
 
 	/* border: 1px solid orange; */
 `;

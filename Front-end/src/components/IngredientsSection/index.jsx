@@ -4,7 +4,7 @@ import Container from "./styles";
 // Imports of Images
 import Minus from "../../assets/minus.svg";
 import Plus from "../../assets/plus.svg";
-import Icon from "../../assets/Icon.svg";
+// import Icon from "../../assets/Icon.svg";
 
 function IngredientsSection({title,ingredients, children }) {
 	return (

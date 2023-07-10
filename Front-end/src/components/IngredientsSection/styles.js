@@ -3,6 +3,8 @@ import styled from "styled-components";
 const Container = styled.section`
     text-align: center;
 
+    overflow: hidden;
+
 	h1 {
 		font-family: Poppins, sans-serif;
 		font-weight: 500;
@@ -25,7 +27,9 @@ const Container = styled.section`
 		justify-content: center;
 		flex-wrap: wrap;
 
-		margin-bottom: 4.8rem;
+		margin-bottom: 1.8rem;
+
+    
 	}
 
 

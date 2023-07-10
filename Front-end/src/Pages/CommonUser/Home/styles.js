@@ -24,9 +24,14 @@ const Container = styled.div`
 		width: 192rem;
 	}
 
-    @media screen and (min-width: 1921px) and (max-width: 2560px) {
-		width: 256rem;
+	@media screen and (min-width: 1921px) {
+		width: 384rem;
+		height: 216rem;
 	}
+
+	/* @media screen and (min-width: 2561px){
+		width: 100%;
+	} */
 
 	/* border: 1px solid red; */
 `;
@@ -84,7 +89,6 @@ const Content = styled.main`
 
 			h1 {
 				font-family: Poppins, sans-serif;
-
 				font-weight: 500;
 				font-size: 3.4rem;
 				line-height: 2.52rem;
@@ -118,7 +122,6 @@ const Content = styled.main`
 
 			h1 {
 				font-family: Poppins, sans-serif;
-
 				font-weight: 500;
 				font-size: 6rem;
 				line-height: 2.52rem;
@@ -152,7 +155,6 @@ const Content = styled.main`
 
 			h1 {
 				font-family: Poppins, sans-serif;
-
 				font-weight: 500;
 				font-size: 6rem;
 				line-height: 2.52rem;
@@ -168,8 +170,8 @@ const Content = styled.main`
 			}
 		}
 
-        @media screen and (min-width: 1921px) and (max-width: 2560px) {
-            display: flex;
+		@media screen and (min-width: 1921px) {
+			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
@@ -183,6 +185,36 @@ const Content = styled.main`
 
 			/* position: relative;
 			left: 5.5rem; */
+
+			h1 {
+				font-family: Poppins, sans-serif;
+				font-weight: 500;
+				font-size: 6rem;
+				line-height: 2.52rem;
+
+				margin-bottom: 0.3rem;
+			}
+
+			p {
+				font-family: Roboto, sans-serif;
+				font-weight: 500;
+				font-size: 2.3rem;
+				line-height: 1.68rem;
+			}
+		}
+
+		/* @media screen and (min-width: 2561px) {
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 4rem;
+
+			width: 128rem;
+			height: 22rem;
+
+			padding: 2.2rem 0.8rem 2.2rem 22rem;
+			margin: 8.4rem auto;
 
 			h1 {
 				font-family: Poppins, sans-serif;
@@ -200,7 +232,7 @@ const Content = styled.main`
 				font-size: 2.3rem;
 				line-height: 1.68rem;
 			}
-		}
+		} */
 	}
 
 	img#imgDescription {
@@ -220,7 +252,7 @@ const Content = styled.main`
 			/* border: 1px solid red; */
 		}
 
-        @media screen and (min-width: 1441px) and (max-width: 1920px) {
+		@media screen and (min-width: 1441px) and (max-width: 1920px) {
 			width: 33.8rem;
 			height: 26.4rem;
 
@@ -230,15 +262,24 @@ const Content = styled.main`
 			/* border: 1px solid red; */
 		}
 
-        @media screen and (min-width: 1921px) and (max-width: 2560px) {
+		@media screen and (min-width: 1921px) {
+			width: 33.8rem;
+			height: 26.4rem;
+
+			top: 3.9rem;
+			left: 26.5rem;
+
+			/* border: 1px solid red; */
+		}
+
+		/* @media screen and (min-width: 2561px) {
 			width: 33.8rem;
 			height: 26.4rem;
 
 			top: 3.9rem;
 			left: 58.5rem;
 
-			/* border: 1px solid red; */
-		}
+		} */
 
 		/* border: 1px solid red; */
 	}

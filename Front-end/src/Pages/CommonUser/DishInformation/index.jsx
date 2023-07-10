@@ -38,17 +38,28 @@ function DishInformation() {
 					/>
 				</div>
 
-				<IngredientsSection
-					title="Salada Ravanello"
-					ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+				<div id="ingredientsSection">
+					<IngredientsSection
+						title="Salada Ravanello"
+						ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim.">
-					<Tags title="alface" />
-					<Tags title="cebola" />
-					<Tags title="pão naan" />
-					<Tags title="pepino" />
-					<Tags title="rabanete" />
-					<Tags title="tomate" />
-				</IngredientsSection>
+						<div id="tags">
+							<Tags title="alface" />
+							<Tags title="cebola" />
+							<Tags title="pão naan" />
+							<Tags title="pepino" />
+							<Tags title="rabanete" />
+							<Tags title="tomate" />
+							{/* <Tags title="alho" /> */}
+							{/* <Tags title="gergelim" /> */}
+							{/* <Tags title="agrião" /> */}
+							{/* <Tags title="nabo" /> */}
+							{/* <Tags title="cheiro-verde" /> */}
+							{/* <Tags title="chicória" /> */}
+							
+						</div>
+					</IngredientsSection>
+				</div>
 
 				<div id="addRequest">
 					<img

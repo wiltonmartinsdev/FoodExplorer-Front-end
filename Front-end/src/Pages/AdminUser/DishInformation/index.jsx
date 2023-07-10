@@ -41,18 +41,16 @@ function DishInformation() {
 						title="Salada Ravanello"
 						ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim.">
-                        <div id="tags">
-                        <Tags title="alface" />
-						<Tags title="cebola" />
-						<Tags title="pão naan" />
-						<Tags title="pepino" />
-						<Tags title="rabanete" />
-						<Tags title="tomate" />
-						<Tags title="alho" />
-						<Tags title="gergelim" />
-					
-					
-                        </div>
+						<div id="tags">
+							<Tags title="alface" />
+							<Tags title="cebola" />
+							<Tags title="pão naan" />
+							<Tags title="pepino" />
+							<Tags title="rabanete" />
+							<Tags title="tomate" />
+							<Tags title="alho" />
+							<Tags title="gergelim" />
+						</div>
 					</IngredientsSection>
 
 					<Button title="Editar prato" />

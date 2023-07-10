@@ -9,13 +9,14 @@ const Container = styled.div`
 
 	margin-top: 0.5rem;
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
+	@media screen and (min-width: 769px) {
 		display: none;
 	}
+    
 
-    @media screen and (min-width: 1441px) and (max-width: 2560px) {
+	/* @media screen and (min-width: 1441px) {
 		display: none;
-	}
+	} */
 
 	.menuIcon {
 		display: flex;
@@ -23,19 +24,19 @@ const Container = styled.div`
 		justify-content: center;
 		align-items: center;
 
-		width: 30px;
-		height: 25px;
+		width: 3rem;
+		height: 2.5rem;
 
 		cursor: pointer;
 	}
 
 	.menuIconLine {
 		width: 2.4rem;
-		height: 3px;
+		height: 0.3rem;
 
 		background-color: white;
 
-		margin-bottom: 4px;
+		margin-bottom: 0.4rem;
 
 		transition: transform 0.3s ease;
 
@@ -83,14 +84,17 @@ const Container = styled.div`
 
 		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-		width: 42.8rem;
-		height: 132.1rem;
+		width: 43rem;
+		height: 132.2rem;
 
 		padding: 3.6rem 2.8rem 1.357rem;
 
 		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 100%;
 		}
+
+		/* border: 1px solid red; */
+
 	}
 
 	p.menu {
@@ -102,9 +106,9 @@ const Container = styled.div`
 
 		background-color: transparent;
 
-		width: 42.8rem;
+		/* padding: 0; */
 
-		padding: 0;
+		/* border: 1px solid red; */
 	}
 
 	.hr {
@@ -119,15 +123,20 @@ const Container = styled.div`
 		border: 1px solid #192227;
 	}
 
-	div#myFavorites {
+	#myFavorites {
+		width: 25.9rem;
 		height: 2.6rem;
 
 		margin: 0;
 		padding: 0 4rem;
 
-		top: 24.5rem;
+		position: absolute;
+		top: 23rem;
+		left: 0;
 
 		background-color: transparent;
+
+		/* border: 1px solid red; */
 	}
 
 	hr#lineFavorites {
@@ -138,28 +147,34 @@ const Container = styled.div`
 		}
 	}
 
-	div#logout {
+	#logout {
 		height: 2.6rem;
 
 		margin: 0;
 		padding: 0 4rem;
 
-		top: 30rem;
+		position: absolute;
+		top: 30.5rem;
+		left: 0.2rem;
+
+		/* border: 1px solid red; */
 
 		background-color: transparent;
 
-		@media screen and (min-width: 430px) and (max-width: 768px) {
+		/* @media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 76.8rem;
-		}
+		} */
 	}
 
 	hr#lineLogout {
-		top: 33rem;
+		top: 35rem;
 
 		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 71.2rem;
 		}
 	}
+
+
 
 	div#footer {
 		top: 143.5rem;

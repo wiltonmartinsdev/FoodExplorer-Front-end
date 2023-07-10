@@ -34,21 +34,23 @@ const MobileUserMenu = () => {
 				/>
 			</div>
 
-			<div
+			<ButtonText
 				id="myFavorites"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Meus Favoritos" />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}
+				title="Meus Favoritos"
+			/>
+
 			<hr
 				id="lineFavorites"
 				className={` hr menu ${menuOpen ? "open" : ""}`}
 			/>
 
-			<div
+			<ButtonText
 				id="logout"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Sair" />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}
+				title="Sair"
+			/>
+
 			<hr
 				id="lineLogout"
 				className={` hr menu ${menuOpen ? "open" : ""}`}
@@ -56,9 +58,7 @@ const MobileUserMenu = () => {
 
 			<div
 				id="footer"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<Footer />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}><Footer /></div>
 		</Container>
 	);
 };

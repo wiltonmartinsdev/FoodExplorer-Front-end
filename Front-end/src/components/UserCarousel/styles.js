@@ -26,11 +26,17 @@ const Container = styled.div`
 			width: 17.8rem;
 		}
 
-        @media screen and (min-width: 1921px) and (max-width: 2560px) {
-			margin-left: 75.4rem;
+		@media screen and (min-width: 1921px) {
+			margin-left: 39.3rem;
 
 			width: 17.8rem;
 		}
+
+		/* @media screen and (min-width: 2561px) {
+			margin-left: 75.4rem;
+
+			width: 17.8rem;
+		} */
 	}
 
 	.mySwiper {
@@ -57,11 +63,19 @@ const Container = styled.div`
 			margin-left: 32.2rem;
 		}
 
-        @media screen and (min-width: 1921px) and (max-width: 2560px) {
+		@media screen and (min-width: 1921px) {
+			width: 127.5rem;
+
+			margin-left: 32.2rem;
+
+            /* border: 1px solid red; */
+		}
+
+        /* @media screen and (min-width: 2561px) {
 			width: 127.5rem;
 
 			margin-left: 64.4rem;
-		}
+		} */
 
 		/* border: 1px solid red; */
 	}

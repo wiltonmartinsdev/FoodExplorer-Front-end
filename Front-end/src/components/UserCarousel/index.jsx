@@ -50,7 +50,7 @@ function UserCarousel({
 
 				console.log(window.innerWidth);
 			} else {
-				setSlidesPerView(2);
+				setSlidesPerView(4);
 				setSpaceBetween(0);
 			}
 		};

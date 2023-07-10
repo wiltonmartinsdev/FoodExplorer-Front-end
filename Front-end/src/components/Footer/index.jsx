@@ -4,9 +4,9 @@ import Container from "./styles";
 // Imports of Images
 import PolygonFooter from "../../assets/polygonFooter.svg";
 
-function Footer() {
+function Footer({...rest}) {
 	return (
-		<Container>
+		<Container {...rest}>
 			<div id="logo">
 				<img
 					src={PolygonFooter}

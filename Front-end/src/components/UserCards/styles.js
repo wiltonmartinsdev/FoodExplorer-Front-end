@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-	width: 43.6rem;
+	/* width: 43.6rem; */
+	/* width: 43rem; */
 	height: 29.2rem;
 
 	margin-left: 2.4rem;
@@ -21,11 +22,17 @@ const Container = styled.section`
 		/* border: 1px solid red; */
 	}
 
-	@media screen and (min-width: 1921px) and (max-width: 2560px) {
+	@media screen and (min-width: 1921px) {
+		margin-left: 7rem;
+
+
+		/* border: 1px solid yellow; */
+	}
+
+    /* @media screen and (min-width: 2561px){
 		margin-left: 11rem;
 
-		/* border: 1px solid red; */
-	}
+	} */
 `;
 
 const Content = styled.div`

@@ -11,6 +11,25 @@ const Container = styled.footer`
 	align-items: center;
 	gap: 0.8rem;
 
+	position: relative;
+
+	@media screen and (min-width: 1921px) {
+		z-index: 9999;
+
+		::before {
+			content: "";
+
+			width: 384rem;
+			height: 7.7rem;
+
+			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+			position: absolute;
+			top: 0;
+			z-index: -1;
+		}
+	}
+
 	#logo {
 		display: flex;
 		align-items: center;
@@ -18,7 +37,6 @@ const Container = styled.footer`
 
 		font-weight: 700;
 		font-size: 1.526rem;
-
 		line-height: 1.788rem;
 
 		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_700};
