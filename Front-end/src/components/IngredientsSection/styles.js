@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-    text-align: center;
-
-    overflow: hidden;
+	text-align: center;
 
 	h1 {
 		font-family: Poppins, sans-serif;
@@ -18,21 +16,38 @@ const Container = styled.section`
 		font-size: 1.622rem;
 		line-height: 2.271rem;
 
-		margin: 2.4rem 0;
+		height: 6.8rem;
+
+		margin: 2.4rem 0 1.5rem;
+
+		overflow: auto;
 	}
 
 	div#tags {
 		display: flex;
 		gap: 2.4rem;
 		justify-content: center;
+		align-items: center;
 		flex-wrap: wrap;
 
-		margin-bottom: 1.8rem;
+		height: 10.8rem;
 
-    
+		/* margin-bottom: 1.8rem; */
+
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		/* border: 1px solid red; */
 	}
 
+	@media screen and (min-width: 769px) {
+		text-align: left;
 
+		h1,
+		p {
+			margin-left: 1.8rem;
+		}
+	}
 `;
 
 export default Container;

@@ -21,66 +21,79 @@ function DishInformation() {
 			<NavBar />
 
 			<Content>
-				<div>
-					<div id="backButton">
+				<div id="wrapper">
+					<div id="containerDish">
+						<div id="backButton">
+							<img
+								id="leftArrow"
+								src={leftArrow}
+								alt="Seta apontando para esquerda"
+							/>
+							<ButtonText title="voltar" />
+						</div>
+
 						<img
-							id="leftArrow"
-							src={leftArrow}
-							alt="Seta apontando para esquerda"
+							id="dish"
+							src={MaskGroup}
+							alt="Prato com uma salada."
 						/>
-						<ButtonText title="voltar" />
 					</div>
 
-					<img
-						id="dish"
-						src={MaskGroup}
-						alt="Prato com uma salada."
-					/>
-				</div>
-
-				<div id="ingredientsSection">
-					<IngredientsSection
-						title="Salada Ravanello"
-						ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+					<div id="ingredientsSection">
+						<IngredientsSection
+							title="Salada Ravanello"
+							ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim. Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim.">
-						<div id="tags">
 							<Tags title="alface" />
 							<Tags title="cebola" />
 							<Tags title="pão naan" />
 							<Tags title="pepino" />
 							<Tags title="rabanete" />
 							<Tags title="tomate" />
-							{/* <Tags title="alho" /> */}
-							{/* <Tags title="gergelim" /> */}
-							{/* <Tags title="agrião" /> */}
-							{/* <Tags title="nabo" /> */}
-							{/* <Tags title="cheiro-verde" /> */}
-							{/* <Tags title="chicória" /> */}
-							
-						</div>
-					</IngredientsSection>
-				</div>
+							<Tags title="alface" />
+							<Tags title="cebola" />
+							<Tags title="pão naan" />
+							<Tags title="pepino" />
+							<Tags title="rabanete" />
+							<Tags title="tomate" />
+							<Tags title="alface" />
+							<Tags title="cebola" />
+							<Tags title="pão naan" />
+							<Tags title="pepino" />
+							<Tags title="rabanete" />
+							<Tags title="tomate" />
+							<Tags title="rabanete" />
+							<Tags title="batata-doce" />
+						</IngredientsSection>
+					</div>
 
-				<div id="addRequest">
-					<img
-						src={Minus}
-						alt="Ícone de menos para tirar um prato"
-					/>
-
-					<span>01</span>
-
-					<img
-						src={Plus}
-						alt="Ícone de menos para adicionar um prato"
-					/>
-
-					<button>
+					<div id="addRequest">
 						<img
-							src={RequestsIcon}
-							alt="Ícone de comanda de pedidos"
+							src={Minus}
+							alt="Ícone de menos para tirar um prato"
 						/>
-						pedir <span id="point">.</span> R$ <span> 25,00</span>
-					</button>
+
+						<span>01</span>
+
+						<img
+							src={Plus}
+							alt="Ícone de menos para adicionar um prato"
+						/>
+
+						<button>
+							<img
+								src={RequestsIcon}
+								alt="Ícone de comanda de pedidos"
+							/>
+							pedir <span id="point">.</span> R${" "}
+							<span> 25,00</span>
+						</button>
+					</div>
 				</div>
 			</Content>
 

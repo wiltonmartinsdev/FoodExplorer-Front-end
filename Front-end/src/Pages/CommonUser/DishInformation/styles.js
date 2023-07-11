@@ -16,13 +16,13 @@ const Container = styled.div`
 		width: 76.8rem;
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		width: 144rem;
-	}
-
-	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		width: 192rem;
 	}
+
+	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
+		width: 192rem;
+	} */
 
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
@@ -51,11 +51,6 @@ const Content = styled.main`
 		width: 9.3rem;
 
 		cursor: pointer;
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			position: relative;
-			right: 11.7rem;
-		}
 	}
 
 	img#leftArrow {
@@ -63,27 +58,22 @@ const Content = styled.main`
 		height: 2.2rem;
 	}
 
-	div#ingredientsSection {
-		/* border: 1px solid red; */
-
-		width: 31.9rem;
-		height: 28.8rem;
-
-		overflow: auto;
-	}
-
 	img#dish {
-		/* position: relative;
-		left: 2.5rem; */
+		position: relative;
+		left: 2.5rem;
 
 		width: 26.4rem;
 
 		margin: 1.6rem 0;
 
 		/* border: 1px solid red; */
+	}
 
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-		}
+	div#ingredientsSection {
+		/* border: 1px solid red; */
+
+		width: 31.9rem;
+		height: 28.8rem;
 	}
 
 	div#addRequest {
@@ -132,43 +122,159 @@ const Content = styled.main`
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
 
+		div#wrapper {
+			position: relative;
+			top: 2rem;
+		}
+
+		div#backButton {
+			position: relative;
+			bottom: 2rem;
+			right: 7rem;
+
+			transform: scale(1.2);
+		}
+
+		img#dish {
+			position: relative;
+			bottom: 3rem;
+			left: 8.3rem;
+
+			transform: scale(1.2);
+		}
+
 		div#ingredientsSection {
 			/* border: 1px solid red; */
 
 			width: 44.2rem;
 			height: 30.3rem;
 
-			overflow: auto;
+			/* overflow: auto; */
 
 			/* position: relative;
 			left: 9.5rem; */
 		}
 
-		div#tags {
-			/* border: 1px solid red; */
-			width: 40.5rem;
-
+		div#addRequest {
 			position: relative;
-			left: 1rem;
+			bottom: 2rem;
 		}
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
+	@media screen and (min-width: 769px) and (max-width: 1920px) {
+		display: flex;
+		flex-direction: row;
+
+		margin: auto;
+
+		div#wrapper {
+			display: flex;
+			gap: 3.5rem;
+
+			position: relative;
+			left: 4rem;
+
+			/* border: 1px solid red; */
+		}
+
+		div#backButton {
+			position: relative;
+			bottom: 1rem;
+
+			transform: none;
+		}
+
+		div#containerDish {
+			/* border: 1px solid green; */
+
+			transform: scale(1.8);
+
+			position: relative;
+			bottom: 2.5rem;
+		}
+
 		div#ingredientsSection {
 			/* border: 1px solid red; */
 
-			width: 44.2rem;
+			width: 48.2rem;
+
+			transform: scale(1.4);
+
+			position: relative;
+			top: 2rem;
+			left: 24rem;
+
+			display: flex;
+			align-items: center;
 
 			/* position: relative;
 			left: 9.5rem; */
 		}
 
-		div#tags {
-			/* border: 1px solid red; */
-			width: 38rem;
+		div#addRequest {
+			position: relative;
+			top: 23rem;
+			right: 20rem;
+		}
+	}
+
+    @media screen and (min-width: 1921px) {
+		display: flex;
+		flex-direction: row;
+
+		margin: auto;
+
+		div#wrapper {
+			display: flex;
+			gap: 3.5rem;
 
 			position: relative;
-			left: 2rem;
+            bottom: 50.5rem;
+			left: 4rem;
+
+            transform: scale(1.2);
+
+			/* border: 1px solid red; */
+		}
+
+		div#backButton {
+			position: relative;
+			bottom: 1rem;
+
+			transform: none;
+		}
+
+		div#containerDish {
+			/* border: 1px solid green; */
+
+			transform: scale(1.8);
+
+			position: relative;
+			bottom: 2.5rem;
+		}
+
+		div#ingredientsSection {
+			/* border: 1px solid red; */
+
+			width: 48.2rem;
+
+			transform: scale(1.4);
+
+			position: relative;
+			top: 2rem;
+			left: 24rem;
+
+			display: flex;
+			align-items: center;
+
+			/* position: relative;
+			left: 9.5rem; */
+		}
+
+		div#addRequest {
+			position: relative;
+			top: 23rem;
+			right: 20rem;
 		}
 	}
 
