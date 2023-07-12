@@ -58,7 +58,9 @@ const MobileUserMenu = () => {
 
 			<div
 				id="footer"
-				className={`menu ${menuOpen ? "open" : ""}`}><Footer /></div>
+				className={`menu ${menuOpen ? "open" : ""}`}>
+				<Footer />
+			</div>
 		</Container>
 	);
 };

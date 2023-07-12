@@ -12,7 +12,6 @@ const Container = styled.div`
 	@media screen and (min-width: 769px) {
 		display: none;
 	}
-    
 
 	/* @media screen and (min-width: 1441px) {
 		display: none;
@@ -94,7 +93,6 @@ const Container = styled.div`
 		}
 
 		/* border: 1px solid red; */
-
 	}
 
 	p.menu {
@@ -173,8 +171,6 @@ const Container = styled.div`
 			width: 71.2rem;
 		}
 	}
-
-
 
 	div#footer {
 		top: 143.5rem;

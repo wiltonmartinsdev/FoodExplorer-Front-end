@@ -28,19 +28,19 @@ const Container = styled.nav`
 		width: 76.8rem;
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
+	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		.input,
 		.button,
 		img#iconSignOut {
 			display: block;
 		}
 
-		width: 144rem;
+		width: 192rem;
 
 		/* padding: 2.4rem 9rem; */
 	}
 
-	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 		.input,
 		.button,
 		img#iconSignOut {
@@ -50,7 +50,7 @@ const Container = styled.nav`
 		width: 192rem;
 
 		padding: 2.4rem 9rem;
-	}
+	} */
 
 	@media screen and (min-width: 1921px) {
 		::before {
@@ -105,7 +105,7 @@ const Content = styled.div`
 		width: 71rem;
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
+	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		img.menu {
 			display: none;
 		}
@@ -138,7 +138,7 @@ const Content = styled.div`
 		}
 	}
 
-	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 		img.menu {
 			display: none;
 		}
@@ -159,17 +159,14 @@ const Content = styled.div`
 			left: 18.5rem;
 		}
 
-		/* button {
-			width: 22.2rem;
-			height: 5.6rem;
-		} */
+
 
 		img#iconSignOut {
 			width: 3.2rem;
 		}
 
 		width: 150rem;
-	}
+	} */
 
 	@media screen and (min-width: 1921px) {
 		img.menu {
@@ -257,7 +254,7 @@ const Brand = styled.div`
 		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 	}
 
-	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 		width: 31.6rem;
 
 		img {
@@ -271,7 +268,7 @@ const Brand = styled.div`
 
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 		}
-	}
+	} */
 
 	@media screen and (min-width: 1921px) {
 		width: 31.6rem;

@@ -10,26 +10,25 @@ const Container = styled.section`
 
 	/* border: 1px solid yellow; */
 
-	@media screen and (min-width: 769px) and (max-width: 1440px) {
-		margin-left: 10.2rem;
+	@media screen and (min-width: 769px) and (max-width: 1920px) {
+		margin-left: 10.5rem;
 
 		/* border: 1px solid red; */
 	}
 
-	@media screen and (min-width: 1441px) and (max-width: 1920px) {
+	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 		margin-left: 11rem;
 
-		/* border: 1px solid red; */
-	}
+		border: 1px solid red;
+	} */
 
 	@media screen and (min-width: 1921px) {
 		margin-left: 7rem;
 
-
 		/* border: 1px solid yellow; */
 	}
 
-    /* @media screen and (min-width: 2561px){
+	/* @media screen and (min-width: 2561px){
 		margin-left: 11rem;
 
 	} */
@@ -68,7 +67,9 @@ const Content = styled.div`
 			font-size: 1.3rem;
 			line-height: 2.4rem;
 
-			margin: 1.2rem 0 1.2rem;
+			margin: auto;
+
+			/* border: 1px solid red; */
 
 			text-align: center;
 		}

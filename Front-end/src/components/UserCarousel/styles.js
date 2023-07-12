@@ -16,15 +16,19 @@ const Container = styled.div`
 
 		margin-left: 2.4rem;
 
-		@media screen and (min-width: 769px) and (max-width: 1440px) {
-			margin-left: 19.3rem;
+		@media screen and (min-width: 769px) and (max-width: 1920px) {
+			margin-left: 43rem;
+
+			width: 15.2rem;
+
+			/* border: 1px solid red; */
 		}
 
-		@media screen and (min-width: 1441px) and (max-width: 1920px) {
+		/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 			margin-left: 43.3rem;
 
 			width: 17.8rem;
-		}
+		} */
 
 		@media screen and (min-width: 1921px) {
 			margin-left: 39.3rem;
@@ -51,27 +55,29 @@ const Container = styled.div`
 			width: 76.8rem;
 		}
 
-		@media screen and (min-width: 769px) and (max-width: 1440px) {
-			width: 125.2rem;
+		@media screen and (min-width: 769px) and (max-width: 1920px) {
+			width: 127rem;
 
-			margin-left: 9.1rem;
+			margin-left: 32.5rem;
+
+			/* border: 1px solid yellow; */
 		}
 
-		@media screen and (min-width: 1441px) and (max-width: 1920px) {
+		/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
 			width: 127.5rem;
 
 			margin-left: 32.2rem;
-		}
+		} */
 
 		@media screen and (min-width: 1921px) {
-			width: 127.5rem;
+			width: 125.2rem;
 
-			margin-left: 32.2rem;
+			margin-left: 33.1rem;
 
-            /* border: 1px solid red; */
+			/* border: 1px solid red; */
 		}
 
-        /* @media screen and (min-width: 2561px) {
+		/* @media screen and (min-width: 2561px) {
 			width: 127.5rem;
 
 			margin-left: 64.4rem;
