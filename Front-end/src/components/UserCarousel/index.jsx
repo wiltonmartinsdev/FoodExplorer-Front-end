@@ -35,24 +35,40 @@ function UserCarousel({
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth >= 430 && window.innerWidth <= 768) {
-				setSlidesPerView(4);
-				setSpaceBetween(25);
+			if (window.innerWidth < 430) {
+				setSlidesPerView(3);
+				setSpaceBetween(65);
 				console.log(window.innerWidth);
-			} else if (window.innerWidth >= 769 && window.innerWidth <= 1920) {
+			} else if (window.innerWidth >= 430 && window.innerWidth <= 769) {
+				setSlidesPerView(3);
+				setSpaceBetween(50);
+				console.log(window.innerWidth);
+			} else if (window.innerWidth >= 769) {
 				setSlidesPerView(4);
 				setSpaceBetween(-100);
 
 				console.log(window.innerWidth);
-			} else if (window.innerWidth >= 1921 && window.innerWidth <= 2560) {
-				setSlidesPerView(4);
-				setSpaceBetween(-100);
-
-				console.log(window.innerWidth);
-			} else {
-				setSlidesPerView(4);
-				setSpaceBetween(0);
 			}
+
+			// }  else if (window.innerWidth >= 769 && window.innerWidth <= 1920) {
+			// 	setSlidesPerView(4);
+			// 	setSpaceBetween(-100);
+
+			// 	console.log(window.innerWidth);
+			// } else if (window.innerWidth >= 769 && window.innerWidth <= 1920) {
+			// 	setSlidesPerView(4);
+			// 	setSpaceBetween(-100);
+
+			// 	console.log(window.innerWidth);
+			// } else if (window.innerWidth >= 1921 && window.innerWidth <= 2560) {
+			// 	setSlidesPerView(4);
+			// 	setSpaceBetween(-100);
+
+			// 	console.log(window.innerWidth);
+			// else {
+			// 	setSlidesPerView(2);
+			// 	setSpaceBetween(0);
+			// }
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -73,7 +89,7 @@ function UserCarousel({
 				spaceBetween={spaceBetween}
 				grabCursor={true}
 				autoplay={{
-					delay: 30000000,
+					delay: 3000,
 					disableOnInteraction: false,
 				}}>
 				<SwiperSlide>

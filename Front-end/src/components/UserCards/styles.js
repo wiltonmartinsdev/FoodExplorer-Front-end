@@ -5,10 +5,16 @@ const Container = styled.section`
 	/* width: 43rem; */
 	height: 29.2rem;
 
-	margin-left: 2.4rem;
+	margin-left: 1.7rem;
 	margin-top: 2.4rem;
 
 	/* border: 1px solid yellow; */
+
+    @media screen and (min-width: 430px) and (max-width: 768px) {
+
+        margin-left: .8rem;
+		/* border: 1px solid red; */
+	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		margin-left: 10.5rem;
@@ -23,7 +29,7 @@ const Container = styled.section`
 	} */
 
 	@media screen and (min-width: 1921px) {
-		margin-left: 7rem;
+		margin-left: 10.5rem;
 
 		/* border: 1px solid yellow; */
 	}

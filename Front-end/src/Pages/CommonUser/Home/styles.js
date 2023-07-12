@@ -52,7 +52,7 @@ const Content = styled.main`
 
 		border-radius: 0.2rem;
 
-		border: 1px solid red;
+		/* border: 1px solid red; */
 
 		h1 {
 			font-family: Poppins, sans-serif;

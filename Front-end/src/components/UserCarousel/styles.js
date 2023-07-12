@@ -14,7 +14,15 @@ const Container = styled.div`
 		font-weight: 400;
 		line-height: 2.52rem;
 
-		margin-left: 2.4rem;
+		margin-left: 1.8rem;
+
+		@media screen and (min-width: 430px) and (max-width: 768px) {
+			margin-left: 4.5rem;
+
+			/* width: 15.2rem; */
+
+			/* border: 1px solid red; */
+		}
 
 		@media screen and (min-width: 769px) and (max-width: 1920px) {
 			margin-left: 43rem;
@@ -31,7 +39,7 @@ const Container = styled.div`
 		} */
 
 		@media screen and (min-width: 1921px) {
-			margin-left: 39.3rem;
+			margin-left: 43rem;
 
 			width: 17.8rem;
 		}
@@ -44,15 +52,20 @@ const Container = styled.div`
 	}
 
 	.mySwiper {
-		width: 100%;
+		width: 43rem;
 		/* height: 100%; */
 
+		/* margin-left: 1rem; */
 		margin-bottom: 2.4rem;
 
 		/* border: 1px solid red; */
 
 		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 76.8rem;
+			width: 69rem;
+
+			margin-left: 3.8rem;
+
+			/* border: 1px solid red; */
 		}
 
 		@media screen and (min-width: 769px) and (max-width: 1920px) {
@@ -70,9 +83,9 @@ const Container = styled.div`
 		} */
 
 		@media screen and (min-width: 1921px) {
-			width: 125.2rem;
+			width: 127.6rem;
 
-			margin-left: 33.1rem;
+			margin-left: 32.5rem;
 
 			/* border: 1px solid red; */
 		}
@@ -107,6 +120,20 @@ const Container = styled.div`
 	.swiper-button-next {
 		color: white;
 		display: none;
+	}
+
+	@media (min-width: 769px) {
+		.mySwiper:hover {
+			.swiper-button-prev {
+				color: white;
+				display: block;
+			}
+
+			.swiper-button-next {
+				color: white;
+				display: block;
+			}
+		}
 	}
 
 	/* @media (max-width: 404px) {
