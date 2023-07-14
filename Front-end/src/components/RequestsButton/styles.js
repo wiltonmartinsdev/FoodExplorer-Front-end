@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.button`
 	width: 22.2rem;
-	height: 6rem;
+	height: 5.6rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_100};
 	color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};

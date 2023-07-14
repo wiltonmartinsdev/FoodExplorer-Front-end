@@ -4,7 +4,7 @@ import { Container, Content } from "./styles";
 // Imports of Images
 import PencilIcon from "../../assets/pencilIcon.svg";
 
-function AdminCards({ title, img, price }) {
+function AdminCards({ title, description, img, price }) {
 	return (
 		<Container>
 			<Content>
@@ -17,7 +17,11 @@ function AdminCards({ title, img, price }) {
 
 					<h1>{title} &gt; </h1>
 
-					<p>
+					<p id="description">
+						{description}
+					</p>
+
+					<p id="price">
 						R$ <span>{price}</span>
 					</p>
 

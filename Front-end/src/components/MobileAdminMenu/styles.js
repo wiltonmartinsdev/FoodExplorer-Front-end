@@ -5,11 +5,18 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center; */
 
+	display: flex;
+	align-items: center;
+
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
 	position: relative;
 
 	/* border: 1px solid red; */
+
+	@media screen and (min-width: 769px) {
+		display: none;
+	}
 
 	.menuIcon {
 		display: flex;
@@ -74,12 +81,12 @@ const Container = styled.div`
 
 	div.menu {
 		position: absolute;
-		top: 5.8rem;
+		top: 11.3rem;
 		left: -2.8rem;
 
 		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-		width: 42.8rem;
+		width: 43rem;
 		height: 132.1rem;
 
 		padding: 3.6rem 2.8rem 1.357rem;
@@ -93,14 +100,14 @@ const Container = styled.div`
 
 	p.menu {
 		position: absolute;
-		top: 0.2rem;
-		left: 3.4rem;
+		top: 4.8rem;
+		left: 3.6rem;
 
 		font-size: 2.1rem;
 
 		background-color: transparent;
 
-		width: 42.8rem;
+		/* width: 43rem; */
 
 		padding: 0;
 	}
@@ -117,63 +124,71 @@ const Container = styled.div`
 		border: 1px solid #192227;
 	}
 
-	div#newDish {
+	button#newDish {
+		width: 13.2rem;
 		height: 2.6rem;
 
 		margin: 0;
-		padding: 0 4rem;
+		/* padding: 0 4rem; */
 
-		top: 19rem;
+		position: absolute;
+		top: 24rem;
+		left: 1rem;
 
 		background-color: transparent;
 	}
 
 	hr#lineNewDish {
-		top: 22.7rem;
+		top: 27.5rem;
 
-        @media screen and (min-width: 430px) and (max-width: 768px) {
+		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 71.2rem;
 		}
 	}
 
-	div#myFavorites {
+	button#myFavorites {
+		width: 17.9rem;
 		height: 2.6rem;
 
 		margin: 0;
-		padding: 0 4rem;
+		/* padding: 0 4rem; */
 
-		top: 24.5rem;
+		position: absolute;
+		top: 29.5rem;
+		left: 1rem;
 
 		background-color: transparent;
 	}
 
 	hr#lineMyFavorites {
-		top: 28.2rem;
+		top: 33rem;
 
-        @media screen and (min-width: 430px) and (max-width: 768px) {
+		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 71.2rem;
 		}
 	}
 
-	div#logout {
+	button#logout {
+		width: 4.6rem;
 		height: 2.6rem;
 
 		margin: 0;
-		padding: 0 4rem;
+		/* padding: 0 4rem; */
 
-		top: 30rem;
+		position: absolute;
+		top: 35rem;
+		left: 1rem;
 
 		background-color: transparent;
 	}
 
 	hr#lineLogout {
-		top: 33.7rem;
+		top: 38.5rem;
 
-        @media screen and (min-width: 430px) and (max-width: 768px) {
+		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 71.2rem;
 		}
 	}
-
 
 	/* div#logout {
 		height: 2.6rem;

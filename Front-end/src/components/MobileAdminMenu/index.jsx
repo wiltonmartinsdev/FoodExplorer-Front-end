@@ -34,31 +34,31 @@ const MobileAdminMenu = () => {
 				/>
 			</div>
 
-			<div
+			<ButtonText
 				id="newDish"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Novo Prato" />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}
+				title="Novo Prato"
+			/>
 			<hr
 				id="lineNewDish"
 				className={` hr menu ${menuOpen ? "open" : ""}`}
 			/>
 
-			<div
+			<ButtonText
 				id="myFavorites"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Meus Favoritos" />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}
+				title="Meus Favoritos"
+			/>
 			<hr
 				id="lineMyFavorites"
 				className={` hr menu ${menuOpen ? "open" : ""}`}
 			/>
 
-			<div
+			<ButtonText
 				id="logout"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Sair" />
-			</div>
+				className={`menu ${menuOpen ? "open" : ""}`}
+				title="Sair"
+			/>
 			<hr
 				id="lineLogout"
 				className={` hr menu ${menuOpen ? "open" : ""}`}
@@ -80,11 +80,11 @@ const MobileAdminMenu = () => {
 				className={` hr menu ${menuOpen ? "open" : ""}`}
 			/> */}
 
-			<div
+			{/* <div
 				id="footer"
 				className={`menu ${menuOpen ? "open" : ""}`}>
 				<Footer />
-			</div>
+			</div> */}
 		</Container>
 	);
 };

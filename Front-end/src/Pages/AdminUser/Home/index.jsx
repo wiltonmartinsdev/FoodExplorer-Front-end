@@ -48,6 +48,11 @@ function Home() {
 					subTitle2="Spaghetti Gamberi"
 					subTitle3="Torradas de Parma"
 					subTitle4="Salada Molla"
+					description1="Rabanetes, folhas verdes e molho agridoce salpicados com
+                    gergelim"
+					description2="Massa fresca com camarões e pesto."
+					description3="Presunto de parma e rúcula em um pão com fermentação natural."
+					description4="Massa fresca com camarões e pesto."
 					image1={MaskGroup01}
 					image2={MaskGroup03}
 					image3={MaskGroup02}
@@ -64,6 +69,10 @@ function Home() {
 					subTitle2="Peachy Pastrie"
 					subTitle3="Macarons"
 					subTitle4="Bolo de Damasco"
+					description1="Torta de ameixa com massa amanteigada, polvilho em açúcar."
+					description2="Delicioso folheado de pêssego com folhas de hortelã."
+					description3="Farinha de amêndoas, manteiga, claras e açúcar."
+					description4="Damascos frescos em uma massa sem glúten."
 					image1={MaskGroup05}
 					image2={MaskGroup06}
 					image3={MaskGroup07}
@@ -80,6 +89,10 @@ function Home() {
 					subTitle2="Expresso"
 					subTitle3="Té D'autunno"
 					subTitle4="Pomo Bourbon"
+					description1="Suco de maracujá gelado, cremoso, docinho."
+					description2="Café cremoso feito na temperatura e pressões perfeitas."
+					description3="Chá de anis, canela e limão. Sinta o outono italiano."
+					description4="Maçã, whisky, canela. On the rocks."
 					image1={MaskGroup09}
 					image2={MaskGroup10}
 					image3={MaskGroup11}

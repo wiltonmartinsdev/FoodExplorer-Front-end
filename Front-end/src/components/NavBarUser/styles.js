@@ -18,6 +18,8 @@ const Container = styled.nav`
 	justify-content: center;
 	align-items: center;
 
+	/* border: 1px solid red; */
+
 	.input,
 	.button,
 	img#iconSignOut {
@@ -61,6 +63,7 @@ const Container = styled.nav`
 
 			position: absolute;
 			top: 0;
+            left: -96rem;
 			z-index: -1;
 		}
 
@@ -92,6 +95,7 @@ const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 4rem;
 
 	width: 37.2rem;
 
@@ -103,6 +107,8 @@ const Content = styled.div`
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 71rem;
+
+		/* justify-content: center; */
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
@@ -131,7 +137,7 @@ const Content = styled.div`
 			height: 5.6rem;
 		} */
 
-		width: 138.2rem;
+		width: 123.6rem;
 
 		img#iconSignOut {
 			width: 3.2rem;
@@ -239,8 +245,11 @@ const Brand = styled.div`
 	width: 16rem;
 
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: 0.8rem;
+
+	/* border: 1px solid green; */
 
 	img {
 		width: 2.4rem;
