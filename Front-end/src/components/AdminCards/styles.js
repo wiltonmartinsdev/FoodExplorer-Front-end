@@ -35,7 +35,7 @@ const Content = styled.div`
 	/* margin-top: 2.4rem; */
 	/* margin-bottom: 2.4rem; */
 
-	/* border: 1px solid red; */
+	/* border: 1px solid yellow; */
 
 	div#cards {
 		width: 17.8rem;
@@ -48,11 +48,16 @@ const Content = styled.div`
 		border-radius: 0.8rem;
 		border: 1px solid #000204;
 
-		/* border: 1px solid yellow; */
+		border: 1px solid yellow;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		div#wrapperCards {
+			position: relative;
+			bottom: 1.5rem;
+		}
 
 		img#dishImage {
 			width: 8.8rem;
@@ -63,11 +68,6 @@ const Content = styled.div`
 
 			transform: scale(1.3);
 		}
-
-		/* img#dishImage {
-			width: 8.8rem;
-			margin: 2.4rem auto 0;
-		} */
 
 		h1 {
 			font-family: Poppins, sans-serif;
@@ -83,32 +83,20 @@ const Content = styled.div`
 		}
 
 		p#description {
-			width: 16.6rem;
-			height: 4.8rem;
-
-			font-size: 1.2rem;
-			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
-
-			text-align: center;
-
-			margin: 1.5rem 0.5rem;
-
-			overflow-y: auto;
-			overflow-x: hidden;
-
-			/* border: 1px solid red; */
+			display: none;
 		}
 
 		p#price {
 			color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
 			text-align: center;
 
-			margin-bottom: 2rem;
+			position: relative;
+			top: 1rem;
 
 			/* border: 1px solid green; */
 		}
 
-		div#icons {
+		/* div#icons {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -116,8 +104,7 @@ const Content = styled.div`
 			width: 10rem;
 			height: 3.2rem;
 
-			/* border: 1px solid yellow; */
-		}
+		} */
 
 		div#pencilIcon {
 			/* border: 1px solid red; */
@@ -130,7 +117,7 @@ const Content = styled.div`
 			align-items: center;
 
 			position: absolute;
-			top: 1.6rem;
+			top: -1.4rem;
 			right: 1.8rem;
 
 			img#heart {
@@ -141,6 +128,42 @@ const Content = styled.div`
 				margin: 0;
 
 				cursor: pointer;
+			}
+		}
+
+		@media screen and (min-width: 769px) {
+			div#wrapperCards {
+				bottom: 0;
+			}
+
+            div#pencilIcon{
+                top: 0;
+            }
+
+			p#description {
+				display: block;
+
+				width: 16.6rem;
+				height: 4.8rem;
+
+				font-size: 1.2rem;
+				color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
+
+				text-align: center;
+
+				margin: 1.5rem 0.5rem;
+
+				position: relative;
+				bottom: 0.5rem;
+
+				overflow-y: auto;
+				overflow-x: hidden;
+
+				/* border: 1px solid red; */
+			}
+
+			p#price {
+				top: -0.5rem;
 			}
 		}
 	}

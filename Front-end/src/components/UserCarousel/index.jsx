@@ -21,6 +21,10 @@ function UserCarousel({
 	subTitle2,
 	subTitle3,
 	subTitle4,
+	description1,
+	description2,
+	description3,
+	description4,
 	image1,
 	image2,
 	image3,
@@ -50,25 +54,6 @@ function UserCarousel({
 				console.log(window.innerWidth);
 			}
 
-			// }  else if (window.innerWidth >= 769 && window.innerWidth <= 1920) {
-			// 	setSlidesPerView(4);
-			// 	setSpaceBetween(-100);
-
-			// 	console.log(window.innerWidth);
-			// } else if (window.innerWidth >= 769 && window.innerWidth <= 1920) {
-			// 	setSlidesPerView(4);
-			// 	setSpaceBetween(-100);
-
-			// 	console.log(window.innerWidth);
-			// } else if (window.innerWidth >= 1921 && window.innerWidth <= 2560) {
-			// 	setSlidesPerView(4);
-			// 	setSpaceBetween(-100);
-
-			// 	console.log(window.innerWidth);
-			// else {
-			// 	setSlidesPerView(2);
-			// 	setSpaceBetween(0);
-			// }
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -89,12 +74,13 @@ function UserCarousel({
 				spaceBetween={spaceBetween}
 				grabCursor={true}
 				autoplay={{
-					delay: 3000,
+					delay: 3000000,
 					disableOnInteraction: false,
 				}}>
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle1}
+						description={description1}
 						img={image1}
 						price={price1}
 					/>
@@ -103,6 +89,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle2}
+						description={description2}
 						img={image2}
 						price={price2}
 					/>
@@ -111,6 +98,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle3}
+						description={description3}
 						img={image3}
 						price={price3}
 					/>
@@ -119,6 +107,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle4}
+						description={description4}
 						img={image4}
 						price={price4}
 					/>
@@ -127,6 +116,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle2}
+						description={description2}
 						img={image2}
 						price={price2}
 					/>
@@ -135,6 +125,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle3}
+						description={description3}
 						img={image3}
 						price={price3}
 					/>
@@ -143,6 +134,7 @@ function UserCarousel({
 				<SwiperSlide>
 					<CardsSection
 						title={subTitle1}
+						description={description1}
 						img={image1}
 						price={price1}
 					/>

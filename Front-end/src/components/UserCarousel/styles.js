@@ -1,12 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 40.4rem;
+	/* width: 40.4rem; */
 
-	/* display: flex;
-	align-items: center; */
-
-	/* border: 1px solid red; */
+	border: 1px solid green;
 
 	h1 {
 		font-family: Poppins, sans-serif;
@@ -56,9 +53,7 @@ const Container = styled.div`
 		/* height: 100%; */
 
 		/* margin-left: 1rem; */
-		margin-bottom: 2.4rem;
-
-		/* border: 1px solid red; */
+		/* margin-bottom: 2.4rem; */
 
 		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 69rem;
@@ -123,6 +118,14 @@ const Container = styled.div`
 	}
 
 	@media (min-width: 769px) {
+		/* height: 54rem; */
+
+        .swiper-slide{
+            height: 32.5rem;
+
+            border: 1px solid;
+        }
+
 		.mySwiper:hover {
 			.swiper-button-prev {
 				color: white;

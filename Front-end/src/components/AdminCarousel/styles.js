@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 40.4rem;
+	/* width: 40.4rem; */
 
 	/* display: flex;
 	align-items: center; */
 
-	/* border: 1px solid red; */
+	border: 1px solid red;
 
 	/* h1 {
 		font-family: Poppins, sans-serif;

@@ -9,7 +9,7 @@ import Minus from "../../assets/minus.svg";
 import Plus from "../../assets/plus.svg";
 import HeartIcon from "../../assets/heartIcon.svg";
 
-function UserCards({ title, img, price }) {
+function UserCards({ title, description, img, price }) {
 	return (
 		<Container>
 			<Content>
@@ -22,7 +22,9 @@ function UserCards({ title, img, price }) {
 
 					<h1>{title} &gt; </h1>
 
-					<p>
+					<p id="description">{description}</p>
+
+					<p id="price">
 						R$ <span>{price}</span>
 					</p>
 
@@ -43,7 +45,10 @@ function UserCards({ title, img, price }) {
 							/>
 						</div>
 
-						<Button title="incluir" />
+						<Button
+							id="include"
+							title="incluir"
+						/>
 					</div>
 					<div id="heartIcon">
 						<img

@@ -9,17 +9,16 @@ function AdminCards({ title, description, img, price }) {
 		<Container>
 			<Content>
 				<div id="cards">
-					<img
+                    <div id="wrapperCards">
+                    <img
+						id="dishImage"
 						src={img}
 						alt=""
-						id="dishImage"
 					/>
 
 					<h1>{title} &gt; </h1>
 
-					<p id="description">
-						{description}
-					</p>
+					<p id="description">{description}</p>
 
 					<p id="price">
 						R$ <span>{price}</span>
@@ -27,11 +26,12 @@ function AdminCards({ title, description, img, price }) {
 
 					<div id="pencilIcon">
 						<img
+							id="heart"
 							src={PencilIcon}
 							alt="Ícone de um lápis para editar os pratos cadastrados"
-							id="heart"
 						/>
 					</div>
+                    </div>
 				</div>
 			</Content>
 		</Container>
