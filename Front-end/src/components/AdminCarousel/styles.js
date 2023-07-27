@@ -6,7 +6,7 @@ const Container = styled.div`
 	/* display: flex;
 	align-items: center; */
 
-	border: 1px solid red;
+	/* border: 1px solid red; */
 
 	/* h1 {
 		font-family: Poppins, sans-serif;

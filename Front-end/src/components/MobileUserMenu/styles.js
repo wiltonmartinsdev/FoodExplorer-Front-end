@@ -5,17 +5,17 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+	/* background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700}; */
 
 	margin-top: 0.5rem;
 
-	@media screen and (min-width: 769px) {
-		display: none;
-	}
+	/* border: 1px solid green; */
 
 	/* @media screen and (min-width: 1441px) {
 		display: none;
 	} */
+
+	position: relative;
 
 	.menuIcon {
 		display: flex;
@@ -27,6 +27,8 @@ const Container = styled.div`
 		height: 2.5rem;
 
 		cursor: pointer;
+
+		/* border: 1px solid red; */
 	}
 
 	.menuIconLine {
@@ -64,124 +66,81 @@ const Container = styled.div`
 		display: none;
 		list-style: none;
 
-		padding: 0;
-		margin: 0;
+		/* padding: 0;
+		margin: 0; */
 
-		position: relative;
+		position: absolute;
+		top: 6.7rem;
+		left: -2.9rem;
 
-		z-index: 9999;
+		width: 43rem;
+		height: 129rem;
+
+		padding: 3.6rem 2.8rem 1.357rem;
+
+		/* z-index: 9999; */
+
+		/* border: 1px solid red; */
+
+		/* input#dishSearch{
+            position: relative;
+            top: 30rem;
+        } */
 	}
 
 	.open + .menu {
 		display: block;
-	}
-
-	div.menu {
-		position: absolute;
-		top: 11.4rem;
-		left: 0;
 
 		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
-
-		width: 43rem;
-		height: 132.2rem;
-
-		padding: 3.6rem 2.8rem 1.357rem;
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 100%;
-		}
-
-		/* border: 1px solid red; */
 	}
 
-	p.menu {
+	p#titleMenuOpen {
 		position: absolute;
-		top: 5rem;
-		left: 6.4rem;
+		top: -6.4rem;
+		left: 6.5rem;
 
 		font-size: 2.1rem;
-
-		background-color: transparent;
-
-		/* padding: 0; */
-
-		/* border: 1px solid red; */
 	}
 
-	.hr {
-		position: absolute;
-		right: 2.8rem;
-		left: 2.8rem;
+	div#wrapperButtonText {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 
-		width: 37.2rem;
+		margin-top: 5rem;
 
-		z-index: 9999;
+		.menuOptions {
+			text-align: left;
 
-		border: 1px solid #192227;
-	}
+			border-bottom: 1px solid #192227;
 
-	#myFavorites {
-		width: 25.9rem;
-		height: 2.6rem;
-
-		margin: 0;
-		padding: 0 4rem;
-
-		position: absolute;
-		top: 23rem;
-		left: 0;
-
-		background-color: transparent;
-
-		/* border: 1px solid red; */
-	}
-
-	hr#lineFavorites {
-		top: 27.6rem;
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 71.2rem;
+			padding-left: 1rem;
+			padding-bottom: 1.5rem;
 		}
 	}
 
-	#logout {
-		height: 2.6rem;
-
-		margin: 0;
-		padding: 0 4rem;
-
+	#footer {
 		position: absolute;
-		top: 30.5rem;
-		left: 0.2rem;
+		top: 121.3rem;
+		left: 0;
 
-		/* border: 1px solid red; */
+		height: 7.7rem;
 
-		background-color: transparent;
-
-		/* @media screen and (min-width: 430px) and (max-width: 768px) {
+		/* padding: 0; */
+		/* 
+		@media screen and (min-width: 430px) and (max-width: 768px) {
 			width: 76.8rem;
 		} */
 	}
 
-	hr#lineLogout {
-		top: 35rem;
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 71.2rem;
+	@media screen and (min-width: 430px) and (max-width: 768px) {
+		.menu {
+			width: 76.8rem;
 		}
 	}
 
-	div#footer {
-		top: 143.5rem;
-
-		height: 7.7rem;
-
-		padding: 0;
-
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 76.8rem;
-		}
+	@media screen and (min-width: 769px) {
+		display: none;
 	}
 `;
 

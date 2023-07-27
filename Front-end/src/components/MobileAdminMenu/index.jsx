@@ -25,66 +25,29 @@ const MobileAdminMenu = () => {
 				<div className="menuIconLine" />
 			</div>
 
-			<p className={`menu ${menuOpen ? "open" : ""}`}>Menu</p>
-
 			<div className={`menu ${menuOpen ? "open" : ""}`}>
+				<p id="titleMenuOpen">Menu</p>
+
 				<Input
+					id="dishSearch"
 					placeholder="Busque por pratos ou ingredientes"
 					img={HiOutlineSearch}
 				/>
+
+				<div id="wrapperButtonText">
+					<ButtonText
+						className="menuOptions"
+						title="Meus Favoritos"
+					/>
+
+					<ButtonText
+						className="menuOptions"
+						title="Sair"
+					/>
+				</div>
+
+				<Footer id="footer" />
 			</div>
-
-			<ButtonText
-				id="newDish"
-				className={`menu ${menuOpen ? "open" : ""}`}
-				title="Novo Prato"
-			/>
-			<hr
-				id="lineNewDish"
-				className={` hr menu ${menuOpen ? "open" : ""}`}
-			/>
-
-			<ButtonText
-				id="myFavorites"
-				className={`menu ${menuOpen ? "open" : ""}`}
-				title="Meus Favoritos"
-			/>
-			<hr
-				id="lineMyFavorites"
-				className={` hr menu ${menuOpen ? "open" : ""}`}
-			/>
-
-			<ButtonText
-				id="logout"
-				className={`menu ${menuOpen ? "open" : ""}`}
-				title="Sair"
-			/>
-			<hr
-				id="lineLogout"
-				className={` hr menu ${menuOpen ? "open" : ""}`}
-			/>
-
-			{/* <div
-				id="dishInformation"
-				className={` hr menu ${menuOpen ? "open" : ""}`}>
-				<DishInformation />
-			</div> */}
-
-			{/* <div
-				id="logout"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<ButtonText title="Sair" />
-			</div>
-			<hr
-				id="lineLogout"
-				className={` hr menu ${menuOpen ? "open" : ""}`}
-			/> */}
-
-			{/* <div
-				id="footer"
-				className={`menu ${menuOpen ? "open" : ""}`}>
-				<Footer />
-			</div> */}
 		</Container>
 	);
 };

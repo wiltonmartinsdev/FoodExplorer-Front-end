@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
 	/* width: 40.4rem; */
 
-	border: 1px solid green;
+	/* border: 1px solid red; */
 
 	h1 {
 		font-family: Poppins, sans-serif;
@@ -123,7 +123,7 @@ const Container = styled.div`
         .swiper-slide{
             height: 32.5rem;
 
-            border: 1px solid;
+            /* border: 1px solid; */
         }
 
 		.mySwiper:hover {

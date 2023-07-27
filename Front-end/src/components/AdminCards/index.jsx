@@ -8,9 +8,8 @@ function AdminCards({ title, description, img, price }) {
 	return (
 		<Container>
 			<Content>
-				<div id="cards">
-                    <div id="wrapperCards">
-                    <img
+				<div id="wrapperCards">
+					<img
 						id="dishImage"
 						src={img}
 						alt=""
@@ -31,7 +30,6 @@ function AdminCards({ title, description, img, price }) {
 							alt="Ícone de um lápis para editar os pratos cadastrados"
 						/>
 					</div>
-                    </div>
 				</div>
 			</Content>
 		</Container>

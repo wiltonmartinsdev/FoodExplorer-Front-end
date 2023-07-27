@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.nav`
-	width: 43rem;
+	/* width: 43rem; */
 	height: 11.4rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};

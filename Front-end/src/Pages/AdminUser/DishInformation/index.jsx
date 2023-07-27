@@ -19,29 +19,39 @@ function DishInformation() {
 			<NavBar />
 
 			<Content>
-				<div>
-					<div id="backButton">
+				<div id="wrapper">
+					<div id="containerDish">
+						<div id="backButton">
+							<img
+								id="leftArrow"
+								src={leftArrow}
+								alt="Seta apontando para esquerda"
+							/>
+							<ButtonText title="voltar" />
+						</div>
+
 						<img
-							id="leftArrow"
-							src={leftArrow}
-							alt="Seta apontando para esquerda"
+							id="dish"
+							src={MaskGroup}
+							alt="Prato com uma salada."
 						/>
-						<ButtonText title="voltar" />
 					</div>
 
-					<img
-						id="dish"
-						src={MaskGroup}
-						alt="Prato com uma salada."
-					/>
-				</div>
-
-				<div id="ingredientsSection">
-					<IngredientsSection
-						title="Salada Ravanello"
-						ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+					<div id="ingredientsSection">
+						<IngredientsSection
+							title="Salada Ravanello"
+							ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim. Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
+				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim.">
-						<div id="tags">
 							<Tags title="alface" />
 							<Tags title="cebola" />
 							<Tags title="pão naan" />
@@ -50,11 +60,18 @@ function DishInformation() {
 							<Tags title="tomate" />
 							<Tags title="alho" />
 							<Tags title="gergelim" />
-						</div>
-					</IngredientsSection>
-
-					<Button title="Editar prato" />
+							<Tags title="rabanete" />
+							<Tags title="tomate" />
+							<Tags title="alho" />
+							<Tags title="cheiro-verde" />
+						</IngredientsSection>
+					</div>
 				</div>
+
+				<Button
+					id="editDish"
+					title="Editar prato"
+				/>
 			</Content>
 
 			<Footer />
