@@ -29,7 +29,8 @@ function NewDish() {
 					<ButtonText title="voltar" />
 				</div>
 
-				<h1>Novo prato</h1>
+				<h1 id="title1">Novo prato</h1>
+				<h1 id="title2">Adicionar prato</h1>
 
 				<form>
 					<label
@@ -42,7 +43,7 @@ function NewDish() {
 								alt="Ícone de uma seta para cima para fazer upload de uma imagem"
 							/>
 
-							<p>Selecione imagem</p>
+							<p>Selecione a imagem</p>
 						</div>
 						<input
 							type="file"
@@ -53,13 +54,21 @@ function NewDish() {
 					</label>
 					<div className="input"></div>
 
-					<label htmlFor="name">Nome</label>
+					<label
+						id="name"
+						htmlFor="name">
+						Nome
+					</label>
 					<Input
 						id="name"
 						placeholder="Ex.: Salada Caesar"
 					/>
 
-					<label htmlFor="category">Categoria</label>
+					<label
+						id="category"
+						htmlFor="category">
+						Categoria
+					</label>
 					<select id="category">
 						<option value="food">Refeição</option>
 						<option value="mainDishes">Pratos Principais</option>
@@ -67,7 +76,11 @@ function NewDish() {
 						<option value="drinks">Bebidas</option>
 					</select>
 
-					<label htmlFor="ingredients">Ingredientes</label>
+					<label
+						id="ingredients"
+						htmlFor="ingredients">
+						Ingredientes
+					</label>
 					<div
 						id="ingredients"
 						className="input">
@@ -76,7 +89,11 @@ function NewDish() {
 						<AddIngredients placeholder="Adicionar" />
 					</div>
 
-					<label htmlFor="price">Preço</label>
+					<label
+						id="price"
+						htmlFor="price">
+						Preço
+					</label>
 					<Input
 						className="no-arrows"
 						id="price"
@@ -84,17 +101,21 @@ function NewDish() {
 						placeholder="R$ 00,00"
 					/>
 
-					<label htmlFor="textArea">Descrição</label>
+					<label
+						id="textArea"
+						htmlFor="textArea">
+						Descrição
+					</label>
 					<TextAreaDescription
 						id="textArea"
-						placeholder="Fale brevemente sobre o prato, seus ingredientes e composição."
+						placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+					/>
+
+					<Button
+						id="save"
+						title="Salvar alterações"
 					/>
 				</form>
-
-				<Button
-					id="save"
-					title="Salvar alterações"
-				/>
 			</Content>
 
 			<Footer />
