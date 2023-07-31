@@ -1,38 +1,49 @@
 // Imports Global
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 // Imports of Components
 import Logo from "../../components/Logo";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
 	return (
 		<Container>
-			<Logo />
+			<Content>
+				<Logo />
 
-			<form>
-				<h4>Email</h4>
-				<Input
-					type="email"
-					placeholder="Exemplo: exemplo@exemplo.com.br"
-					required
-				/>
+				<form>
+					<fieldset>
+						<legend>Faça login</legend>
 
-				<h4>Senha</h4>
-				<Input
-					type="password"
-					placeholder="No mínimo 6 caracteres"
-					minLength={6}
-					required
-				/>
+						<label>Email</label>
+						<Input
+							type="email"
+							placeholder="Exemplo: exemplo@exemplo.com.br"
+							required
+						/>
 
-				<Button title="Entrar" />
-			</form>
+						<label>Senha</label>
+						<Input
+							type="password"
+							placeholder="No mínimo 6 caracteres"
+							minLength={6}
+							required
+						/>
+					</fieldset>
 
-			<div>
-				<a href="#">Criar uma conta</a>
-			</div>
+					<Button
+						id="enter"
+						title="Entrar"
+					/>
+
+					<ButtonText
+						id="newAccount"
+						title="Criar uma conta"
+					/>
+				</form>
+			</Content>
 		</Container>
 	);
 }

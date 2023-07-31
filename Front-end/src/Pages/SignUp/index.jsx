@@ -1,47 +1,58 @@
 // Imports Global
-import Container from "./styles";
+import { Container, Content } from "./styles";
 
 // Imports of Components
 import Logo from "../../components/Logo";
-import Button from "../../components/Button";
 import Input from "../../components/Input";
+import Button from "../../components/Button";
+import ButtonText from "../../components/ButtonText";
 
-function SignUp() {
+function SignIn() {
 	return (
 		<Container>
-			<Logo />
+			<Content>
+				<Logo />
 
-			<form>
-				<h4>Seu nome</h4>
-				<Input
-					type="text"
-					placeholder="Exemplo: Maria da Silva"
-					required
-				/>
+				<form>
+					<fieldset>
+						<legend>Crie sua conta</legend>
 
-				<h4>Email</h4>
-				<Input
-					type="email"
-					placeholder="Exemplo: exemplo@exemplo.com.br"
-					required
-				/>
+						<label>Seu nome</label>
+						<Input
+							type="text"
+							placeholder="Exemplo: Maria da Silva"
+							required
+						/>
 
-				<h4>Senha</h4>
-				<Input
-					type="password"
-					placeholder="No mínimo 6 caracteres"
-					minLength={6}
-					required
-				/>
+						<label>Email</label>
+						<Input
+							type="email"
+							placeholder="Exemplo: exemplo@exemplo.com.br"
+							required
+						/>
 
-				<Button title="Criar conta" />
-			</form>
+						<label>Senha</label>
+						<Input
+							type="password"
+							placeholder="No mínimo 6 caracteres"
+							minLength={6}
+							required
+						/>
+					</fieldset>
 
-			<div>
-				<a href="#">Já tenho uma conta</a>
-			</div>
+					<Button
+						id="createAccount"
+						title="Criar conta"
+					/>
+
+					<ButtonText
+						id="myAccount"
+						title="Já tenho uma conta"
+					/>
+				</form>
+			</Content>
 		</Container>
 	);
 }
 
-export default SignUp;
+export default SignIn;
