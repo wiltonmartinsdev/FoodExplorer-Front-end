@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import { Link } from "react-router-dom";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -38,10 +39,14 @@ function SignIn() {
 						title="Entrar"
 					/>
 
-					<ButtonText
-						id="newAccount"
-						title="Criar uma conta"
-					/>
+					<Link
+						id="linkMyAccount"
+						to="/register">
+						<ButtonText
+							id="myAccount"
+							title="Criar uma conta"
+						/>
+					</Link>
 				</form>
 			</Content>
 		</Container>

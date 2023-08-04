@@ -37,11 +37,6 @@ const MobileUserMenu = () => {
 				<div id="wrapperButtonText">
 					<ButtonText
 						className="menuOptions"
-						title="Meus Favoritos"
-					/>
-
-					<ButtonText
-						className="menuOptions"
 						title="Sair"
 					/>
 				</div>

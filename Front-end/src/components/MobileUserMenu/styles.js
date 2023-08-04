@@ -97,7 +97,7 @@ const Container = styled.div`
 	p#titleMenuOpen {
 		position: absolute;
 		top: -6.4rem;
-		left: 6.5rem;
+		left: 6.6rem;
 
 		font-size: 2.1rem;
 	}

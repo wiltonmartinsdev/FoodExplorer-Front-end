@@ -160,7 +160,7 @@ const Content = styled.div`
 
 		width: 150rem;
 
-        /* border: 1px solid yellow; */
+		/* border: 1px solid yellow; */
 	}
 `;
 
@@ -209,7 +209,8 @@ const Brand = styled.div`
 
 		align-items: flex-start;
 
-		width: 16.1rem;
+		/* width: 16.1rem; */
+		width: 16.5rem;
 		height: 4.5rem;
 
 		/* border: 1px solid red; */
@@ -249,21 +250,21 @@ const Brand = styled.div`
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 		} */
 
-        align-items: flex-start;
+		align-items: flex-start;
 
-width: 16.1rem;
-height: 4.5rem;
+		width: 16.1rem;
+		height: 4.5rem;
 
-/* border: 1px solid red; */
+		/* border: 1px solid red; */
 
-p {
-    position: absolute;
-    top: 50%;
-    right: 0;
-}
+		p {
+			position: absolute;
+			top: 50%;
+			right: 0;
+		}
 
-.input {
-}
+		.input {
+		}
 	}
 `;
 

@@ -50,8 +50,6 @@ const Content = styled.main`
 
 				width: 9.3rem;
 
-				cursor: pointer;
-
 				img#leftArrow {
 					width: 1.2rem;
 					height: 2.2rem;

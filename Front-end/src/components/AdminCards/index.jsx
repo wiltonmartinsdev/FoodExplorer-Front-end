@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import { Link } from "react-router-dom";
 
 // Imports of Images
 import PencilIcon from "../../assets/pencilIcon.svg";
@@ -9,11 +10,13 @@ function AdminCards({ title, description, img, price }) {
 		<Container>
 			<Content>
 				<div id="wrapperCards">
-					<img
-						id="dishImage"
-						src={img}
-						alt=""
-					/>
+					<Link to="/DishInformation">
+						<img
+							id="dishImage"
+							src={img}
+							alt="imagem referente ao prato ou bebida"
+						/>
+					</Link>
 
 					<h1>{title} &gt; </h1>
 
@@ -24,11 +27,13 @@ function AdminCards({ title, description, img, price }) {
 					</p>
 
 					<div id="pencilIcon">
-						<img
-							id="heart"
-							src={PencilIcon}
-							alt="Ícone de um lápis para editar os pratos cadastrados"
-						/>
+						<Link to="/EditDish">
+							<img
+								id="heart"
+								src={PencilIcon}
+								alt="Ícone de um lápis para editar os pratos cadastrados"
+							/>
+						</Link>
 					</div>
 				</div>
 			</Content>

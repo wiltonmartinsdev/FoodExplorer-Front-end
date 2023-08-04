@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content, Brand } from "./styles";
+import { Link } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 
 // Imports of Components
@@ -14,23 +15,24 @@ import IconSignOut from "../../assets/iconSignOut.svg";
 function NavBarAdmin() {
 	return (
 		<Container>
-				<MobileUserAdmin />
+			<MobileUserAdmin />
 			<Content>
 				{/* <div>
             <MobileUserAdmin />
             </div> */}
 
+				<Link to="/">
+					<Brand>
+						<img
+							src={Polygon}
+							alt="Ícone de um polígono na cor azul"
+						/>
 
-				<Brand>
-					<img
-						src={Polygon}
-						alt="Ícone de um polígono na cor azul"
-					/>
+						<h1>food explorer</h1>
 
-					<h1>food explorer</h1>
-
-					<p>admin</p>
-				</Brand>
+						<p>admin</p>
+					</Brand>
+				</Link>
 
 				<Input
 					className="input"
@@ -38,7 +40,12 @@ function NavBarAdmin() {
 					img={HiOutlineSearch}
 				/>
 
-				<Button className="button" title="Novo prato" />
+				<Link to="/NewDish">
+					<Button
+						className="button"
+						title="Novo prato"
+					/>
+				</Link>
 
 				<img
 					id="iconSignOut"

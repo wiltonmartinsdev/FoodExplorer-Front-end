@@ -97,7 +97,7 @@ const Container = styled.div`
 	p#titleMenuOpen {
 		position: absolute;
 		top: -6.4rem;
-		left: 6.5rem;
+		left: 5.6rem;
 
 		font-size: 2.1rem;
 	}
@@ -116,6 +116,11 @@ const Container = styled.div`
 
 			padding-left: 1rem;
 			padding-bottom: 1.5rem;
+		}
+
+		button#newDish,
+		button#logout {
+			width: 100%;
 		}
 	}
 

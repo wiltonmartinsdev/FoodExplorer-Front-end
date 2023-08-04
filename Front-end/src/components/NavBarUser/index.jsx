@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content, Brand } from "./styles";
+import { Link } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 
 // Imports of Components
@@ -19,14 +20,16 @@ function NavBarUser() {
 			<Content>
 				<MobileUserMenu />
 
-				<Brand id="brand">
-					<img
-						src={Polygon}
-						alt="Ícone de um polígono na cor azul"
-					/>
+				<Link to="/">
+					<Brand id="brand">
+						<img
+							src={Polygon}
+							alt="Ícone de um polígono na cor azul"
+						/>
 
-					<h1>food explorer</h1>
-				</Brand>
+						<h1>food explorer</h1>
+					</Brand>
+				</Link>
 
 				<img
 					className="menu"

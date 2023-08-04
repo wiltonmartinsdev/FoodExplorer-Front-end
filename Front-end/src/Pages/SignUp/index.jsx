@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import { Link } from "react-router-dom";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -7,7 +8,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 
-function SignIn() {
+function SignUp() {
 	return (
 		<Container>
 			<Content>
@@ -45,14 +46,18 @@ function SignIn() {
 						title="Criar conta"
 					/>
 
-					<ButtonText
-						id="myAccount"
-						title="Já tenho uma conta"
-					/>
+					<Link
+						id="linkMyAccount"
+						to="/">
+						<ButtonText
+							id="myAccount"
+							title="Já tenho uma conta"
+						/>
+					</Link>
 				</form>
 			</Content>
 		</Container>
 	);
 }
 
-export default SignIn;
+export default SignUp;

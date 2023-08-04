@@ -1,6 +1,7 @@
 // Imports Global
 import Container from "./styles";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 
 // Imports of Components
@@ -35,15 +36,21 @@ const MobileAdminMenu = () => {
 				/>
 
 				<div id="wrapperButtonText">
-					<ButtonText
-						className="menuOptions"
-						title="Meus Favoritos"
-					/>
+					<Link to="/NewDish">
+						<ButtonText
+							className="menuOptions"
+							id="newDish"
+							title="Novo Prato"
+						/>
+					</Link>
 
-					<ButtonText
-						className="menuOptions"
-						title="Sair"
-					/>
+					<Link>
+						<ButtonText
+							className="menuOptions"
+							id="logout"
+							title="Sair"
+						/>
+					</Link>
 				</div>
 
 				<Footer id="footer" />

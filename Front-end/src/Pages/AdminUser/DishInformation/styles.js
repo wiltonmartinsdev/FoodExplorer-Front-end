@@ -44,8 +44,6 @@ const Content = styled.main`
 				display: flex;
 				gap: 1.1rem;
 
-				cursor: pointer;
-
 				img#leftArrow {
 					width: 1.2rem;
 					height: 2.2rem;

@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import { Link } from "react-router-dom";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -27,7 +28,9 @@ function DishInformation() {
 								src={leftArrow}
 								alt="Seta apontando para esquerda"
 							/>
-							<ButtonText title="voltar" />
+							<Link to="/">
+								<ButtonText title="voltar" />
+							</Link>
 						</div>
 
 						<img
@@ -68,10 +71,12 @@ function DishInformation() {
 					</div>
 				</div>
 
-				<Button
-					id="editDish"
-					title="Editar prato"
-				/>
+				<Link to="/EditDish">
+					<Button
+						id="editDish"
+						title="Editar prato"
+					/>
+				</Link>
 			</Content>
 
 			<Footer />

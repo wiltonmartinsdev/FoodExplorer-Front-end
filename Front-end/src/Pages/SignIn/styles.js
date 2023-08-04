@@ -65,8 +65,12 @@ const Content = styled.main`
 			margin-bottom: 3.2rem;
 		}
 
-		button#newAccount {
-			font-size: 1.4rem;
+		#linkMyAccount {
+			text-align: center;
+
+			button#myAccount {
+				font-size: 1.4rem;
+			}
 		}
 	}
 

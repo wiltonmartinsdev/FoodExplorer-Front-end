@@ -63,7 +63,7 @@ const Container = styled.nav`
 
 			position: absolute;
 			top: 0;
-            left: -96rem;
+			left: -96rem;
 			z-index: -1;
 		}
 
@@ -242,7 +242,7 @@ const Content = styled.div`
 `;
 
 const Brand = styled.div`
-	width: 16rem;
+	width: 16.6rem;
 
 	display: flex;
 	justify-content: center;

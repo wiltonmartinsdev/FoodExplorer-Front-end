@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import { Link } from "react-router-dom";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -26,7 +27,9 @@ function EditDish() {
 						src={leftArrow}
 						alt="Seta apontando para esquerda"
 					/>
-					<ButtonText title="voltar" />
+					<Link to="/">
+						<ButtonText title="voltar" />
+					</Link>
 				</div>
 
 				<h1>Editar prato</h1>

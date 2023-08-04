@@ -64,6 +64,8 @@ const Content = styled.div`
 	img#dishImage {
 		width: 8.8rem;
 		margin: 2.4rem auto 0;
+
+        cursor: pointer;
 	}
 
 	h1 {
@@ -141,6 +143,16 @@ const Content = styled.div`
 		cursor: pointer;
 	}
 
+	.favoriteHeartIcon {
+		svg {
+			fill: red;
+		}
+
+		svg path {
+			stroke: red;
+		}
+	}
+
 	div#heartIcon {
 		/* border: 1px solid red; */
 
@@ -155,7 +167,9 @@ const Content = styled.div`
 		top: 1.6rem;
 		right: 1.8rem;
 
-		img#heart {
+		cursor: pointer;
+
+		/* img#heart {
 			width: 2.4rem;
 			height: 2.2rem;
 
@@ -163,7 +177,7 @@ const Content = styled.div`
 			margin: 0;
 
 			cursor: pointer;
-		}
+		} */
 	}
 
 	button#include {

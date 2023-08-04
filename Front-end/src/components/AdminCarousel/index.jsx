@@ -34,16 +34,16 @@ function AdminCarousel({
 	price3,
 	price4,
 }) {
-	const [slidesPerView, setSlidesPerView] = useState(2);
+	const [slidesPerView, setSlidesPerView] = useState(4);
 	const [spaceBetween, setSpaceBetween] = useState(0);
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth < 430) {
-				setSlidesPerView(3);
-				setSpaceBetween(65);
+			if (window.innerWidth <= 430) {
+				setSlidesPerView(2);
+				setSpaceBetween(10);
 				console.log(window.innerWidth);
-			} else if (window.innerWidth >= 430 && window.innerWidth <= 769) {
+			} else if (window.innerWidth > 431 && window.innerWidth <= 769) {
 				setSlidesPerView(3);
 				setSpaceBetween(50);
 				console.log(window.innerWidth);
@@ -54,6 +54,8 @@ function AdminCarousel({
 				console.log(window.innerWidth);
 			}
 		};
+
+		handleResize();
 
 		window.addEventListener("resize", handleResize);
 
