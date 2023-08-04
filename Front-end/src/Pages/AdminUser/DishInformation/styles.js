@@ -28,13 +28,9 @@ const Container = styled.div`
 `;
 
 const Content = styled.main`
-	/* width: 31.6rem; */
-
 	grid-area: main;
 
 	margin: 3.2rem 5.6rem 0;
-
-	/* border: 1px solid red; */
 
 	text-align: center;
 
@@ -63,7 +59,6 @@ const Content = styled.main`
 		div#ingredientsSection {
 			div#tags {
 				position: relative;
-				/* bottom: 1.3rem; */
 			}
 		}
 	}
@@ -84,8 +79,6 @@ const Content = styled.main`
 			}
 
 			div#ingredientsSection {
-				/* border: 1px solid red; */
-
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -94,11 +87,9 @@ const Content = styled.main`
 				margin: auto;
 
 				div#tags {
-					/* border: 1px solid red; */
 					width: 41.5rem;
 
 					position: relative;
-					/* bottom: 2.2rem; */
 					left: 2rem;
 				}
 			}
@@ -110,9 +101,6 @@ const Content = styled.main`
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		/* margin: auto; */
-		/* position: relative; */
-
 		div#wrapper {
 			display: flex;
 			justify-content: center;
@@ -121,8 +109,6 @@ const Content = styled.main`
 
 			position: relative;
 			top: 8.5rem;
-
-			/* border: 1px solid red; */
 
 			div#containerDish {
 				transform: scale(1.5);
@@ -137,17 +123,9 @@ const Content = styled.main`
 				width: 48.2rem;
 
 				transform: scale(1.2);
-				/* 
-            p{
-                position: relative;
-                right: 1.6rem;
-            } */
 
 				div#tags {
 					width: 50.6rem;
-
-					/* position: relative;
-					bottom: 1.2rem; */
 				}
 			}
 		}
@@ -175,8 +153,6 @@ const Content = styled.main`
 
 			position: relative;
 			top: 8.5rem;
-
-			/* border: 1px solid red; */
 
 			div#containerDish {
 				transform: scale(1.5);

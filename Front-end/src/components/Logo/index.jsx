@@ -1,4 +1,7 @@
+// Imports Global
 import Container from "./styles";
+
+// Imports of Images
 import Polygon from "../../assets/polygon.svg";
 
 function Logo() {

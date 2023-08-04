@@ -6,7 +6,6 @@ const Container = styled.div`
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-	/* padding: 15.8rem 8.495rem 0 6.5rem; */
 	padding-top: 15.8rem;
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
@@ -111,8 +110,6 @@ const Content = styled.main`
 			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
 			margin: 0;
-
-			/* border: 1px solid red; */
 		}
 	}
 

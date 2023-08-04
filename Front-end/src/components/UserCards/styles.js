@@ -1,53 +1,23 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-	/* width: 43.6rem; */
-	/* width: 43rem; */
-	/* height: 29.2rem; */
-
 	margin-left: 1.7rem;
 	margin-top: 2.4rem;
 
-	/* border: 1px solid yellow; */
-
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		margin-left: 0.8rem;
-		/* border: 1px solid red; */
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		margin-left: 10.5rem;
-
-		/* border: 1px solid red; */
 	}
-
-	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
-		margin-left: 11rem;
-
-		border: 1px solid red;
-	} */
 
 	@media screen and (min-width: 1921px) {
 		margin-left: 10.5rem;
-
-		/* border: 1px solid yellow; */
 	}
-
-	/* @media screen and (min-width: 2561px){
-		margin-left: 11rem;
-
-	} */
 `;
 
 const Content = styled.div`
-	/* display: flex; */
-	/* gap: 1.6rem; */
-
-	/* margin-top: 2.4rem; */
-	/* margin-bottom: 2.4rem; */
-
-	/* border: 1px solid red; */
-
 	width: 17.8rem;
 	height: 27.8rem;
 
@@ -59,13 +29,11 @@ const Content = styled.div`
 	border-radius: 0.8rem;
 	border: 1px solid #000204;
 
-	/* border: 1px solid yellow; */
-
 	img#dishImage {
 		width: 8.8rem;
 		margin: 2.4rem auto 0;
 
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	h1 {
@@ -78,8 +46,6 @@ const Content = styled.div`
 
 		position: relative;
 		top: 1.3rem;
-
-		/* border: 1px solid red; */
 
 		text-align: center;
 	}
@@ -105,42 +71,43 @@ const Content = styled.div`
 
 		margin: auto;
 
-		/* border: 1px solid red; */
-	}
+		div#icons {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 
-	div#icons {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+			width: 10rem;
+			height: 3.2rem;
 
-		width: 10rem;
-		height: 3.2rem;
+			img#Minus {
+				width: 1.8rem;
+				height: 0.4rem;
 
-		/* border: 1px solid yellow; */
+				margin: 0;
 
-		span {
-			font-size: 2rem;
+				border-radius: 1rem;
+
+				cursor: pointer;
+			}
+
+			span {
+				font-size: 2rem;
+			}
+
+			img#Plus {
+				width: 2rem;
+				height: 2rem;
+
+				margin: 0;
+
+				cursor: pointer;
+			}
 		}
-	}
 
-	img#Minus {
-		width: 1.8rem;
-		height: 0.4rem;
-
-		margin: 0;
-
-		border-radius: 1rem;
-
-		cursor: pointer;
-	}
-
-	img#Plus {
-		width: 2rem;
-		height: 2rem;
-
-		margin: 0;
-
-		cursor: pointer;
+		button#include {
+			width: 13.2rem;
+			height: 2.8rem;
+		}
 	}
 
 	.favoriteHeartIcon {
@@ -154,8 +121,6 @@ const Content = styled.div`
 	}
 
 	div#heartIcon {
-		/* border: 1px solid red; */
-
 		width: 2.4rem;
 		height: 2.2rem;
 
@@ -168,21 +133,6 @@ const Content = styled.div`
 		right: 1.8rem;
 
 		cursor: pointer;
-
-		/* img#heart {
-			width: 2.4rem;
-			height: 2.2rem;
-
-			position: relative;
-			margin: 0;
-
-			cursor: pointer;
-		} */
-	}
-
-	button#include {
-		width: 13.2rem;
-		height: 2.8rem;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -226,8 +176,6 @@ const Content = styled.div`
 
 			margin: auto;
 			padding: 0 1rem;
-
-			/* border: 1px solid red; */
 
 			div#icons span {
 				position: relative;

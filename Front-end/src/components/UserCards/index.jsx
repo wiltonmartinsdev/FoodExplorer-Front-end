@@ -13,9 +13,9 @@ import Plus from "../../assets/plus.svg";
 function UserCards({ title, description, img, price }) {
 	const [isHeartIconClicked, setHeartIconClicked] = useState(false);
 
-	const handleHeartIconClick = () => {
+	function handleHeartIconClick() {
 		setHeartIconClicked((prevValue) => !prevValue);
-	};
+	}
 
 	return (
 		<Container>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
 	width: 100%;
 
-	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
 	border: none;
 	border-radius: 0.5rem;
@@ -11,11 +11,11 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 
-    position: relative;
+	position: relative;
 
 	input {
 		width: 100%;
-		height: 4.8rem;
+		height: 5rem;
 		gap: 1.6rem;
 
 		background-color: transparent;

@@ -32,12 +32,8 @@ const Container = styled.section`
 
 		height: 10.8rem;
 
-		/* margin-bottom: 1.8rem; */
-
 		overflow-y: auto;
 		overflow-x: hidden;
-
-		/* border: 1px solid red; */
 	}
 
 	@media screen and (min-width: 769px) {

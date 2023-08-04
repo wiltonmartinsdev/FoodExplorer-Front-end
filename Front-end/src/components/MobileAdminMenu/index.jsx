@@ -9,12 +9,12 @@ import Input from "../Input";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
-const MobileAdminMenu = () => {
+function MobileAdminMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const toggleMenu = () => {
+	function toggleMenu() {
 		setMenuOpen(!menuOpen);
-	};
+	}
 
 	return (
 		<Container>
@@ -35,7 +35,7 @@ const MobileAdminMenu = () => {
 					img={HiOutlineSearch}
 				/>
 
-				<div id="wrapperButtonText">
+				<div id="buttonTextWrapper">
 					<Link to="/NewDish">
 						<ButtonText
 							className="menuOptions"
@@ -57,6 +57,6 @@ const MobileAdminMenu = () => {
 			</div>
 		</Container>
 	);
-};
+}
 
 export default MobileAdminMenu;

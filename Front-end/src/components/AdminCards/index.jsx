@@ -9,7 +9,7 @@ function AdminCards({ title, description, img, price }) {
 	return (
 		<Container>
 			<Content>
-				<div id="wrapperCards">
+				<div id="cardsWrapper">
 					<Link to="/DishInformation">
 						<img
 							id="dishImage"

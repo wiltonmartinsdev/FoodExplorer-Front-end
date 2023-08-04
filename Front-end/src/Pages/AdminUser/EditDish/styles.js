@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 42.8rem;
+	width: 43rem;
 
 	margin: auto;
 
@@ -29,11 +29,6 @@ const Container = styled.div`
 `;
 
 const Content = styled.main`
-	/* width: 36.4rem;
-	height: 92.3rem; */
-
-	/* border: 1px solid red; */
-
 	grid-area: main;
 
 	margin: 1.092rem 3.2rem 5.308rem;
@@ -76,10 +71,6 @@ const Content = styled.main`
 			margin: 2.4rem 0 1.6rem;
 		}
 
-		input {
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-		}
-
 		label#upload {
 			position: relative;
 
@@ -118,7 +109,7 @@ const Content = styled.main`
 		}
 
 		div.input {
-			height: 4.8rem;
+			height: 5rem;
 
 			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
@@ -130,9 +121,9 @@ const Content = styled.main`
 			font-size: 1.4rem;
 			line-height: 2.24rem;
 
-			height: 4.8rem;
+			height: 5rem;
 
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
 
 			border: none;
@@ -153,17 +144,16 @@ const Content = styled.main`
 
 		div#ingredients {
 			display: flex;
-			/* align-items: center;
-		justify-content: center; */
+
 			flex-wrap: wrap;
-
-			/* height: auto; */
-
-			/* gap: 1.6rem; */
 
 			padding-left: 0.8rem;
 
-			span {
+			height: 5rem;
+
+			overflow-y: auto;
+
+			/* span {
 				width: 11.8rem;
 				height: 3.2rem;
 
@@ -171,7 +161,7 @@ const Content = styled.main`
 				justify-content: center;
 				align-items: center;
 				gap: 0.8rem;
-			}
+			} */
 		}
 
 		div[typeof="input"] {
@@ -234,8 +224,6 @@ const Content = styled.main`
 			display: flex;
 			flex-direction: row;
 
-			/* border: 1px solid red; */
-
 			label#upload,
 			label#name,
 			label#category {
@@ -312,7 +300,6 @@ const Content = styled.main`
 
 			div#ingredients {
 				width: 89.5rem;
-				height: 4.8rem;
 			}
 
 			label#price {
@@ -371,8 +358,6 @@ const Content = styled.main`
 			display: flex;
 			flex-direction: row;
 
-			/* border: 1px solid red; */
-
 			label#upload,
 			label#name,
 			label#category {
@@ -449,7 +434,6 @@ const Content = styled.main`
 
 			div#ingredients {
 				width: 89.5rem;
-				height: 4.8rem;
 			}
 
 			label#price {

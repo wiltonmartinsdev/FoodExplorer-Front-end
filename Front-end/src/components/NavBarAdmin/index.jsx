@@ -16,11 +16,8 @@ function NavBarAdmin() {
 	return (
 		<Container>
 			<MobileUserAdmin />
-			<Content>
-				{/* <div>
-            <MobileUserAdmin />
-            </div> */}
 
+			<Content>
 				<Link to="/">
 					<Brand>
 						<img

@@ -35,7 +35,7 @@ function AdminCarousel({
 	price4,
 }) {
 	const [slidesPerView, setSlidesPerView] = useState(4);
-	const [spaceBetween, setSpaceBetween] = useState(0);
+	const [spaceBetween, setSpaceBetween] = useState(-100);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -47,7 +47,7 @@ function AdminCarousel({
 				setSlidesPerView(3);
 				setSpaceBetween(50);
 				console.log(window.innerWidth);
-			} else if (window.innerWidth >= 769) {
+			} else if (window.innerWidth > 769) {
 				setSlidesPerView(4);
 				setSpaceBetween(-100);
 
@@ -75,7 +75,7 @@ function AdminCarousel({
 				spaceBetween={spaceBetween}
 				grabCursor={true}
 				autoplay={{
-					delay: 3000000,
+					delay: 3000,
 					disableOnInteraction: false,
 				}}>
 				<SwiperSlide>

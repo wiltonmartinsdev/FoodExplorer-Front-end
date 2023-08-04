@@ -9,7 +9,7 @@ import AppAdminRoutes from "./appAdmin.routes";
 function Routes() {
 	return (
 		<BrowserRouter>
-			<AppUserRoutes />
+			<AppAdminRoutes />
 		</BrowserRouter>
 	);
 }

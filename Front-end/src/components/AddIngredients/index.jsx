@@ -1,26 +1,23 @@
 // Imports Global
 import Container from "./styles";
 
-// Imports of Components
-
 // Imports External
 import { FiX, FiPlus } from "react-icons/fi";
 
-// Imports of Images
-
-function AddIngredients({ isNew = false, value, onClick, ...rest }) {
+function AddIngredients({ isNew, value, onClick, ...rest }) {
 	return (
 		<Container isNew={isNew}>
 			<input
 				type="text"
-				readOnly={isNew}
+				readOnly={!isNew}
+				value={value}
 				{...rest}
 			/>
 
 			<button
 				type="button"
 				onClick={onClick}>
-				{isNew ? <FiX /> : <FiPlus />}
+				{isNew ? <FiPlus /> : <FiX />}
 			</button>
 		</Container>
 	);

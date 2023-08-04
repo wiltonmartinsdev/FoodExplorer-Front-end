@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.nav`
-	/* width: 43rem; */
 	height: 11.4rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-	/* margin: auto; */
 	padding-right: 2.8rem;
 	padding-left: 2.8rem;
-	/* padding: 5.6rem 2.8rem 2.4rem; */
 
 	position: relative;
 
@@ -17,10 +14,6 @@ const Container = styled.nav`
 
 	display: flex;
 	justify-content: flex-start;
-	/* justify-content: center; */
-	/* align-items: center; */
-
-	/* border: 1px solid red; */
 
 	.input,
 	.button,
@@ -40,8 +33,6 @@ const Container = styled.nav`
 		}
 
 		width: 192rem;
-
-		/* padding: 2.4rem 9rem; */
 	}
 
 	@media screen and (min-width: 1921px) {
@@ -55,8 +46,6 @@ const Container = styled.nav`
 			top: 0;
 			left: -96rem;
 			z-index: -1;
-
-			/* border: 1px solid yellow; */
 		}
 
 		.input,
@@ -66,8 +55,6 @@ const Container = styled.nav`
 		}
 
 		width: 192rem;
-
-		/* padding: 2.4rem 9rem; */
 	}
 `;
 
@@ -77,11 +64,7 @@ const Content = styled.div`
 	align-items: center;
 	gap: 4rem;
 
-	/* width: 37.2rem; */
-
 	margin: auto;
-
-	/* border: 1px solid yellow; */
 
 	img#iconSignOut {
 		cursor: pointer;
@@ -96,10 +79,12 @@ const Content = styled.div`
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		justify-content: center;
 
-		/* width: 160rem; */
-
 		img.menu {
 			display: none;
+		}
+
+		div[typeof="input"] {
+			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 		}
 
 		.input input {
@@ -131,6 +116,10 @@ const Content = styled.div`
 	@media screen and (min-width: 1921px) {
 		img.menu {
 			display: none;
+		}
+
+		div[typeof="input"] {
+			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 		}
 
 		.input input {
@@ -159,25 +148,16 @@ const Content = styled.div`
 		}
 
 		width: 150rem;
-
-		/* border: 1px solid yellow; */
 	}
 `;
 
 const Brand = styled.div`
-	/* width: 33.2rem; */
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 0.8rem;
 
-	/* border: 1px solid orange; */
-
 	position: relative;
-	/* left: 0.6rem; */
-
-	/* border: 1px solid yellow; */
 
 	img {
 		width: 2.4rem;
@@ -198,22 +178,11 @@ const Brand = styled.div`
 		color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		/* left: 15rem; */
-
-		/* border: 1px solid red; */
-	}
-
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		/* left: 15rem; */
-
 		align-items: flex-start;
 
-		/* width: 16.1rem; */
 		width: 16.5rem;
 		height: 4.5rem;
-
-		/* border: 1px solid red; */
 
 		p {
 			position: absolute;
@@ -225,37 +194,11 @@ const Brand = styled.div`
 		}
 	}
 
-	/* border: 1px solid red; */
-
-	/* > h1 {
-		font-size: 2.116rem;
-		font-weight: 700;
-		line-height: 2.48rem;
-
-		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
-	} */
-
 	@media screen and (min-width: 1921px) {
-		/* width: 31.6rem;
-
-		img {
-			width: 4.5rem;
-		}
-
-		> h1 {
-			font-size: 4rem;
-			font-weight: 700;
-			line-height: 2.48rem;
-
-			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
-		} */
-
 		align-items: flex-start;
 
 		width: 16.1rem;
 		height: 4.5rem;
-
-		/* border: 1px solid red; */
 
 		p {
 			position: absolute;

@@ -8,12 +8,12 @@ import Input from "../Input";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
-const MobileUserMenu = () => {
+function MobileUserMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const toggleMenu = () => {
+	function toggleMenu() {
 		setMenuOpen(!menuOpen);
-	};
+	}
 
 	return (
 		<Container>
@@ -34,7 +34,7 @@ const MobileUserMenu = () => {
 					img={HiOutlineSearch}
 				/>
 
-				<div id="wrapperButtonText">
+				<div id="buttonTextWrapper">
 					<ButtonText
 						className="menuOptions"
 						title="Sair"
@@ -45,6 +45,6 @@ const MobileUserMenu = () => {
 			</div>
 		</Container>
 	);
-};
+}
 
 export default MobileUserMenu;

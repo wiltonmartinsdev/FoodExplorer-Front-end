@@ -14,8 +14,6 @@ const Container = styled.div`
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
-
-		/* border: 1px solid red; */
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
@@ -26,8 +24,6 @@ const Container = styled.div`
 		width: 384rem;
 		height: 216rem;
 	}
-
-	/* border: 1px solid red; */
 `;
 
 const Content = styled.main`
@@ -71,7 +67,6 @@ const Content = styled.main`
 
 			width: 69.5rem;
 
-			/* margin: 6.2rem 3.5rem 4.4rem 3.6rem; */
 			padding: 2.2rem 0.8rem 2.2rem 15.3rem;
 
 			h1 {
@@ -135,9 +130,6 @@ const Content = styled.main`
 			padding: 2.2rem 0.8rem 2.2rem 22rem;
 			margin: 8.4rem auto;
 
-			/* position: relative;
-			left: 5.5rem; */
-
 			h1 {
 				font-family: Poppins, sans-serif;
 				font-weight: 500;
@@ -171,8 +163,6 @@ const Content = styled.main`
 
 			top: 6.6rem;
 			left: 11.7rem;
-
-			/* border: 1px solid red; */
 		}
 
 		@media screen and (min-width: 1921px) {
@@ -181,8 +171,6 @@ const Content = styled.main`
 
 			top: 3.9rem;
 			left: 26.5rem;
-
-			/* border: 1px solid red; */
 		}
 	}
 `;

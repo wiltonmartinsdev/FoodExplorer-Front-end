@@ -10,7 +10,6 @@ const Container = styled.div`
 	display: grid;
 	justify-content: center;
 	grid-template-areas: "navbar" "main" "footer";
-	/* grid-template-rows: 11.4rem 74rem 7.7rem; */
 	grid-template-rows: 11.4rem auto 7.7rem;
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
@@ -22,15 +21,9 @@ const Container = styled.div`
 		grid-template-rows: 11.4rem 73.2rem 7.7rem;
 	}
 
-	/* @media screen and (min-width: 1441px) and (max-width: 1920px) {
-		width: 192rem;
-	} */
-
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
 		height: 216rem;
-
-		/* grid-template-rows: 11.4rem 196.6rem 7.7rem; */
 	}
 `;
 
@@ -54,8 +47,6 @@ const Content = styled.main`
 					width: 1.2rem;
 					height: 2.2rem;
 				}
-
-				/* border: 1px solid red; */
 			}
 
 			img#dish {
@@ -67,15 +58,12 @@ const Content = styled.main`
 
 		div#ingredientsSection {
 			div#tags {
-				/* position: relative;
-				bottom: 1.3rem; */
 			}
 		}
 	}
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		div#wrapper {
-			/* border: 1px solid red; */
 			position: relative;
 			top: 7rem;
 
@@ -105,7 +93,6 @@ const Content = styled.main`
 				margin: auto;
 
 				div#tags {
-					/* border: 1px solid red; */
 					width: 41.5rem;
 
 					position: relative;
@@ -139,15 +126,11 @@ const Content = styled.main`
 
 				transform: scale(1.2);
 
-				/* position: relative;
-				top: 2.5rem; */
-
 				div#tags {
 					width: 47.5rem;
 
 					position: relative;
 					left: 1.5rem;
-					/* bottom: 1.5rem; */
 				}
 			}
 		}
@@ -177,27 +160,15 @@ const Content = styled.main`
 
 				transform: scale(1.2);
 
-				/* position: relative;
-				top: 2.5rem; */
-
 				div#tags {
 					width: 47.5rem;
 
 					position: relative;
 					left: 1.5rem;
-					/* bottom: 1.5rem; */
 				}
 			}
 		}
 	}
-
-	/* div#footer {
-		top: 143.5rem;
-
-		height: 7.7rem;
-
-		padding: 0;
-	} */
 `;
 
 export { Container, Content };

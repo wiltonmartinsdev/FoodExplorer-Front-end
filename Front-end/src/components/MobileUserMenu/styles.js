@@ -5,15 +5,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	/* background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700}; */
-
 	margin-top: 0.5rem;
-
-	/* border: 1px solid green; */
-
-	/* @media screen and (min-width: 1441px) {
-		display: none;
-	} */
 
 	position: relative;
 
@@ -27,8 +19,6 @@ const Container = styled.div`
 		height: 2.5rem;
 
 		cursor: pointer;
-
-		/* border: 1px solid red; */
 	}
 
 	.menuIconLine {
@@ -66,9 +56,6 @@ const Container = styled.div`
 		display: none;
 		list-style: none;
 
-		/* padding: 0;
-		margin: 0; */
-
 		position: absolute;
 		top: 6.7rem;
 		left: -2.9rem;
@@ -77,15 +64,6 @@ const Container = styled.div`
 		height: 129rem;
 
 		padding: 3.6rem 2.8rem 1.357rem;
-
-		/* z-index: 9999; */
-
-		/* border: 1px solid red; */
-
-		/* input#dishSearch{
-            position: relative;
-            top: 30rem;
-        } */
 	}
 
 	.open + .menu {
@@ -102,7 +80,7 @@ const Container = styled.div`
 		font-size: 2.1rem;
 	}
 
-	div#wrapperButtonText {
+	div#buttonTextWrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
@@ -125,12 +103,6 @@ const Container = styled.div`
 		left: 0;
 
 		height: 7.7rem;
-
-		/* padding: 0; */
-		/* 
-		@media screen and (min-width: 430px) and (max-width: 768px) {
-			width: 76.8rem;
-		} */
 	}
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {

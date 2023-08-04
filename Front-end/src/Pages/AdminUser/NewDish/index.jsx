@@ -87,9 +87,18 @@ function NewDish() {
 					<div
 						id="ingredients"
 						className="input">
-						<AddIngredients isNew />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
+						<AddIngredients value="Pão" />
 
-						<AddIngredients placeholder="Adicionar" />
+						<AddIngredients
+							isNew
+							placeholder="Adicionar"
+						/>
 					</div>
 
 					<label
