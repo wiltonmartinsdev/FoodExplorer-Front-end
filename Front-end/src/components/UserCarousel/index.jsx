@@ -42,16 +42,12 @@ function UserCarousel({
 			if (window.innerWidth <= 430) {
 				setSlidesPerView(2);
 				setSpaceBetween(10);
-				console.log(window.innerWidth);
 			} else if (window.innerWidth > 431 && window.innerWidth <= 769) {
 				setSlidesPerView(3);
 				setSpaceBetween(50);
-				console.log(window.innerWidth);
 			} else if (window.innerWidth > 769) {
 				setSlidesPerView(4);
 				setSpaceBetween(-100);
-
-				console.log(window.innerWidth);
 			}
 		};
 
