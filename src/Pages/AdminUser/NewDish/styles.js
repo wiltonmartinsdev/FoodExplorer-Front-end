@@ -152,16 +152,6 @@ const Content = styled.main`
 			height: 5rem;
 
 			overflow-y: auto;
-
-			span {
-				width: 11.8rem;
-				height: 3.2rem;
-
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 0.8rem;
-			}
 		}
 
 		div[typeof="input"] {

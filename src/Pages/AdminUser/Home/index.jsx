@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import React, { useEffect } from "react";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -22,6 +23,19 @@ import MaskGroup11 from "../../../assets/maskGroup11.png";
 import MaskGroup12 from "../../../assets/maskGroup12.png";
 
 function Home() {
+	useEffect(() => {
+		const link = document.createElement("link");
+		link.rel = "icon";
+		link.href = "src/assets/polygon.svg";
+		link.type = "image/x-icon";
+
+		document.head.appendChild(link);
+
+		return () => {
+			document.head.removeChild(link);
+		};
+	}, []);
+
 	return (
 		<Container>
 			<NavBar />
