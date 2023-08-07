@@ -21,7 +21,7 @@ export default createGlobalStyle`
    
         -webkit-font-smoothing: antialiased;
 
-        /* overflow-x: hidden; */
+        overflow-x: hidden;
 
     }
 

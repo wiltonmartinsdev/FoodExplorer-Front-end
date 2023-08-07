@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarUser";
+import BackToUpButton from "../../../components/BackToUpButton";
 import Carousel from "../../../components/UserCarousel";
 import Footer from "../../../components/Footer";
 
@@ -39,6 +40,8 @@ function Home() {
 	return (
 		<Container>
 			<NavBar />
+
+			<BackToUpButton />
 
 			<Content>
 				<div id="descriptionOfFlavors">
