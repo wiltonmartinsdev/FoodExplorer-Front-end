@@ -94,6 +94,8 @@ const Content = styled.div`
 			width: 70rem;
 
 			padding-left: 22.5rem;
+
+			z-index: -1;
 		}
 
 		.input svg {
