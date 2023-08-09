@@ -45,6 +45,11 @@ const Content = styled.div`
 			top: 1rem;
 
 			transform: scale(1.3);
+			transition: transform 0.5s ease;
+		}
+
+		img#dishImage:hover {
+			transform: scale(1.6);
 		}
 
 		h1 {
@@ -88,7 +93,13 @@ const Content = styled.div`
 				position: relative;
 				margin: 0;
 
+				transition: transform 0.5s ease;
+
 				cursor: pointer;
+			}
+
+			img#heart:hover {
+				transform: scale(1.4);
 			}
 		}
 	}

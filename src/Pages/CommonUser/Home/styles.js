@@ -22,7 +22,7 @@ const Container = styled.div`
 
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
-		height: 216rem;
+		height: 170rem;
 	}
 `;
 

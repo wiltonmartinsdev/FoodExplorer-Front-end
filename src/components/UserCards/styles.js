@@ -33,7 +33,13 @@ const Content = styled.div`
 		width: 8.8rem;
 		margin: 2.4rem auto 0;
 
+		transition: transform 0.5s ease;
+
 		cursor: pointer;
+	}
+
+	img#dishImage:hover {
+		transform: scale(1.4);
 	}
 
 	h1 {
@@ -132,7 +138,13 @@ const Content = styled.div`
 		top: 1.6rem;
 		right: 1.8rem;
 
+		transition: transform 0.5s ease;
+
 		cursor: pointer;
+	}
+
+	div#heartIcon:hover {
+		transform: scale(1.3);
 	}
 
 	@media screen and (max-width: 768px) {
