@@ -136,7 +136,7 @@ const Content = styled.div`
 
 		position: absolute;
 		top: 1.6rem;
-		right: 1.8rem;
+		right: 1.6rem;
 
 		transition: transform 0.5s ease;
 
@@ -144,7 +144,7 @@ const Content = styled.div`
 	}
 
 	div#heartIcon:hover {
-		transform: scale(1.3);
+		transform: scale(1.6);
 	}
 
 	@media screen and (max-width: 768px) {

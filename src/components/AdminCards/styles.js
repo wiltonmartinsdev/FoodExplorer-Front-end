@@ -22,7 +22,6 @@ const Content = styled.div`
 	height: 29.2rem;
 
 	position: relative;
-	bottom: 1.2rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
@@ -33,108 +32,95 @@ const Content = styled.div`
 	flex-direction: column;
 	justify-content: center;
 
-	div#cardsWrapper {
+	img#dishImage {
+		width: 8.8rem;
+		margin: 2.4rem auto 0;
+
 		position: relative;
-		bottom: 1.5rem;
+		top: 1rem;
 
-		img#dishImage {
-			width: 8.8rem;
-			margin: 2.4rem auto 0;
+		transform: scale(1.3);
+		transition: transform 0.5s ease;
+	}
 
-			position: relative;
-			top: 1rem;
+	img#dishImage:hover {
+		transform: scale(1.6);
+	}
 
-			transform: scale(1.3);
-			transition: transform 0.5s ease;
-		}
+	h1 {
+		font-family: Poppins, sans-serif;
+		font-weight: 500;
+		font-size: 1.3rem;
+		line-height: 2.4rem;
 
-		img#dishImage:hover {
-			transform: scale(1.6);
-		}
+		margin: 3.3rem auto 0;
+		text-align: center;
+	}
 
-		h1 {
-			font-family: Poppins, sans-serif;
-			font-weight: 500;
-			font-size: 1.3rem;
-			line-height: 2.4rem;
+	p#description {
+		display: none;
+	}
 
-			margin: 3.3rem auto 0;
-			text-align: center;
-		}
+	p#price {
+		color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
+		text-align: center;
 
-		p#description {
-			display: none;
-		}
+		position: relative;
+		top: 1rem;
+	}
 
-		p#price {
-			color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
-			text-align: center;
+	div#pencilIcon {
+		width: 2.4rem;
+		height: 2.2rem;
 
-			position: relative;
-			top: 1rem;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-		div#pencilIcon {
+		position: absolute;
+		top: 1.6rem;
+		right: 1.6rem;
+
+		img#heart {
 			width: 2.4rem;
-			height: 2.2rem;
+			height: 2.4rem;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			position: relative;
+			margin: 0;
 
-			position: absolute;
-			top: -1.4rem;
-			right: 1.8rem;
+			transition: transform 0.5s ease;
 
-			img#heart {
-				width: 2.4rem;
-				height: 2.4rem;
+			cursor: pointer;
+		}
 
-				position: relative;
-				margin: 0;
-
-				transition: transform 0.5s ease;
-
-				cursor: pointer;
-			}
-
-			img#heart:hover {
-				transform: scale(1.4);
-			}
+		img#heart:hover {
+			transform: scale(1.4);
 		}
 	}
 
 	@media screen and (min-width: 769px) {
-		div#cardsWrapper {
-			bottom: 0;
+		p#description {
+			display: block;
 
-			div#pencilIcon {
-				top: 0;
-			}
+			width: 16.6rem;
+			height: 4.8rem;
 
-			p#description {
-				display: block;
+			font-size: 1.2rem;
+			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
 
-				width: 16.6rem;
-				height: 4.8rem;
+			text-align: center;
 
-				font-size: 1.2rem;
-				color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
+			margin: 1.5rem 0.5rem;
 
-				text-align: center;
+			position: relative;
+			bottom: 0.5rem;
 
-				margin: 1.5rem 0.5rem;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
 
-				position: relative;
-				bottom: 0.5rem;
-
-				overflow-y: auto;
-				overflow-x: hidden;
-			}
-
-			p#price {
-				top: -0.5rem;
-			}
+		p#price {
+			top: -0.5rem;
 		}
 	}
 `;
