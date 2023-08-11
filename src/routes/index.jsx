@@ -9,7 +9,9 @@ import AppAdminRoutes from "./appAdmin.routes";
 function Routes() {
 	return (
 		<BrowserRouter>
-			<AppAdminRoutes />
+			<AuthRoutes />
+			{/* <AppAdminRoutes /> */}
+			{/* <AppUserRoutes /> */}
 		</BrowserRouter>
 	);
 }

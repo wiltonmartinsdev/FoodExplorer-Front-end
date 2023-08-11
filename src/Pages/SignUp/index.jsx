@@ -1,5 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Imports of Components
@@ -9,12 +10,24 @@ import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 
 function SignUp() {
+	useEffect(() => {
+		const link = document.createElement("link");
+		link.rel = "icon";
+		link.href = "src/assets/polygon.svg";
+		link.type = "image/x-icon";
+
+		document.head.appendChild(link);
+
+		return () => {
+			document.head.removeChild(link);
+		};
+	}, []);
 	return (
 		<Container>
 			<Content>
-				<Logo />
+				<Logo className="animate__animated animate__backInLeft" />
 
-				<form>
+				<form className="animate__animated animate__backInRight">
 					<fieldset>
 						<legend>Crie sua conta</legend>
 

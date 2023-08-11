@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 43rem;
-	height: 92.2rem;
+	height: 92.8rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
@@ -81,8 +81,6 @@ const Content = styled.main`
 
 		header {
 			margin: 0;
-
-			transform: scale(2);
 		}
 
 		form {
@@ -121,8 +119,6 @@ const Content = styled.main`
 
 		header {
 			margin: 0;
-
-			transform: scale(2);
 		}
 
 		form {

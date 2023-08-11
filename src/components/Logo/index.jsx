@@ -4,9 +4,9 @@ import Container from "./styles";
 // Imports of Images
 import Polygon from "../../assets/polygon.svg";
 
-function Logo() {
+function Logo({ ...rest }) {
 	return (
-		<Container>
+		<Container {...rest}>
 			<img
 				src={Polygon}
 				alt="Logo em forma de polígono do food explorer"
