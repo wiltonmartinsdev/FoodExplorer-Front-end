@@ -27,7 +27,7 @@
 
 ## Instalação
 - Clone o repositório: git clone git@github.com:wiltonmartinsdev/FoodExplorer-Front-end.git
-- Acesse o diretório do projeto: `cd FoodExplorer-Front-End`
+- Acesse o diretório do projeto: `cd FoodExplorer-Front-end`
 - Com o Node.js e NPM instalado na máquina, quando executar o projeto pela primeira vez, precisará digitar no terminal o comando abaixo para instalar as dependências do projeto.
 
         npm install
