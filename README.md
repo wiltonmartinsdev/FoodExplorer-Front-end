@@ -6,11 +6,11 @@
 
 
 ## Stacks utilizadas
-  **No Front-end:** `React.js`, `Styled-Component`
+  **No Front-end:** `React.js`, `Styled-Component`.
   - React.js: Uma biblioteca JavaScript para criar interfaces de usuário.
   - Styled-components: Uma biblioteca que permite escrever CSS em JavaScript para estilizar componentes React.
   
-  **E no Back-end:** `Node.js`, `Express.js`, `Cors`, `Axios`, `JWT`, `SQLite`, `Knex.js`
+  **E no Back-end:** `Node.js`, `Express.js`, `Cors`, `Axios`, `JWT`, `SQLite`, `Knex.js`.
 - Node.js: Um ambiente de tempo de execução JavaScript que permite executar código JavaScript fora do navegador.
 - Express: Um framework para Node.js que simplifica a criação de aplicativos da web e APIs.
 - Cors: Um middleware que adiciona cabeçalhos CORS (Cross-Origin Resource Sharing) às solicitações e respostas HTTP.
@@ -26,8 +26,8 @@
 
 
 ## Instalação
-- Clone o repositório
-- Acesse o diretório do projeto: `cd FoodExplorer-Front-end`
+- Clone o repositório.
+- Acesse o diretório do projeto: `cd FoodExplorer-Front-end`.
 - Certifique-se de ter o Node.js e o NPM instalados em sua máquina e depois digite no terminal o comando abaixo para instalar todas as dependências necessárias do projeto.
 
         npm install
