@@ -22,13 +22,13 @@
 ## Pré-requisitos
 - Node.js instalado na máquina.
 - NPM (Node Package Manager) para instalar as dependências necessárias do projeto.
-- Esse repositório é o Front-end da aplicação e para o correto funcionamento, em ambiente local, precisamos rodar em conjunto com o repositório Back-end da aplicação. Acesse o link abaixo para ter acesso ao repositório Back-end da aplicação: https://github.com/wiltonmartinsdev/FoodExplorer-Back-End
+- Esse repositório é o Front-end da aplicação e para o correto funcionamento, em ambiente local, é necessário executá-lo em conjunto com o repositório Back-end. Você pode acessar o repositório Back-end em: https://github.com/wiltonmartinsdev/FoodExplorer-Back-End
 
 
 ## Instalação
 - Clone o repositório: git clone git@github.com:wiltonmartinsdev/FoodExplorer-Front-End.git
 - Acesse o diretório do projeto: `cd FoodExplorer-Front-End`
-- Com o Node.js e npm instalado na máquina, quando executar o projeto pela primeira vez, precisará digitar no terminal o comando abaixo para instalar as dependências do projeto.
+- Com o Node.js e NPM instalado na máquina, quando executar o projeto pela primeira vez, precisará digitar no terminal o comando abaixo para instalar as dependências do projeto.
 
         npm install
 
@@ -48,7 +48,7 @@ Autenticação:
 
 - Criar Conta: Novos usuários podem criar uma conta, fornecendo informações de registro.
 
-- Fazer Login: O usuário pode fazer login na aplicação para acessar as funcionalidades referentes ao usuário, que são descritas logo abaixo.
+- Fazer Login: Admin e usuário poderão fazer login na aplicação para acessar as funcionalidades referentes a cada persona, que são descritas logo abaixo.
 
 Para o Usuário:
 
@@ -71,7 +71,7 @@ Para o Admin:
 
 
 ## Status do Projeto
-- Conforme com o que foi proposto, pelos requisitos obrigatórios para desenvolver o projeto, o Front-End encontra-se finalizado.
+- Conforme com o que foi proposto, pelos requisitos obrigatórios para desenvolver o projeto, o Front-end encontra-se finalizado.
 
 
 ## Aprendizados
@@ -81,6 +81,6 @@ Para o Admin:
 
 - Eu aprendi nesse projeto tecnologias novas como o React.js, Styled-Component, Node.js, Express.js, Cors, Axios, JWT, Sqlite, Knex.js e como fazer criptografia da senha do usuário, validação de email, etc.
 
-- Tive muitas dificuldades no começo de entender como tudo funciona, de como o front-end se comunica com back-end usando cors, axios, jwt, etc. E no React entender como é o funcionamento de propriedades e componentes, entender os Hooks, jsx e no back-end, assim como os métodos HTTP, como se conectar ao banco de dados e ao invés de usar direto o banco de dados usar uma Query Builder que no caso usamos o Knex.js. Então, foram muitos aprendizados e desafios.
+- Tive muitas dificuldades no começo de entender como tudo funciona, de como o Front-end se comunica com Back-end usando cors, axios, jwt, etc. E no React entender como é o funcionamento de propriedades e componentes, entender os Hooks, jsx e no Back-end, assim como os métodos HTTP, como se conectar ao banco de dados e ao invés de usar direto o banco de dados usar uma Query Builder que no caso usamos o Knex.js. Então, foram muitos aprendizados e desafios.
 
 - Mas, praticando, pesquisando muito também em outras fontes para aprimorar meus conhecimentos como no próprio fórum do Explorer, Google, YouTube, Stack Overflow, MDN Web Docs, chatGPT e revendo as aulas e realizando este projeto assim como os projetos anteriores, consegui colocar em prática todos os conhecimentos adquiridos no Explorer.
