@@ -94,14 +94,16 @@ const Content = styled.div`
 			width: 70rem;
 
 			padding-left: 22.5rem;
-
-			z-index: -1;
 		}
 
 		.input svg {
 			position: absolute;
 			top: 1.6rem;
 			left: 18.5rem;
+		}
+
+		.button {
+			position: relative;
 		}
 
 		img#iconSignOut {
@@ -134,6 +136,10 @@ const Content = styled.div`
 			position: absolute;
 			top: 1.6rem;
 			left: 18.5rem;
+		}
+
+		.button {
+			position: relative;
 		}
 
 		img#iconSignOut {
