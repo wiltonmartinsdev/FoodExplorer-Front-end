@@ -83,7 +83,9 @@ Para o Admin:
 ## Aprendizados
 - A cada novo projeto proposto no Explorer sempre há novos aprendizados e desafios, focados em nos levar a pensar fora da caixa e com isso sempre aprimorando cada vez mais o meu conhecimento adquirido em desenvolvimento Web FullStack.
 
-- Esse projeto foi muito desafiador, muito mesmo!, assim como todos, mas, esse é especial por ser o último projeto dessa minha trajetória no Explorer.
+- Foram inúmeras horas de dedicação intensa, envolvendo estudos profundos e práticas incansáveis. Renunciei a muitas coisas para embarcar nesse processo de aprendizagem pelo Explorer, enfrentando inúmeras dificuldades ao longo do caminho. Embora eu esteja ciente de que a jornada ainda é longa e o aprendizado é contínuo, é extremamente gratificante olhar para trás e perceber todas as adversidades superadas durante o desenvolvimento deste projeto. Ver que sou capaz de criar uma aplicação completa, desde o Front-end até o Back-end, é um testemunho tangível de todo o progresso alcançado.
+
+- Esse projeto foi muito desafiador, muito mesmo! Assim como todos, mas, esse é especial por ser o último projeto dessa minha trajetória no Explorer.
 
 - Eu aprendi nesse projeto tecnologias novas como o React.js, Styled-Component, Node.js, Express.js, Cors, Axios, JWT, Sqlite, Knex.js e como fazer criptografia da senha do usuário, validação de email, etc.
 
