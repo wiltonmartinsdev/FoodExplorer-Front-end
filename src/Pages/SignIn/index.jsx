@@ -2,6 +2,7 @@
 import { Container, Content } from "./styles";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/auth.jsx";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -10,6 +11,8 @@ import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
+	const data = useAuth();
+
 	useEffect(() => {
 		const link = document.createElement("link");
 		link.rel = "icon";

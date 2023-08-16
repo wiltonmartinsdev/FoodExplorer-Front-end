@@ -1,7 +1,8 @@
 // Imports Global
 import { Container, Content } from "./styles";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { api } from "../../services/api.js";
+import { Link, useNavigate } from "react-router-dom";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -10,6 +11,33 @@ import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 
 function SignUp() {
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const navigate = useNavigate();
+
+	function handleSignUp() {
+		if (!name || !email || !password) {
+			return alert("Preencha todos os campos");
+		}
+
+		api.post("/users", { name, email, password })
+			.then(() => {
+				alert("Parabéns! Seu cadastro foi realizado com sucesso!");
+				navigate("/");
+			})
+			.catch((error) => {
+				if (error.response) {
+					alert(error.response.data.message);
+				} else {
+					alert(
+						"Ops! Desculpe, ocorreu um erro ao tentar cadastrar um usuário.Por favor, tente novamente."
+					);
+				}
+			});
+	}
+
 	useEffect(() => {
 		const link = document.createElement("link");
 		link.rel = "icon";
@@ -36,6 +64,7 @@ function SignUp() {
 							type="text"
 							placeholder="Exemplo: Maria da Silva"
 							required
+							onChange={(e) => setName(e.target.value)}
 						/>
 
 						<label>Email</label>
@@ -43,6 +72,7 @@ function SignUp() {
 							type="email"
 							placeholder="Exemplo: exemplo@exemplo.com.br"
 							required
+							onChange={(e) => setEmail(e.target.value)}
 						/>
 
 						<label>Senha</label>
@@ -50,13 +80,14 @@ function SignUp() {
 							type="password"
 							placeholder="No mínimo 6 caracteres"
 							minLength={6}
-							required
+							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</fieldset>
 
 					<Button
 						id="createAccount"
 						title="Criar conta"
+						onClick={handleSignUp}
 					/>
 
 					<Link
