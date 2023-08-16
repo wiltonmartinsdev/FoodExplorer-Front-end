@@ -2,6 +2,7 @@
 import { Container, Content, Brand } from "./styles";
 import { Link } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
+import { useAuth } from "../../hooks/auth";
 
 // Imports of Components
 import MobileUserMenu from "../MobileUserMenu";
@@ -15,6 +16,8 @@ import IconSignOut from "../../assets/iconSignOut.svg";
 import RequestsIcon from "../../assets/requestsIcon.svg";
 
 function NavBarUser() {
+	const { signOut } = useAuth();
+
 	return (
 		<Container>
 			<Content>
@@ -53,6 +56,7 @@ function NavBarUser() {
 					id="iconSignOut"
 					src={IconSignOut}
 					alt="Ícone com uma seta pequena para direita indicando para sair da aplicação."
+					onClick={signOut}
 				/>
 			</Content>
 		</Container>

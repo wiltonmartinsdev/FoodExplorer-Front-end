@@ -19,7 +19,15 @@ function SignUp() {
 
 	function handleSignUp() {
 		if (!name || !email || !password) {
-			return alert("Preencha todos os campos");
+			return alert(
+				"Por favor, lembre-se de preencher todos os campos para que possamos criar sua conta com sucesso."
+			);
+		}
+
+		if (password.length < 6) {
+			return alert(
+				"Ops! Lembre-se de que a sua senha deve conter pelo menos 6 caracteres. Isso ajudará a manter a sua conta segura!"
+			);
 		}
 
 		api.post("/users", { name, email, password })

@@ -1,8 +1,8 @@
 // Imports Global
 import { Container, Content } from "./styles";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/auth.jsx";
+import { useAuth } from "../../hooks/auth";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -11,7 +11,14 @@ import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
-	const data = useAuth();
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const { signIn } = useAuth();
+
+	function handleSignIn() {
+		signIn({ email, password });
+	}
 
 	useEffect(() => {
 		const link = document.createElement("link");
@@ -40,6 +47,9 @@ function SignIn() {
 							type="email"
 							placeholder="Exemplo: exemplo@exemplo.com.br"
 							required
+							onChange={(e) => {
+								setEmail(e.target.value);
+							}}
 						/>
 
 						<label>Senha</label>
@@ -48,12 +58,16 @@ function SignIn() {
 							placeholder="No mínimo 6 caracteres"
 							minLength={6}
 							required
+							onChange={(e) => {
+								setPassword(e.target.value);
+							}}
 						/>
 					</fieldset>
 
 					<Button
 						id="enter"
 						title="Entrar"
+						onClick={handleSignIn}
 					/>
 
 					<Link

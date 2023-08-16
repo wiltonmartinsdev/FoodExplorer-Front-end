@@ -6,13 +6,15 @@ import GlobalStyles from "./styles/global";
 import "animate.css";
 import theme from "./styles/theme";
 import { ThemeProvider } from "styled-components";
-import { AuthProvider } from "./hooks/auth.jsx";
+import { AuthProvider } from "./hooks/auth";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
-			<Routes />
+			<AuthProvider>
+				<Routes />
+			</AuthProvider>
 		</ThemeProvider>
 	</React.StrictMode>
 );
