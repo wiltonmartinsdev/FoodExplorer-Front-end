@@ -56,7 +56,7 @@ const Content = styled.main`
 			}
 		}
 
-		div#ingredientsSection {
+		div#dishDescriptionSection {
 			div#tags {
 				position: relative;
 			}
@@ -78,7 +78,7 @@ const Content = styled.main`
 				}
 			}
 
-			div#ingredientsSection {
+			div#dishDescriptionSection {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -119,7 +119,7 @@ const Content = styled.main`
 				}
 			}
 
-			div#ingredientsSection {
+			div#dishDescriptionSection {
 				width: 48.2rem;
 
 				transform: scale(1.2);
@@ -163,7 +163,7 @@ const Content = styled.main`
 				}
 			}
 
-			div#ingredientsSection {
+			div#dishDescriptionSection {
 				width: 48.2rem;
 
 				transform: scale(1.2);

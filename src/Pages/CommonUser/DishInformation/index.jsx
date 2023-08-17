@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../../../components/NavBarUser";
 import ButtonText from "../../../components/ButtonText";
 import AddRequest from "../../../components/AddRequest";
-import IngredientsSection from "../../../components/IngredientsSection";
+import DishDescriptionSection from "../../../components/DishDescriptionSection";
 import Tags from "../../../components/Tags";
 import Footer from "../../../components/Footer";
 
@@ -54,10 +54,10 @@ function DishInformation() {
 						/>
 					</div>
 
-					<div id="ingredientsSection">
-						<IngredientsSection
+					<div id="dishDescriptionSection">
+						<DishDescriptionSection
 							title="Salada Ravanello"
-							ingredients="Rabanetes, folhas verdes e molho agridoce salpicados com
+							description="Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim. Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim. Rabanetes, folhas verdes e molho agridoce salpicados com
 				gergelim.  ">
@@ -73,7 +73,7 @@ function DishInformation() {
 							<Tags title="tomate" />
 							<Tags title="alho" />
 							<Tags title="cheiro-verde" />
-						</IngredientsSection>
+						</DishDescriptionSection>
 					</div>
 				</div>
 				<AddRequest />

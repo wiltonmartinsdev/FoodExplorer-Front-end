@@ -1,7 +1,7 @@
 // Imports Global
 import Container from "./styles";
 
-function IngredientsSection({ title, ingredients, children }) {
+function DishDescriptionSection({ title, ingredients, children }) {
 	return (
 		<Container>
 			<h1> {title}</h1>
@@ -13,4 +13,4 @@ function IngredientsSection({ title, ingredients, children }) {
 	);
 }
 
-export default IngredientsSection;
+export default DishDescriptionSection;
