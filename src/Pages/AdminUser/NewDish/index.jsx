@@ -17,25 +17,31 @@ import leftArrow from "../../../assets/leftArrow.svg";
 import UploadImg from "../../../assets/uploadImg.svg";
 
 function NewDish() {
-	const [tags, setTags] = useState([]);
-	const [newTags, setNewTags] = useState("");
+	const [name, setName] = useState("");
+	const [category, setCategory] = useState([]);
+	const [ingredients, setIngredients] = useState([]);
+	const [newIngredients, setNewIngredients] = useState("");
+	const [price, setPrice] = useState();
+	const [description, setDescription] = useState("");
 
-	function handleAddTag() {
-		if (newTags === "") {
+	function handleAddIngredient() {
+		if (newIngredients === "") {
 			return alert(
 				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicionar com sucesso!"
 			);
 		}
-		setTags((prevState) => [...prevState, newTags]);
-		setNewTags("");
+		setIngredients((prevState) => [...prevState, newIngredients]);
+		setNewIngredients("");
 	}
 
-	function handleRemoveTag(deleted) {
-		setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+	function handleRemoveIngredient(deleted) {
+		setIngredients((prevState) =>
+			prevState.filter((ingredient) => ingredient !== deleted)
+		);
 	}
 
 	async function handleSaveNewDish() {
-		if (newTags) {
+		if (newIngredients) {
 			return alert(
 				"Ops! Percebemos que você preencheu o campo do ingrediente, mas não clicou em 'Adicionar'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
 			);
@@ -126,21 +132,21 @@ function NewDish() {
 					<div
 						id="ingredients"
 						className="input">
-						{tags.map((tag, index) => (
+						{ingredients.map((ingredient, index) => (
 							<AddIngredients
 								key={String(index)}
-								value={tag}
+								value={ingredient}
 								onClick={() => {
-									handleRemoveTag(tag);
+									handleRemoveIngredient(ingredient);
 								}}
 							/>
 						))}
 						<AddIngredients
 							isNew
 							placeholder="Adicionar"
-							value={newTags}
-							onChange={(e) => setNewTags(e.target.value)}
-							onClick={handleAddTag}
+							value={newIngredients}
+							onChange={(e) => setNewIngredients(e.target.value)}
+							onClick={handleAddIngredient}
 						/>
 					</div>
 
