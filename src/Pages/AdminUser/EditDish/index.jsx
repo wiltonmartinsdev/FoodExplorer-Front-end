@@ -1,6 +1,6 @@
 // Imports Global
 import { Container, Content } from "./styles";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Imports of Components
@@ -17,6 +17,31 @@ import leftArrow from "../../../assets/leftArrow.svg";
 import UploadImg from "../../../assets/uploadImg.svg";
 
 function EditDish() {
+	const [tags, setTags] = useState([]);
+	const [newTags, setNewTags] = useState("");
+
+	function handleAddTag() {
+		if (newTags === "") {
+			return alert(
+				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicionar com sucesso!"
+			);
+		}
+		setTags((prevState) => [...prevState, newTags]);
+		setNewTags("");
+	}
+
+	function handleRemoveTag(deleted) {
+		setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+	}
+
+	async function handleSaveDishEditChanges() {
+		if (newTags) {
+			return alert(
+				"Ops! Percebemos que você preencheu o campo do ingrediente, mas não clicou em 'Adicionar'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
+			);
+		}
+	}
+
 	useEffect(() => {
 		const link = document.createElement("link");
 		link.rel = "icon";
@@ -102,17 +127,21 @@ function EditDish() {
 					<div
 						id="ingredients"
 						className="input">
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-						<AddIngredients value="Pão" />
-
+						{tags.map((tag, index) => (
+							<AddIngredients
+								key={String(index)}
+								value={tag}
+								onClick={() => {
+									handleRemoveTag(tag);
+								}}
+							/>
+						))}
 						<AddIngredients
 							isNew
 							placeholder="Adicionar"
+							value={newTags}
+							onChange={(e) => setNewTags(e.target.value)}
+							onClick={handleAddTag}
 						/>
 					</div>
 
@@ -147,6 +176,7 @@ function EditDish() {
 						<Button
 							id="save"
 							title="Salvar alterações"
+							onClick={handleSaveDishEditChanges}
 						/>
 					</div>
 				</form>

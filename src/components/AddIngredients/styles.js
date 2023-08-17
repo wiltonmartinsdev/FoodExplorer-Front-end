@@ -16,7 +16,7 @@ const Container = styled.div`
 	padding-right: 1.6rem;
 
 	input {
-		width: 9.4rem;
+		width: 13rem;
 		height: 3.2rem;
 
 		background-color: ${({ theme, isNew }) =>
@@ -25,7 +25,7 @@ const Container = styled.div`
 		border: none;
 		border-radius: 0.8rem;
 
-		padding-left: 1.6rem;
+		padding-left: 2rem;
 	}
 
 	button {
