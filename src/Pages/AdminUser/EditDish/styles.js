@@ -177,6 +177,10 @@ const Content = styled.main`
 			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 		}
 
+		button#delete:hover {
+			background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_100};
+		}
+
 		button#save {
 			background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_400};
 		}
