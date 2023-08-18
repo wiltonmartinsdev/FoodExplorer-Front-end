@@ -1,7 +1,8 @@
 // Imports Global
 import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { api } from "../../../services/api";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -18,11 +19,16 @@ import UploadImg from "../../../assets/uploadImg.svg";
 
 function NewDish() {
 	const [name, setName] = useState("");
-	const [category, setCategory] = useState([]);
+	const [description, setDescription] = useState("");
+
+	const options = ["Pratos Principais", "Sobremesas", "Bebidas"];
+	const [category, setCategory] = useState(options[0]);
+
+	const [price, setPrice] = useState();
 	const [ingredients, setIngredients] = useState([]);
 	const [newIngredients, setNewIngredients] = useState("");
-	const [price, setPrice] = useState();
-	const [description, setDescription] = useState("");
+
+	const navigate = useNavigate();
 
 	function handleAddIngredient() {
 		if (newIngredients === "") {
@@ -46,6 +52,17 @@ function NewDish() {
 				"Ops! Percebemos que você preencheu o campo do ingrediente, mas não clicou em 'Adicionar'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
 			);
 		}
+
+		await api.post("/admin/NewDish", {
+			name,
+			description,
+			category,
+			price,
+			ingredients,
+		});
+
+		alert("Ótima notícia! O prato foi cadastrado com sucesso no sistema!");
+		navigate("/");
 	}
 
 	useEffect(() => {
@@ -110,6 +127,9 @@ function NewDish() {
 					<Input
 						id="name"
 						placeholder="Ex.: Salada Caesar"
+						onChange={(e) => {
+							setName(e.target.value);
+						}}
 					/>
 
 					<label
@@ -117,11 +137,17 @@ function NewDish() {
 						htmlFor="category">
 						Categoria
 					</label>
-					<select id="category">
-						<option value="food">Refeição</option>
-						<option value="mainDishes">Pratos Principais</option>
-						<option value="desserts"> Sobremesas</option>
-						<option value="drinks">Bebidas</option>
+					<select
+						id="category"
+						value={category}
+						onChange={(e) => setCategory(e.target.value)}>
+						{options.map((option, index) => (
+							<option
+								value={option}
+								key={String(index)}>
+								{option}
+							</option>
+						))}
 					</select>
 
 					<label
@@ -160,6 +186,9 @@ function NewDish() {
 						id="price"
 						type="number"
 						placeholder="R$ 00,00"
+						onChange={(e) => {
+							setPrice(e.target.value);
+						}}
 					/>
 
 					<label
@@ -170,6 +199,9 @@ function NewDish() {
 					<TextAreaDescription
 						id="textArea"
 						placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+						onChange={(e) => {
+							setDescription(e.target.value);
+						}}
 					/>
 
 					<Button

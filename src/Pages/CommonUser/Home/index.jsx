@@ -60,7 +60,7 @@ function Home() {
 				/>
 
 				<Carousel
-					title="Refeições"
+					title="Pratos Principais"
 					subTitle1="Salada Ravanello"
 					subTitle2="Spaghetti Gamberi"
 					subTitle3="Torradas de Parma"
@@ -81,7 +81,7 @@ function Home() {
 				/>
 
 				<Carousel
-					title="Pratos principais"
+					title="Sobremesas"
 					subTitle1="Prugna Pie"
 					subTitle2="Peachy Pastrie"
 					subTitle3="Macarons"
