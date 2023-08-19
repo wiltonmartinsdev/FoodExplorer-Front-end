@@ -2,6 +2,7 @@
 import Container from "./styles";
 import React, { useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
+import { useAuth } from "../../hooks/auth";
 
 // Imports of Components
 import Input from "../Input";
@@ -9,6 +10,8 @@ import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
 function MobileUserMenu() {
+	const { signOut } = useAuth();
+
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	function toggleMenu() {
@@ -38,6 +41,7 @@ function MobileUserMenu() {
 					<ButtonText
 						className="menuOptions"
 						title="Sair"
+						onClick={signOut}
 					/>
 				</div>
 

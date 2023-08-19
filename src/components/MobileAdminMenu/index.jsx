@@ -3,6 +3,7 @@ import Container from "./styles";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
+import { useAuth } from "../../hooks/auth";
 
 // Imports of Components
 import Input from "../Input";
@@ -10,6 +11,8 @@ import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
 function MobileAdminMenu() {
+	const { signOut } = useAuth();
+
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	function toggleMenu() {
@@ -49,6 +52,7 @@ function MobileAdminMenu() {
 							className="menuOptions"
 							id="logout"
 							title="Sair"
+                            onClick={signOut}
 						/>
 					</Link>
 				</div>
