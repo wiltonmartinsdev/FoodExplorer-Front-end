@@ -46,23 +46,56 @@ function NewDish() {
 		);
 	}
 
-	async function handleSaveNewDish() {
+	function handleErrorsWhenSaving() {
 		if (newIngredients) {
 			return alert(
 				"Ops! Percebemos que você preencheu o campo do ingrediente, mas não clicou em 'Adicionar'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
 			);
 		}
 
-		await api.post("/admin/NewDish", {
-			name,
-			description,
-			category,
-			price,
-			ingredients,
-		});
+		if (!name) {
+			return alert(
+				"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Nome'. Por favor, verifique esse campo e tente novamente."
+			);
+		} else if (!description) {
+			return alert(
+				"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Descrição'. Por favor, verifique esse campo e tente novamente."
+			);
+		} else if (!price) {
+			return alert(
+				"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Preço'. Por favor, verifique esse campo e tente novamente."
+			);
+		} else if (ingredients.length === 0) {
+			return alert(
+				"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você adicione pelo menos um ingrediente. Por favor, verifique esse campo e tente novamente."
+			);
+		}
+	}
 
-		alert("Ótima notícia! O prato foi cadastrado com sucesso no sistema!");
-		navigate("/");
+	async function handleSaveNewDish() {
+		try {
+			handleErrorsWhenSaving();
+			await api.post("/admin/NewDish", {
+				name,
+				description,
+				category,
+				price,
+				ingredients,
+			});
+			alert(
+				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!"
+			);
+
+			navigate("/");
+		} catch (error) {
+			if (error.response) {
+				return alert(error.response.data.message);
+			} else {
+				return alert(
+					"Ops! Desculpe, ocorreu um erro ao tentar cadastrar o prato devido a algum problema no servidor. Por favor, tente novamente."
+				);
+			}
+		}
 	}
 
 	useEffect(() => {
