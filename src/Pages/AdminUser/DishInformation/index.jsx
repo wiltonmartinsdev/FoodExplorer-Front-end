@@ -1,7 +1,8 @@
 // Imports Global
 import { Container, Content } from "./styles";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../../services/api";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -12,10 +13,38 @@ import Tags from "../../../components/Tags";
 import Footer from "../../../components/Footer";
 
 // Imports of Images
-import MaskGroup from "../../../assets/maskGroup01.png";
 import leftArrow from "../../../assets/leftArrow.svg";
 
 function DishInformation() {
+	const params = useParams();
+	
+    const navigate = useNavigate();
+
+	const [dishes, setDishes] = useState(null);
+
+	const [ingredients, setIngredients] = useState();
+
+	function handleBack() {
+		navigate(-1);
+	}
+
+	function handleEditDish() {
+		navigate(`/EditDish/${params.Id}`);
+	}
+
+	useEffect(() => {
+		async function fetchDish() {
+			const response = await api.get(
+				`admin/DishInformation/${params.Id}`
+			);
+
+			setDishes(response.data);
+			setIngredients(response.data.ingredientInformation);
+		}
+
+		fetchDish();
+	}, []);
+
 	useEffect(() => {
 		const link = document.createElement("link");
 		link.rel = "icon";
@@ -33,65 +62,52 @@ function DishInformation() {
 		<Container>
 			<NavBar />
 
-			<Content>
-				<div id="wrapper">
-					<div id="containerDish">
-						<div id="backButton">
+			{dishes && (
+				<Content>
+					<div id="wrapper">
+						<div id="containerDish">
+							<div id="backButton">
+								<img
+									id="leftArrow"
+									src={leftArrow}
+									alt="Seta apontando para esquerda"
+								/>
+								<ButtonText
+									title="voltar"
+									onClick={handleBack}
+								/>
+							</div>
+
 							<img
-								id="leftArrow"
-								src={leftArrow}
-								alt="Seta apontando para esquerda"
+								id="dish"
+								src={`${api.defaults.baseURL}/files/${dishes.Image}`}
+								alt={dishes.Name}
 							/>
-							<Link to="/">
-								<ButtonText title="voltar" />
-							</Link>
 						</div>
 
-						<img
-							id="dish"
-							src={MaskGroup}
-							alt="Prato com uma salada."
-						/>
+						<div id="dishDescriptionSection">
+							<DishDescriptionSection
+								title={dishes.Name}
+								description={dishes.Description}>
+								{ingredients.map((ingredient) => {
+									return (
+										<Tags
+											key={ingredient.Id}
+											name={ingredient.Name}
+										/>
+									);
+								})}
+							</DishDescriptionSection>
+						</div>
 					</div>
 
-					<div id="dishDescriptionSection">
-						<DishDescriptionSection
-							title="Salada Ravanello"
-							description="Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim. Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.Rabanetes, folhas verdes e molho agridoce salpicados com
-				gergelim.">
-							<Tags title="alface" />
-							<Tags title="cebola" />
-							<Tags title="pão naan" />
-							<Tags title="pepino" />
-							<Tags title="rabanete" />
-							<Tags title="tomate" />
-							<Tags title="alho" />
-							<Tags title="gergelim" />
-							<Tags title="rabanete" />
-							<Tags title="tomate" />
-							<Tags title="alho" />
-							<Tags title="cheiro-verde" />
-						</DishDescriptionSection>
-					</div>
-				</div>
-
-				<Link to="/EditDish">
 					<Button
 						id="editDish"
 						title="Editar prato"
+						onClick={handleEditDish}
 					/>
-				</Link>
-			</Content>
+				</Content>
+			)}
 
 			<Footer />
 		</Container>

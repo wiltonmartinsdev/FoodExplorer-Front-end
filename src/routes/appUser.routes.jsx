@@ -9,7 +9,7 @@ function AppUserRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/DishInformation" element={<DishInformation />} />
+            <Route path="/DishInformation/:Id" element={<DishInformation />} />
  
         </Routes>
     )

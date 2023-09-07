@@ -39,6 +39,22 @@ const Container = styled.section`
 	@media screen and (min-width: 769px) {
 		text-align: left;
 
+		div#tags {
+			display: flex;
+			gap: 2.4rem;
+			justify-content: start;
+			align-items: center;
+			flex-wrap: wrap;
+
+			height: 10.8rem;
+
+			position: absolute;
+			left: 1.9rem;
+
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
 		h1,
 		p {
 			margin-left: 1.8rem;

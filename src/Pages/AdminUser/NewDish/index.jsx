@@ -1,7 +1,7 @@
 // Imports Global
 import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
 
 // Imports of Components
@@ -19,23 +19,55 @@ import UploadImg from "../../../assets/uploadImg.svg";
 
 function NewDish() {
 	const [name, setName] = useState("");
+
 	const [description, setDescription] = useState("");
 
-	const options = ["Pratos Principais", "Sobremesas", "Bebidas"];
-	const [category, setCategory] = useState(options[0]);
+	const [category, setCategory] = useState("");
 
 	const [price, setPrice] = useState();
+
+	const [image, setImage] = useState(null);
+
+	const [imageName, setImageName] = useState("");
+
 	const [ingredients, setIngredients] = useState([]);
+
 	const [newIngredients, setNewIngredients] = useState("");
 
 	const navigate = useNavigate();
 
+	function handleHome() {
+		navigate("/");
+	}
+
+	function handleBack() {
+		navigate(-1);
+	}
+
+	function handleImage(event) {
+		const file = event.target.files[0];
+
+		setImage(file);
+		setImageName(file.name);
+	}
+
+	function isDuplicateIngredient(ingredient) {
+		return ingredients.includes(ingredient);
+	}
+
 	function handleAddIngredient() {
 		if (newIngredients === "") {
 			return alert(
-				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicionar com sucesso!"
+				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicioná-lo com sucesso!"
 			);
 		}
+
+		if (isDuplicateIngredient(newIngredients)) {
+			return alert(
+				"Ops! Vejo que você já adicionou esse ingrediente. Se desejar, fique à vontade para modificar o nome do ingrediente para que possamos adicioná-lo com sucesso ao sistema."
+			);
+		}
+
 		setIngredients((prevState) => [...prevState, newIngredients]);
 		setNewIngredients("");
 	}
@@ -62,6 +94,10 @@ function NewDish() {
 				return alert(
 					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Descrição'. Por favor, verifique esse campo e tente novamente."
 				);
+			} else if (!category) {
+				return alert(
+					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você selecione uma categoria. Por favor, verifique esse campo e tente novamente."
+				);
 			} else if (!price) {
 				return alert(
 					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Preço'. Por favor, verifique esse campo e tente novamente."
@@ -70,20 +106,33 @@ function NewDish() {
 				return alert(
 					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você adicione pelo menos um ingrediente. Por favor, verifique esse campo e tente novamente."
 				);
+			} else if (!image) {
+				return alert(
+					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você selecione uma imagem. Por favor, selecione uma imagem e tente novamente."
+				);
 			}
 
-			await api.post("/admin/NewDish", {
+			// Ao cadastrar um prato, estou capturando o ID do mesmo. Esse ID será posteriormente utilizado para associar e cadastrar uma imagem específica para o prato, garantindo uma correspondência precisa entre o prato e sua imagem correspondente.
+			const response = await api.post("/admin/NewDish", {
 				name,
 				description,
 				category,
 				price,
 				ingredients,
 			});
+
+			const DishId = String(response.data.DishId);
+			const dishImage = new FormData();
+			dishImage.append("Image", image);
+
+			// Após capturar o ID do prato, estou utilizando essa informação para efetuar o cadastro da imagem correspondente a esse prato específico. Dessa forma, estabeleço uma ligação direta entre o prato e sua imagem associada no sistema.
+			await api.patch(`admin/Image/${DishId}`, dishImage);
+
 			alert(
 				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!"
 			);
 
-			navigate("/");
+			handleHome();
 		} catch (error) {
 			if (error.response) {
 				return alert(error.response.data.message);
@@ -119,9 +168,10 @@ function NewDish() {
 						src={leftArrow}
 						alt="Seta apontando para esquerda"
 					/>
-					<Link to="/">
-						<ButtonText title="voltar" />
-					</Link>
+					<ButtonText
+						title="voltar"
+						onClick={handleBack}
+					/>
 				</div>
 
 				<h1 id="title1">Novo prato</h1>
@@ -134,17 +184,18 @@ function NewDish() {
 						Imagem do Prato
 						<div id="upload">
 							<img
+								id="imageUpload"
 								src={UploadImg}
 								alt="Ícone de uma seta para cima para fazer upload de uma imagem"
 							/>
 
-							<p>Selecione a imagem</p>
+							<p>{imageName || "Selecione a imagem"}</p>
 						</div>
 						<input
 							type="file"
 							accept="image/*"
-							multiple
 							id="img"
+							onChange={handleImage}
 						/>
 					</label>
 					<div className="input"></div>
@@ -171,13 +222,12 @@ function NewDish() {
 						id="category"
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}>
-						{options.map((option, index) => (
-							<option
-								value={option}
-								key={String(index)}>
-								{option}
-							</option>
-						))}
+						<option value="">Selecione a Categoria</option>
+						<option value="Pratos Principais">
+							Pratos Principais
+						</option>
+						<option value="Sobremesas"> Sobremesas</option>
+						<option value="Bebidas">Bebidas</option>
 					</select>
 
 					<label

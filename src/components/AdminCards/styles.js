@@ -39,6 +39,8 @@ const Content = styled.div`
 		position: relative;
 		top: 1rem;
 
+		cursor: pointer;
+
 		transform: scale(1.3);
 		transition: transform 0.5s ease;
 	}
@@ -47,7 +49,7 @@ const Content = styled.div`
 		transform: scale(1.6);
 	}
 
-	h1 {
+	h1#cardsH1 {
 		font-family: Poppins, sans-serif;
 		font-weight: 500;
 		font-size: 1.3rem;

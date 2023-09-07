@@ -1,7 +1,7 @@
 // Imports Global
 import Container from "./styles";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useAuth } from "../../hooks/auth";
 
@@ -10,13 +10,22 @@ import Input from "../Input";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
-function MobileAdminMenu() {
+function MobileAdminMenu({ onChange }) {
 	const { signOut } = useAuth();
+
+    const navigate = useNavigate()
 
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	function toggleMenu() {
 		setMenuOpen(!menuOpen);
+	}
+
+	function handleSignOut() {
+
+		navigate("/");
+
+		signOut();
 	}
 
 	return (
@@ -36,6 +45,7 @@ function MobileAdminMenu() {
 					id="dishSearch"
 					placeholder="Busque por pratos ou ingredientes"
 					img={HiOutlineSearch}
+					onChange={onChange}
 				/>
 
 				<div id="buttonTextWrapper">
@@ -47,14 +57,12 @@ function MobileAdminMenu() {
 						/>
 					</Link>
 
-					<Link>
 						<ButtonText
 							className="menuOptions"
 							id="logout"
 							title="Sair"
-                            onClick={signOut}
+							onClick={handleSignOut}
 						/>
-					</Link>
 				</div>
 
 				<Footer id="footer" />

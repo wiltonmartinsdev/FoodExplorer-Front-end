@@ -11,8 +11,8 @@ function AppAdminRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/DishInformation" element={<DishInformation />} />
-            <Route path="/EditDish" element={<EditDish />} />
+            <Route path="/DishInformation/:Id" element={<DishInformation />} />
+            <Route path="/EditDish/:Id" element={<EditDish />} />
             <Route path="/NewDish" element={<NewDish />} />
         </Routes>
     )

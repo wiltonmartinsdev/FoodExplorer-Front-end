@@ -1,6 +1,7 @@
 // Imports Global
 import Container from "./styles";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useAuth } from "../../hooks/auth";
 
@@ -9,13 +10,21 @@ import Input from "../Input";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
 
-function MobileUserMenu() {
+function MobileUserMenu({ onChange }) {
 	const { signOut } = useAuth();
+
+    const navigate = useNavigate()
 
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	function toggleMenu() {
 		setMenuOpen(!menuOpen);
+	}
+
+	function handleSignOut() {
+		navigate("/");
+
+		signOut();
 	}
 
 	return (
@@ -35,13 +44,14 @@ function MobileUserMenu() {
 					id="dishSearch"
 					placeholder="Busque por pratos ou ingredientes"
 					img={HiOutlineSearch}
+					onChange={onChange}
 				/>
 
 				<div id="buttonTextWrapper">
 					<ButtonText
 						className="menuOptions"
 						title="Sair"
-						onClick={signOut}
+						onClick={handleSignOut}
 					/>
 				</div>
 

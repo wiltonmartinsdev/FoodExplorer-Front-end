@@ -1,6 +1,6 @@
 // Imports Global
 import { Container, Content, Brand } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useAuth } from "../../hooks/auth";
 
@@ -15,13 +15,21 @@ import NotificationIcon from "../../assets/notificationIcon.svg";
 import IconSignOut from "../../assets/iconSignOut.svg";
 import RequestsIcon from "../../assets/requestsIcon.svg";
 
-function NavBarUser() {
+function NavBarUser({onChange}) {
 	const { signOut } = useAuth();
+
+	const navigate = useNavigate();
+
+	function handleSignOut() {
+		navigate("/");
+
+		signOut();
+	}
 
 	return (
 		<Container>
 			<Content>
-				<MobileUserMenu />
+				<MobileUserMenu onChange={onChange} />
 
 				<Link to="/">
 					<Brand id="brand">
@@ -44,6 +52,8 @@ function NavBarUser() {
 					className="input"
 					placeholder="Busque por pratos ou ingredientes"
 					img={HiOutlineSearch}
+                    onChange={onChange}
+
 				/>
 
 				<RequestsButton
@@ -56,7 +66,7 @@ function NavBarUser() {
 					id="iconSignOut"
 					src={IconSignOut}
 					alt="Ícone com uma seta pequena para direita indicando para sair da aplicação."
-					onClick={signOut}
+					onClick={handleSignOut}
 				/>
 			</Content>
 		</Container>

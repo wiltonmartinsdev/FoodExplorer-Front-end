@@ -1,8 +1,8 @@
 // Imports Global
 import Container from "./styles";
 
-function Tags({ title }) {
-	return <Container>{title}</Container>;
+function Tags({ name }) {
+	return <Container>{name}</Container>;
 }
 
 export default Tags;

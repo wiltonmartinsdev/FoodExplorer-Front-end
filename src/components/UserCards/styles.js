@@ -42,7 +42,7 @@ const Content = styled.div`
 		transform: scale(1.4);
 	}
 
-	h1 {
+	h1#cardsH1 {
 		font-family: Poppins, sans-serif;
 		font-weight: 500;
 		font-size: 1.3rem;

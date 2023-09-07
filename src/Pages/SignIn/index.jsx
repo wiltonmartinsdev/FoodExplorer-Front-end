@@ -12,11 +12,28 @@ import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	
+    const [password, setPassword] = useState("");
 
 	const { signIn } = useAuth();
 
 	function handleSignIn() {
+		if (email === "" && password === "") {
+			return alert(
+				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema."
+			);
+		}
+
+        if (!email) {
+			return alert(
+				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema."
+			);
+		} else if (!password) {
+			return alert(
+				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema."
+			);
+		}
+
 		signIn({ email, password });
 	}
 

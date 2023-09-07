@@ -87,11 +87,22 @@ const Content = styled.main`
 				top: 4.3rem;
 				left: 3rem;
 
+				img#imageUpload {
+					position: absolute;
+					right: 27.1rem;
+				}
+
 				p {
 					font-family: Poppins, sans-serif;
 					font-weight: 500;
 					font-size: 1.4rem;
 					line-height: 2.4rem;
+
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					width: 23.5rem;
 
 					color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 				}
@@ -232,12 +243,23 @@ const Content = styled.main`
 
 					z-index: 9999;
 
+					img#imageUpload {
+						position: absolute;
+						right: 22.4rem;
+					}
+
 					p#description1 {
 						display: none;
 					}
 
 					p#description2 {
 						display: block;
+
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+
+						width: 14.5rem;
 					}
 				}
 			}
@@ -366,12 +388,23 @@ const Content = styled.main`
 
 					z-index: 9999;
 
+                    img#imageUpload {
+						position: absolute;
+						right: 22.4rem;
+					}
+
 					p#description1 {
 						display: none;
 					}
 
 					p#description2 {
 						display: block;
+
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+
+						width: 14.5rem;
 					}
 				}
 			}

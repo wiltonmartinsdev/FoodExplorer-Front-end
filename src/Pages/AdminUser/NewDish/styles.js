@@ -91,11 +91,21 @@ const Content = styled.main`
 				top: 4.3rem;
 				right: 10.5rem;
 
+				img#imageUpload {
+					position: absolute;
+					right: 21.9rem;
+
+				}
+
 				p {
 					font-family: Poppins, sans-serif;
 					font-weight: 500;
 					font-size: 1.4rem;
 					line-height: 2.4rem;
+
+					position: relative;
+					top: 0.2rem;
+					left: 0.6rem;
 
 					color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 				}
