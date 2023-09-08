@@ -25,16 +25,16 @@ function EditDish() {
 	const [category, setCategory] = useState("");
 
 	const [ingredients, setIngredients] = useState([]);
-	
-    const [newIngredients, setNewIngredients] = useState("");
-	
-    const [ingredientId, setIngredientId] = useState([]);
+
+	const [newIngredients, setNewIngredients] = useState("");
+
+	const [ingredientId, setIngredientId] = useState([]);
 
 	const [price, setPrice] = useState("");
 
 	const [image, setImage] = useState();
-	
-    const [imageName, setImageName] = useState("");
+
+	const [imageName, setImageName] = useState("");
 
 	const [description, setDescription] = useState("");
 
@@ -53,9 +53,9 @@ function EditDish() {
 		setImageName(file.name);
 	}
 
-    function isDuplicateIngredient(ingredient){
-        return ingredients.includes(ingredient)
-    }
+	function isDuplicateIngredient(ingredient) {
+		return ingredients.includes(ingredient);
+	}
 
 	function handleAddIngredient() {
 		if (newIngredients === "") {
@@ -64,9 +64,11 @@ function EditDish() {
 			);
 		}
 
-        if(isDuplicateIngredient(newIngredients)){
-            return alert("Ops! Vejo que você já adicionou esse ingrediente. Se desejar, fique à vontade para modificar o nome do ingrediente para que possamos adicioná-lo com sucesso ao sistema.")
-        }
+		if (isDuplicateIngredient(newIngredients)) {
+			return alert(
+				"Ops! Vejo que você já adicionou esse ingrediente. Se desejar, fique à vontade para modificar o nome do ingrediente para que possamos adicioná-lo com sucesso ao sistema."
+			);
+		}
 
 		setIngredients((prevState) => [...prevState, newIngredients]);
 
@@ -196,19 +198,6 @@ function EditDish() {
 		}
 	}, [dish]);
 
-	useEffect(() => {
-		const link = document.createElement("link");
-		link.rel = "icon";
-		link.href = "src/assets/polygon.svg";
-		link.type = "image/x-icon";
-
-		document.head.appendChild(link);
-
-		return () => {
-			document.head.removeChild(link);
-		};
-	}, []);
-
 	return (
 		<Container>
 			<NavBar />
@@ -325,7 +314,6 @@ function EditDish() {
 							value={newIngredients}
 							onChange={(e) => setNewIngredients(e.target.value)}
 							onClick={handleAddIngredient}
-							
 						/>
 					</div>
 

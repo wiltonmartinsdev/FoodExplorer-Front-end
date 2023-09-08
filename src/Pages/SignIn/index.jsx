@@ -12,8 +12,8 @@ import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
-	
-    const [password, setPassword] = useState("");
+
+	const [password, setPassword] = useState("");
 
 	const { signIn } = useAuth();
 
@@ -24,7 +24,7 @@ function SignIn() {
 			);
 		}
 
-        if (!email) {
+		if (!email) {
 			return alert(
 				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema."
 			);
@@ -36,19 +36,6 @@ function SignIn() {
 
 		signIn({ email, password });
 	}
-
-	useEffect(() => {
-		const link = document.createElement("link");
-		link.rel = "icon";
-		link.href = "src/assets/polygon.svg";
-		link.type = "image/x-icon";
-
-		document.head.appendChild(link);
-
-		return () => {
-			document.head.removeChild(link);
-		};
-	}, []);
 
 	return (
 		<Container>
