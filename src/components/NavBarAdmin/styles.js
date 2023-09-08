@@ -162,6 +162,7 @@ const Brand = styled.div`
 	gap: 0.8rem;
 
 	position: relative;
+	left: 0.5rem;
 
 	img {
 		width: 2.4rem;

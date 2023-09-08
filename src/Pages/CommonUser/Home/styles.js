@@ -10,13 +10,15 @@ const Container = styled.div`
 	display: grid;
 	justify-content: center;
 	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
+	grid-template-rows: 11.4rem 127rem 7.7rem;
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
+		grid-template-rows: 11.4rem 151rem 7.7rem;
+
 		width: 192rem;
 	}
 

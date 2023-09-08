@@ -149,7 +149,7 @@ const Content = styled.div`
 `;
 
 const Brand = styled.div`
-	width: 16.6rem;
+	width: 17.6rem;
 
 	display: flex;
 	justify-content: center;
