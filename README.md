@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#usedStacks">Stacks utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#prerequisite">Pré-requisito</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#prerequisite">Pré-requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#applicationExecution">Execução da Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#functionalities">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -31,8 +31,10 @@
 - SQLite e Knex.js: Um banco de dados SQL leve e uma biblioteca query builder para Node.js.
 
 
-<h2 id="prerequisite">Pré-requisito </h2>
+<h2 id="prerequisite">Pré-requisitos </h2>
 
+- Node.js instalado na máquina.
+- NPM (Node Package Manager) para instalar as dependências necessárias do projeto.
 - Esse repositório é o Front-end da aplicação e para o correto funcionamento, em ambiente local, é necessário executá-lo em conjunto com o repositório Back-end. Você pode acessar o repositório Back-end em: https://github.com/wiltonmartinsdev/FoodExplorer-Back-end
 
 
