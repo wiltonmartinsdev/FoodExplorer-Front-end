@@ -31,7 +31,7 @@
 - SQLite e Knex.js: Um banco de dados SQL leve e uma biblioteca query builder para Node.js.
 
 
-<h2 id="prerequisite">Pré-requisitos </h2>
+<h2 id="prerequisite">Pré-requisito </h2>
 
 - Esse repositório é o Front-end da aplicação e para o correto funcionamento, em ambiente local, é necessário executá-lo em conjunto com o repositório Back-end. Você pode acessar o repositório Back-end em: https://github.com/wiltonmartinsdev/FoodExplorer-Back-end
 
