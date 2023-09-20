@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 43rem;
-	height: 92.8rem;
+	height: 94.6rem;
+
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 

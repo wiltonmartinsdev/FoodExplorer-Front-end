@@ -5,7 +5,6 @@ import { api } from "../../../services/api";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
-import BackToUpButton from "../../../components/BackToUpButton";
 import CardsSection from "../../../components/AdminCards";
 import Footer from "../../../components/Footer";
 
@@ -72,8 +71,6 @@ function Home() {
 					return setSearch(e.target.value);
 				}}
 			/>
-
-			<BackToUpButton />
 
 			<Content>
 				<div id="descriptionOfFlavors">

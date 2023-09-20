@@ -5,7 +5,6 @@ import { api } from "../../../services/api";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarUser";
-import BackToUpButton from "../../../components/BackToUpButton";
 import CardsSection from "../../../components/UserCards";
 import Footer from "../../../components/Footer";
 
@@ -68,8 +67,6 @@ function Home() {
 	return (
 		<Container>
 			<NavBar onChange={(e) => setSearch(e.target.value)} />
-
-			<BackToUpButton />
 
 			<Content>
 				<div id="descriptionOfFlavors">
