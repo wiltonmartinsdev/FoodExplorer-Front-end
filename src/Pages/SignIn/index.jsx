@@ -3,6 +3,7 @@ import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import toast, { Toaster } from 'react-hot-toast';
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -12,30 +13,51 @@ import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
-
-	const [password, setPassword] = useState("");
+	
+    const [password, setPassword] = useState("");
 
 	const { signIn } = useAuth();
 
 	function handleSignIn() {
 		if (email === "" && password === "") {
-			return alert(
-				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema."
-			);
+
+           return toast.error("Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema.",
+           {
+             duration: 5000,
+           });
 		}
 
-		if (!email) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema."
-			);
+        if (!email) {
+
+            return toast.error("Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema.",
+            {
+              duration: 5000,
+            });
+
 		} else if (!password) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema."
-			);
+
+            return toast.error("Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema.",
+            {
+              duration: 5000,
+            });
+            
 		}
 
 		signIn({ email, password });
 	}
+
+	useEffect(() => {
+		const link = document.createElement("link");
+		link.rel = "icon";
+		link.href = "src/assets/polygon.svg";
+		link.type = "image/x-icon";
+
+		document.head.appendChild(link);
+
+		return () => {
+			document.head.removeChild(link);
+		};
+	}, []);
 
 	return (
 		<Container>
@@ -84,6 +106,8 @@ function SignIn() {
 					</Link>
 				</form>
 			</Content>
+
+            <Toaster/>
 		</Container>
 	);
 }

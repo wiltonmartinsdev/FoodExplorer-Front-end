@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
+import toast, { Toaster } from "react-hot-toast";
 
 export const AuthContext = createContext({});
 
@@ -23,11 +24,20 @@ function AuthProvider({ children }) {
 			setData({ registeredUser, token });
 		} catch (error) {
 			if (error.response) {
-				alert(error.response.data.message);
+				toast.error(`${error.response.data.message}`, {
+					duration: 5000,
+				});
 			} else {
-				alert("Não foi possível entrar!");
+				toast.error(
+					"Ops! Desculpe, ocorreu um erro ao tentar fazer login no sistema devido a algum problema no servidor. Por favor, tente novamente.",
+					{
+						duration: 5000,
+					}
+				);
 			}
 		}
+
+		<Toaster />;
 	}
 
 	function signOut() {

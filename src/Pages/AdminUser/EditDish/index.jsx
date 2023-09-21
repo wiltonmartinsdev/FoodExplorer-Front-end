@@ -3,6 +3,7 @@ import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
+import toast, { Toaster } from "react-hot-toast";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -59,14 +60,20 @@ function EditDish() {
 
 	function handleAddIngredient() {
 		if (newIngredients === "") {
-			return alert(
-				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicioná-lo com sucesso!"
+			return toast.error(
+				"Ops! Por favor, dê um nome ao ingrediente para adicioná-lo com sucesso.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		if (isDuplicateIngredient(newIngredients)) {
-			return alert(
-				"Ops! Vejo que você já adicionou esse ingrediente. Se desejar, fique à vontade para modificar o nome do ingrediente para que possamos adicioná-lo com sucesso ao sistema."
+			return toast.error(
+				"Ops! Percebi que você já adicionou esse ingrediente. Se quiser, você pode editar o nome do ingrediente para concluir sua inserção ao sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
@@ -93,8 +100,11 @@ function EditDish() {
 	async function handleSaveDishEditChanges() {
 		try {
 			if (newIngredients) {
-				return alert(
-					"Ops! Percebi que você preencheu o campo do ingrediente, mas não clicou no símbolo de adição '+'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
+				return toast.error(
+					"Ops! Lembre-se de clicar no símbolo de adição '+' para adicionar o ingrediente.",
+					{
+						duration: 5000,
+					}
 				);
 			}
 
@@ -110,16 +120,26 @@ function EditDish() {
 				ingredients,
 			});
 
-			alert(
-				"Ótima notícia! O prato foi atualizado com sucesso no sistema!"
-			),
-				handleBack();
+			toast.success(
+				"Ótima notícia! O prato foi atualizado com sucesso no sistema!",
+				{
+					duration: 3000,
+				}
+			);
+
+            setTimeout(() => {
+                handleBack();
+            }, 3000);
 		} catch (error) {
 			if (error.response) {
-				return alert(error.response.data.message);
+				return toast.error(`${error.response.data.message}`, {
+					duration: 5000,
+				});
 			} else {
-				return alert(
-					"Ops! Desculpe, ocorreu um erro ao tentar atualizar o prato devido a algum problema no servidor. Por favor, tente novamente."
+				return toast.error(
+					"Ops! Desculpe, ocorreu um erro ao tentar atualizar o prato devido a algum problema no servidor. Por favor, tente novamente.", {
+                        duration: 5000,
+                    }
 				);
 			}
 		}
@@ -143,14 +163,20 @@ function EditDish() {
 		if (isConfirm) {
 			try {
 				await api.delete(`admin/EditDish/${params.Id}`);
-				alert("Prato deletado com sucesso do sistema!");
+				toast.success("Prato deletado com sucesso do sistema!"), {
+                    duration: 5000,
+                };
 				navigate("/");
 			} catch (error) {
 				if (error.response) {
-					return alert(error.response.data.message);
+					return toast.error(`${error.response.data.message}`, {
+                        duration: 5000,
+                    });
 				} else {
-					return alert(
-						"Ops! Desculpe, ocorreu um erro ao tentar deletar as informações do prato devido a algum problema no servidor. Por favor, tente novamente."
+					return toast.error(
+						"Ops! Desculpe, ocorreu um erro ao tentar deletar as informações do prato devido a algum problema no servidor. Por favor, tente novamente.", {
+                            duration: 5000,
+                        }
 					);
 				}
 			}
@@ -360,6 +386,8 @@ function EditDish() {
 			</Content>
 
 			<Footer />
+
+			<Toaster />
 		</Container>
 	);
 }

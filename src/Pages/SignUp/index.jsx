@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import validator from "validator";
 import { api } from "../../services/api.js";
 import { Link, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -22,50 +23,80 @@ function SignUp() {
 
 	function handleSignUp() {
 		if (!name && !email && !password) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu seu nome, email e senha! Por favor, lembre-se de inserir todos os campos para que possamos criar sua conta com sucesso no sistema."
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu seu nome, email e senha! Por favor, lembre-se de inserir todos os campos para que possamos criar sua conta com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		if (!name) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu seu nome! Por favor, insira seu nome para que possamos criar sua conta com sucesso no sistema"
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu seu nome! Por favor, insira seu nome para que possamos criar sua conta com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		} else if (!email) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para que possamos criar sua conta com sucesso no sistema."
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para que possamos criar sua conta com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		} else if (!password) {
-			return alert(
-				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para que possamos criar sua conta com sucesso no sistema."
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para que possamos criar sua conta com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		if (!validator.isEmail(email)) {
-			return alert(
-				"Ops! Parece que o endereço de email que você inseriu não é válido. Por favor, verifique e insira um endereço de email válido."
+			return toast.error(
+				"Ops! Parece que o endereço de email que você inseriu não é válido. Por favor, verifique e insira um endereço de email válido.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		if (!validator.isLength(password, { min: 6 })) {
-			return alert(
-				"Ops! Lembre-se de que a sua senha deve conter pelo menos 6 caracteres. Isso ajudará a manter a sua conta segura!"
+			return toast.error(
+				"Ops! Lembre-se de que a sua senha deve conter pelo menos 6 caracteres. Isso ajudará a manter a sua conta segura!",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		api.post("/users", { name, email, password })
 			.then(() => {
-				alert(
-					`Parabéns, ${name}! Seja bem-vindo(a) ao Food Explorer. Seu cadastro foi realizado com sucesso!`
+				toast.success(
+					`Parabéns, ${name}! Seja bem-vindo(a) ao Food Explorer. Seu cadastro foi realizado com sucesso!`,
+
+					{
+						duration: 5000,
+					}
 				);
-				navigate("/");
+
+				setTimeout(() => {
+					navigate("/");
+				}, 5000);
 			})
 			.catch((error) => {
 				if (error.response) {
-					alert(error.response.data.message);
+					toast.error(`${error.response.data.message}`, {
+						duration: 5000,
+					});
 				} else {
-					alert(
-						"Ops! Desculpe, ocorreu um erro ao tentar cadastrar um usuário.Por favor, tente novamente."
+					toast.error(
+						"Ops! Desculpe, ocorreu um erro ao tentar cadastrar um usuário.Por favor, tente novamente.",
+						{
+							duration: 5000,
+						}
 					);
 				}
 			});
@@ -121,6 +152,8 @@ function SignUp() {
 					</Link>
 				</form>
 			</Content>
+
+			<Toaster />
 		</Container>
 	);
 }

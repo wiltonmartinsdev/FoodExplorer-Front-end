@@ -3,6 +3,7 @@ import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
+import toast, { Toaster } from "react-hot-toast";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -57,14 +58,20 @@ function NewDish() {
 
 	function handleAddIngredient() {
 		if (newIngredients === "") {
-			return alert(
-				"Ops! Parece que falta um nome para o ingrediente. Não se esqueça de dar um nome ao ingrediente para que possamos adicioná-lo com sucesso!"
+			return toast.error(
+				"Ops! Por favor, dê um nome ao ingrediente para adicioná-lo com sucesso.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
 		if (isDuplicateIngredient(newIngredients)) {
-			return alert(
-				"Ops! Vejo que você já adicionou esse ingrediente. Se desejar, fique à vontade para modificar o nome do ingrediente para que possamos adicioná-lo com sucesso ao sistema."
+			return toast.error(
+				"Ops! Percebi que você já adicionou esse ingrediente. Se quiser, você pode editar o nome do ingrediente para concluir sua inserção ao sistema.",
+				{
+					duration: 5000,
+				}
 			);
 		}
 
@@ -81,34 +88,55 @@ function NewDish() {
 	async function handleSaveNewDish() {
 		try {
 			if (newIngredients) {
-				return alert(
-					"Ops! Percebi que você preencheu o campo do ingrediente, mas não clicou no símbolo de adição '+'. Sinta-se à vontade para clicar para adicionar ou deixar o campo vazio se desejar."
+				return toast.error(
+					"Ops! Lembre-se de clicar no símbolo de adição '+' para adicionar o ingrediente.",
+					{
+						duration: 5000,
+					}
 				);
 			}
 
 			if (!name) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Nome'. Por favor, verifique esse campo e tente novamente."
+				return toast.error(
+					"Ops! Por favor, preencha o campo 'Nome' para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			} else if (!description) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Descrição'. Por favor, verifique esse campo e tente novamente."
+				return toast.error(
+					"Ops! Por favor, preencha o campo 'Descrição' para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			} else if (!category) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você selecione uma categoria. Por favor, verifique esse campo e tente novamente."
+				return toast.error(
+					"Ops! Por favor, selecione uma 'Categoria' para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			} else if (!price) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você preencha o campo 'Preço'. Por favor, verifique esse campo e tente novamente."
+				return toast.error(
+					"Ops! Por favor, preencha o campo 'Preço' para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			} else if (ingredients.length === 0) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você adicione pelo menos um ingrediente. Por favor, verifique esse campo e tente novamente."
+				return toast.error(
+					"Ops! Por favor, adicione pelo menos um ingrediente para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			} else if (!image) {
-				return alert(
-					"Ops! Para assegurar que o cadastro do prato seja bem-sucedido no nosso sistema, é fundamental que você selecione uma imagem. Por favor, selecione uma imagem e tente novamente."
+				return toast.error(
+					"Ops! Por favor, selecione uma 'Imagem' para concluir o cadastro do prato.",
+					{
+						duration: 5000,
+					}
 				);
 			}
 
@@ -128,16 +156,21 @@ function NewDish() {
 			// Após capturar o ID do prato, estou utilizando essa informação para efetuar o cadastro da imagem correspondente a esse prato específico. Dessa forma, estabeleço uma ligação direta entre o prato e sua imagem associada no sistema.
 			await api.patch(`admin/Image/${DishId}`, dishImage);
 
-			alert(
-				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!"
+			toast.success(
+				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!",
+				{
+					duration: 3000,
+				}
 			);
 
-			handleHome();
+			setTimeout(() => {
+				handleHome();
+			}, 3000);
 		} catch (error) {
 			if (error.response) {
-				return alert(error.response.data.message);
+				toast.error(error.response.data.message);
 			} else {
-				return alert(
+				toast.error(
 					"Ops! Desculpe, ocorreu um erro ao tentar cadastrar o prato devido a algum problema no servidor. Por favor, tente novamente."
 				);
 			}
@@ -280,6 +313,8 @@ function NewDish() {
 			</Content>
 
 			<Footer />
+
+			<Toaster />
 		</Container>
 	);
 }
