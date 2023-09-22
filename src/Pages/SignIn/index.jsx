@@ -3,7 +3,7 @@ import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -13,37 +13,42 @@ import ButtonText from "../../components/ButtonText";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
-	
-    const [password, setPassword] = useState("");
+
+	const [password, setPassword] = useState("");
+
+	const [loading, setLoading] = useState(false);
 
 	const { signIn } = useAuth();
 
 	function handleSignIn() {
 		if (email === "" && password === "") {
-
-           return toast.error("Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema.",
-           {
-             duration: 5000,
-           });
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema.",
+				{
+					duration: 5000,
+				}
+			);
 		}
 
-        if (!email) {
-
-            return toast.error("Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema.",
-            {
-              duration: 5000,
-            });
-
+		if (!email) {
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
+			);
 		} else if (!password) {
-
-            return toast.error("Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema.",
-            {
-              duration: 5000,
-            });
-            
+			return toast.error(
+				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema.",
+				{
+					duration: 5000,
+				}
+			);
 		}
 
-		signIn({ email, password });
+		setLoading(true);
+
+		signIn({ email, password }).finally(() => setLoading(false));
 	}
 
 	useEffect(() => {
@@ -94,6 +99,7 @@ function SignIn() {
 						id="enter"
 						title="Entrar"
 						onClick={handleSignIn}
+						loading={loading}
 					/>
 
 					<Link
@@ -107,7 +113,7 @@ function SignIn() {
 				</form>
 			</Content>
 
-            <Toaster/>
+			<Toaster />
 		</Container>
 	);
 }
