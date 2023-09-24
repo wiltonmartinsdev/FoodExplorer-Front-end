@@ -9,6 +9,14 @@ const Container = styled.button`
 
 	border: none;
 	border-radius: 0.5rem;
+
+	div#spinner {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .8rem;
+	}
 `;
 
 export default Container;
