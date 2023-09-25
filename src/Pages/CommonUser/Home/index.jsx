@@ -85,7 +85,7 @@ function Home() {
 				/>
 
 				<div id="carousel">
-					<p className="carousel">Pratos Principais</p>
+					<p className="carousel">Refeições</p>
 
 					<Swiper
 						className="mySwiper"
@@ -100,7 +100,7 @@ function Home() {
 						}}>
 						{dishes
 							.filter((dish) => {
-								return dish.Category === "Pratos Principais";
+								return dish.Category === "Refeições";
 							})
 							.map((dish) => {
 								return (
