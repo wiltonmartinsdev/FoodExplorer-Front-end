@@ -127,9 +127,9 @@ function EditDish() {
 				}
 			);
 
-            setTimeout(() => {
-                handleBack();
-            }, 3000);
+			setTimeout(() => {
+				handleBack();
+			}, 3000);
 		} catch (error) {
 			if (error.response) {
 				return toast.error(`${error.response.data.message}`, {
@@ -137,9 +137,10 @@ function EditDish() {
 				});
 			} else {
 				return toast.error(
-					"Ops! Desculpe, ocorreu um erro ao tentar atualizar o prato devido a algum problema no servidor. Por favor, tente novamente.", {
-                        duration: 5000,
-                    }
+					"Ops! Desculpe, ocorreu um erro ao tentar atualizar o prato devido a algum problema no servidor. Por favor, tente novamente.",
+					{
+						duration: 5000,
+					}
 				);
 			}
 		}
@@ -163,20 +164,22 @@ function EditDish() {
 		if (isConfirm) {
 			try {
 				await api.delete(`admin/EditDish/${params.Id}`);
-				toast.success("Prato deletado com sucesso do sistema!"), {
-                    duration: 5000,
-                };
+				toast.success("Prato deletado com sucesso do sistema!"),
+					{
+						duration: 5000,
+					};
 				navigate("/");
 			} catch (error) {
 				if (error.response) {
 					return toast.error(`${error.response.data.message}`, {
-                        duration: 5000,
-                    });
+						duration: 5000,
+					});
 				} else {
 					return toast.error(
-						"Ops! Desculpe, ocorreu um erro ao tentar deletar as informações do prato devido a algum problema no servidor. Por favor, tente novamente.", {
-                            duration: 5000,
-                        }
+						"Ops! Desculpe, ocorreu um erro ao tentar deletar as informações do prato devido a algum problema no servidor. Por favor, tente novamente.",
+						{
+							duration: 5000,
+						}
 					);
 				}
 			}
@@ -293,9 +296,7 @@ function EditDish() {
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}>
 						<option value="">Selecionar</option>
-						<option value="Pratos Principais">
-							Pratos Principais
-						</option>
+						<option value="Refeições">Refeições</option>
 						<option value="Sobremesas"> Sobremesas</option>
 						<option value="Bebidas">Bebidas</option>
 					</select>

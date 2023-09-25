@@ -243,9 +243,7 @@ function NewDish() {
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}>
 						<option value="">Selecione a Categoria</option>
-						<option value="Pratos Principais">
-							Pratos Principais
-						</option>
+						<option value="Refeições">Refeições</option>
 						<option value="Sobremesas"> Sobremesas</option>
 						<option value="Bebidas">Bebidas</option>
 					</select>

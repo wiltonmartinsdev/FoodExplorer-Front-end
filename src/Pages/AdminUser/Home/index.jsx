@@ -89,7 +89,7 @@ function Home() {
 				/>
 
 				<div id="carousel">
-					<p className="carousel">Pratos Principais</p>
+					<p className="carousel">Refeições</p>
 
 					<Swiper
 						className="mySwiper"
@@ -99,12 +99,12 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
 							.filter((dish) => {
-								return dish.Category === "Pratos Principais";
+								return dish.Category === "Refeições";
 							})
 							.map((dish) => {
 								return (
@@ -125,7 +125,7 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
@@ -151,7 +151,7 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
