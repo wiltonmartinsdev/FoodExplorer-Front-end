@@ -30,6 +30,8 @@ function Home() {
 
 	const [search, setSearch] = useState("");
 
+	const [favorites, setFavorites] = useState([]);
+
 	useEffect(() => {
 		async function fetchDishes() {
 			const response = await api.get(
@@ -64,6 +66,41 @@ function Home() {
 		};
 	}, []);
 
+	useEffect(() => {
+		const fetchFavorites = async () => {
+			try {
+				const response = await api.get("/favorites");
+				const favoritesAll = response.data.map(
+					(favorite) => favorite.DishId
+				);
+
+				console.log("Todos os favoritos", favoritesAll);
+				setFavorites(favoritesAll);
+			} catch (error) {
+				console.log("Erro ao buscar favoritos");
+			}
+		};
+
+		fetchFavorites();
+	}, []);
+
+	const updateFavorite = async (isFavorite, dishId) => {
+		try {
+			if (isFavorite) {
+				await api.delete(`/favorites/${dishId}`);
+
+				setFavorites((prevFavorites) =>
+					prevFavorites.filter((favorite) => favorite !== dishId)
+				);
+			} else {
+				await api.post("/favorites", { DishId: dishId });
+				setFavorites((prevFavorites) => [...prevFavorites, dishId]);
+			}
+		} catch (error) {
+			console.log("Erro ao atualizar favoritos!:", error);
+		}
+	};
+
 	return (
 		<Container>
 			<NavBar onChange={(e) => setSearch(e.target.value)} />
@@ -95,7 +132,7 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
@@ -105,7 +142,13 @@ function Home() {
 							.map((dish) => {
 								return (
 									<SwiperSlide key={String(dish.Id)}>
-										<CardsSection data={dish} />
+										<CardsSection
+											data={dish}
+											isFavorite={favorites.includes(
+												dish.Id
+											)}
+											updateFavorite={updateFavorite}
+										/>
 									</SwiperSlide>
 								);
 							})}
@@ -121,7 +164,7 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
@@ -131,7 +174,13 @@ function Home() {
 							.map((dish, index) => {
 								return (
 									<SwiperSlide key={String(index)}>
-										<CardsSection data={dish} />
+										<CardsSection
+											data={dish}
+											isFavorite={favorites.includes(
+												dish.Id
+											)}
+											updateFavorite={updateFavorite}
+										/>
 									</SwiperSlide>
 								);
 							})}
@@ -147,7 +196,7 @@ function Home() {
 						spaceBetween={spaceBetween}
 						grabCursor={true}
 						autoplay={{
-							delay: 3000,
+							delay: 3000000,
 							disableOnInteraction: false,
 						}}>
 						{dishes
@@ -157,7 +206,13 @@ function Home() {
 							.map((dish) => {
 								return (
 									<SwiperSlide key={dish.Id}>
-										<CardsSection data={dish} />
+										<CardsSection
+											data={dish}
+											isFavorite={favorites.includes(
+												dish.Id
+											)}
+											updateFavorite={updateFavorite}
+										/>
 									</SwiperSlide>
 								);
 							})}
