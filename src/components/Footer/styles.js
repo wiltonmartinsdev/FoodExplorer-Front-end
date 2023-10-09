@@ -14,7 +14,7 @@ const Container = styled.footer`
 	position: relative;
 
 	@media screen and (min-width: 1921px) {
-		top: 19.8rem;
+		top: 0;
 
 		z-index: 9999;
 
