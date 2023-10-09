@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	width: 43rem;
-	height: 94.6rem;
+	height: 100vh;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
@@ -18,7 +18,6 @@ const Container = styled.div`
 
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
-		height: 216rem;
 	}
 `;
 
