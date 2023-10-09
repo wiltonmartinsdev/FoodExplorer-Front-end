@@ -202,7 +202,7 @@ const Brand = styled.div`
 	@media screen and (min-width: 1921px) {
 		align-items: flex-start;
 
-		width: 16.1rem;
+		width: 16.5rem;
 		height: 4.5rem;
 
 		p {

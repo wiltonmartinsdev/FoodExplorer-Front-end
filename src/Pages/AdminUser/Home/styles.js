@@ -10,21 +10,22 @@ const Container = styled.div`
 	display: grid;
 	justify-content: center;
 	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem 136rem 7.7rem;
+	grid-template-rows: 11.4rem auto 7.7rem;
 
 	@media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		grid-template-rows: 11.4rem 160rem 7.7rem;
+        grid-template-rows: 11.4rem 160rem 7.7rem;
 
 		width: 192rem;
 	}
 
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
-		height: 175rem;
+        height: 170rem;
+
 	}
 `;
 

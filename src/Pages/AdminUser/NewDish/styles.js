@@ -19,12 +19,12 @@ const Container = styled.div`
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		width: 192rem;
 
-		grid-template-rows: 11.4rem 80rem 7.7rem;
+		grid-template-rows: 11.4rem 100vh 7.7rem;
 	}
 
 	@media screen and (min-width: 1921px) {
 		width: 384rem;
-		height: 216rem;
+		height: 100vh;
 	}
 `;
 
@@ -94,7 +94,6 @@ const Content = styled.main`
 				img#imageUpload {
 					position: absolute;
 					right: 21.9rem;
-
 				}
 
 				p {
