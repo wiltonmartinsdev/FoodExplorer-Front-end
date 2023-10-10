@@ -3,7 +3,7 @@ import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 // Imports of Components
 import Logo from "../../components/Logo";
@@ -22,27 +22,18 @@ function SignIn() {
 
 	function handleSignIn() {
 		if (email === "" && password === "") {
-			return toast.error(
-				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema.",
-				{
-					duration: 5000,
-				}
+			return toast.warning(
+				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema."
 			);
 		}
 
 		if (!email) {
-			return toast.error(
-				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema.",
-				{
-					duration: 5000,
-				}
+			return toast.warning(
+				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema."
 			);
 		} else if (!password) {
-			return toast.error(
-				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema.",
-				{
-					duration: 5000,
-				}
+			return toast.warning(
+				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema."
 			);
 		}
 
@@ -112,8 +103,6 @@ function SignIn() {
 					</Link>
 				</form>
 			</Content>
-
-			<Toaster />
 		</Container>
 	);
 }

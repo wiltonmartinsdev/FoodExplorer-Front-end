@@ -1,9 +1,9 @@
 // Imports Global
 import { Container, Content } from "./styles";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 // Imports of Components
 import NavBar from "../../../components/NavBarAdmin";
@@ -58,20 +58,14 @@ function NewDish() {
 
 	function handleAddIngredient() {
 		if (newIngredients === "") {
-			return toast.error(
-				"Ops! Por favor, dê um nome ao ingrediente para adicioná-lo com sucesso.",
-				{
-					duration: 5000,
-				}
+			return toast.warning(
+				"Ops! Por favor, dê um nome ao ingrediente para adicioná-lo com sucesso."
 			);
 		}
 
 		if (isDuplicateIngredient(newIngredients)) {
-			return toast.error(
-				"Ops! Percebi que você já adicionou esse ingrediente. Se quiser, você pode editar o nome do ingrediente para concluir sua inserção ao sistema.",
-				{
-					duration: 5000,
-				}
+			return toast.warning(
+				"Ops! Percebi que você já adicionou esse ingrediente. Se quiser, você pode editar o nome do ingrediente para concluir sua inserção ao sistema."
 			);
 		}
 
@@ -88,55 +82,34 @@ function NewDish() {
 	async function handleSaveNewDish() {
 		try {
 			if (newIngredients) {
-				return toast.error(
-					"Ops! Lembre-se de clicar no símbolo de adição '+' para adicionar o ingrediente.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Lembre-se de clicar no símbolo de adição '+' para adicionar o ingrediente."
 				);
 			}
 
 			if (!name) {
-				return toast.error(
-					"Ops! Por favor, preencha o campo 'Nome' para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, preencha o campo 'Nome' para concluir o cadastro do prato."
 				);
 			} else if (!description) {
-				return toast.error(
-					"Ops! Por favor, preencha o campo 'Descrição' para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, preencha o campo 'Descrição' para concluir o cadastro do prato."
 				);
 			} else if (!category) {
-				return toast.error(
-					"Ops! Por favor, selecione uma 'Categoria' para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, selecione uma 'Categoria' para concluir o cadastro do prato."
 				);
 			} else if (!price) {
-				return toast.error(
-					"Ops! Por favor, preencha o campo 'Preço' para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, preencha o campo 'Preço' para concluir o cadastro do prato."
 				);
 			} else if (ingredients.length === 0) {
-				return toast.error(
-					"Ops! Por favor, adicione pelo menos um ingrediente para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, adicione pelo menos um ingrediente para concluir o cadastro do prato."
 				);
 			} else if (!image) {
-				return toast.error(
-					"Ops! Por favor, selecione uma 'Imagem' para concluir o cadastro do prato.",
-					{
-						duration: 5000,
-					}
+				return toast.warning(
+					"Ops! Por favor, selecione uma 'Imagem' para concluir o cadastro do prato."
 				);
 			}
 
@@ -157,15 +130,12 @@ function NewDish() {
 			await api.patch(`admin/Image/${DishId}`, dishImage);
 
 			toast.success(
-				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!",
-				{
-					duration: 3000,
-				}
+				"Ótima notícia! O prato foi cadastrado com sucesso no sistema!"
 			);
 
 			setTimeout(() => {
 				handleHome();
-			}, 3000);
+			}, 6000);
 		} catch (error) {
 			if (error.response) {
 				toast.error(error.response.data.message);
@@ -311,8 +281,6 @@ function NewDish() {
 			</Content>
 
 			<Footer />
-
-			<Toaster />
 		</Container>
 	);
 }
