@@ -148,7 +148,10 @@ function EditDish() {
 			try {
 				await api.delete(`admin/EditDish/${params.Id}`);
 				toast.success("Prato deletado com sucesso do sistema!");
-				navigate("/");
+
+				setTimeout(() => {
+					navigate("/");
+				}, 6000);
 			} catch (error) {
 				if (error.response) {
 					return toast.error(`${error.response.data.message}`);
