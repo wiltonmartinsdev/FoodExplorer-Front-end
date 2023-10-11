@@ -34,6 +34,9 @@ const Content = styled.div`
 
 	img#dishImage {
 		width: 8.8rem;
+
+		border-radius: 50%;
+
 		margin: 2.4rem auto 0;
 
 		position: relative;
