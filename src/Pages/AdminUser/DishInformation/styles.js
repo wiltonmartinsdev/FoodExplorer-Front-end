@@ -52,6 +52,7 @@ const Content = styled.main`
 
 			img#dish {
 				width: 26.4rem;
+				height: 26.4rem;
 
 				border-radius: 50%;
 
