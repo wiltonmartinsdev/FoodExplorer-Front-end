@@ -27,7 +27,9 @@ function NavBarUser({ onChange }) {
 	}
 
 	function handlePayments() {
-		navigate("/Payments");
+		// navigate("/Payments");
+
+		navigate("/");
 	}
 
 	return (
