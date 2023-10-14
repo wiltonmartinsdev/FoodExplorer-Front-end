@@ -17,10 +17,10 @@ function AppUserRoutes() {
 				path="/DishInformation/:Id"
 				element={<DishInformation />}
 			/>
-			<Route
+			{/* <Route
 				path="/Payments"
 				element={<Payments />}
-			/>
+			/> */}
 		</Routes>
 	);
 }
