@@ -67,6 +67,10 @@ const Content = styled.div`
 
 	width: 37.2rem;
 
+	img.menu {
+		cursor: pointer;
+	}
+
 	img#iconSignOut {
 		cursor: pointer;
 	}

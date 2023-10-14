@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
 // Imports of Components
+import QuantifySelection from "../QuantitySelection";
 import Button from "../Button";
 
-// Imports of Images
-import Minus from "../../assets/minus.svg";
-import Plus from "../../assets/plus.svg";
-
 function UserCards({ data, isFavorite, updateFavorite, ...rest }) {
+	const [number, setNumber] = useState(1);
+
 	const navigate = useNavigate();
 
 	function handleDishInformation(Id) {
@@ -52,21 +51,10 @@ function UserCards({ data, isFavorite, updateFavorite, ...rest }) {
 					</p>
 
 					<div id="includeDish">
-						<div id="icons">
-							<img
-								src={Minus}
-								alt="Sinal de Menos para retirar um prato"
-								id="Minus"
-							/>
-
-							<span>01</span>
-
-							<img
-								src={Plus}
-								alt="Sinal de Mais para incluir um prato"
-								id="Plus"
-							/>
-						</div>
+						<QuantifySelection
+							number={number}
+							setNumber={setNumber}
+						/>
 
 						<Button
 							id="include"

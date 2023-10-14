@@ -15,7 +15,7 @@ import NotificationIcon from "../../assets/notificationIcon.svg";
 import IconSignOut from "../../assets/iconSignOut.svg";
 import RequestsIcon from "../../assets/requestsIcon.svg";
 
-function NavBarUser({onChange}) {
+function NavBarUser({ onChange }) {
 	const { signOut } = useAuth();
 
 	const navigate = useNavigate();
@@ -24,6 +24,10 @@ function NavBarUser({onChange}) {
 		navigate("/");
 
 		signOut();
+	}
+
+	function handlePayments() {
+		navigate("/Payments");
 	}
 
 	return (
@@ -45,21 +49,22 @@ function NavBarUser({onChange}) {
 				<img
 					className="menu"
 					src={NotificationIcon}
-					alt="Ícone de notificações de pedidos "
+					alt="Ícone de notificações de pedidos"
+					onClick={handlePayments}
 				/>
 
 				<Input
 					className="input"
 					placeholder="Busque por pratos ou ingredientes"
 					img={HiOutlineSearch}
-                    onChange={onChange}
-
+					onChange={onChange}
 				/>
 
 				<RequestsButton
 					className="button"
 					image={RequestsIcon}
 					title="Pedidos"
+					onClick={handlePayments}
 				/>
 
 				<img
