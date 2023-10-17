@@ -24,3 +24,8 @@ function AddIngredients({ isNew, value, onClick, ...rest }) {
 }
 
 export default AddIngredients;
+
+
+
+
+

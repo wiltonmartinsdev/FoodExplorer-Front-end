@@ -85,10 +85,12 @@ function DishInformation() {
 									);
 								})}
 							</DishDescriptionSection>
+
+
 						</div>
 					</div>
 
-					<Button
+                    <Button
 						id="editDish"
 						title="Editar prato"
 						onClick={handleEditDish}

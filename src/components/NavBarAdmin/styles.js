@@ -186,32 +186,26 @@ const Brand = styled.div`
 	@media screen and (min-width: 769px) and (max-width: 1920px) {
 		align-items: flex-start;
 
-		width: 16.5rem;
+		width: 17rem;
 		height: 4.5rem;
 
 		p {
 			position: absolute;
 			top: 50%;
-			right: 0;
-		}
-
-		.input {
+			right: 0.6rem;
 		}
 	}
 
 	@media screen and (min-width: 1921px) {
 		align-items: flex-start;
 
-		width: 16.5rem;
+		width: 17rem;
 		height: 4.5rem;
 
 		p {
 			position: absolute;
 			top: 50%;
-			right: 0;
-		}
-
-		.input {
+			right: 0.6rem;
 		}
 	}
 `;

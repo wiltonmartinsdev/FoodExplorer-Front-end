@@ -60,7 +60,13 @@ const Content = styled.div`
 		line-height: 2.4rem;
 
 		margin: 3.3rem auto 0;
-		text-align: center;
+		
+        text-align: center;
+
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
 	}
 
 	p#description {
@@ -106,10 +112,9 @@ const Content = styled.div`
 
 	@media screen and (min-width: 769px) {
 		p#description {
-			display: block;
-
+			display: flex;
+			flex-direction: column;
 			width: 16.6rem;
-			height: 4.8rem;
 
 			font-size: 1.2rem;
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
@@ -121,8 +126,11 @@ const Content = styled.div`
 			position: relative;
 			bottom: 0.5rem;
 
-			overflow-y: auto;
-			overflow-x: hidden;
+			/* Limitar o número de linhas de texto a 3 */
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
 		}
 
 		p#price {
