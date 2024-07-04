@@ -66,6 +66,8 @@ const Content = styled.main`
 		#linkMyAccount {
 			text-align: center;
 
+            :nth-child()
+
 			button#myAccount {
 				font-size: 1.4rem;
 			}

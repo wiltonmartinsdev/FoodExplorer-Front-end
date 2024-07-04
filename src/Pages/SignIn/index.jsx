@@ -1,15 +1,13 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { toast } from "react-toastify";
 
-// Imports of Components
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+
 import Logo from "../../components/Logo";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import ButtonText from "../../components/ButtonText";
+import { useAuth } from "../../hooks/auth";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
@@ -56,54 +54,67 @@ function SignIn() {
 	}, []);
 
 	return (
-		<Container>
-			<Content>
-				<Logo className="animate__animated animate__backInLeft " />
+		<main className="px-14 h-screen flex flex-col justify-center lg:flex-row lg:justify-center lg:items-center lg:gap-20 xl:gap-72  ">
+			<Logo />
 
-				<form className="animate__animated animate__backInRight">
-					<fieldset>
-						<legend>Faça login</legend>
+			<form className="animate__animated animate__backInRight shrink-0 lg:bg-BG_700 lg:w-[476px] lg:h-auto lg:rounded-2xl lg:p-16 ">
+				<fieldset>
+					<legend className="hidden font-poppins font-medium  lg:block lg:mb-8 lg:text-4xl lg:text-center lg:text-white">
+						Faça login
+					</legend>
 
-						<label>Email</label>
-						<Input
-							type="email"
-							placeholder="Exemplo: exemplo@exemplo.com.br"
-							required
-							onChange={(e) => {
-								setEmail(e.target.value);
-							}}
-						/>
-
-						<label>Senha</label>
-						<Input
-							type="password"
-							placeholder="No mínimo 6 caracteres"
-							minLength={6}
-							required
-							onChange={(e) => {
-								setPassword(e.target.value);
-							}}
-						/>
-					</fieldset>
-
-					<Button
-						id="enter"
-						title="Entrar"
-						onClick={handleSignIn}
-						loading={loading}
+					<Label
+						htmlFor="email"
+						className="text-TEXT_400">
+						E-mail
+					</Label>
+					<Input
+						type="email"
+						id="email"
+						placeholder="Exemplo: exemplo@exemplo.com.br"
+						required
+						onChange={(e) => {
+							setEmail(e.target.value);
+						}}
+						className="mb-8 bg-transparent placeholder:text-TEXT_500 text-white"
 					/>
 
-					<Link
-						id="linkMyAccount"
-						to="/register">
-						<ButtonText
-							id="myAccount"
-							title="Criar uma conta"
-						/>
-					</Link>
-				</form>
-			</Content>
-		</Container>
+					<label
+						htmlFor="password"
+						className="text-TEXT_400">
+						Senha
+					</label>
+					<Input
+						type="password"
+						id="password"
+						placeholder="No mínimo 6 caracteres"
+						minLength={6}
+						required
+						onChange={(e) => {
+							setPassword(e.target.value);
+						}}
+						className="mb-10 bg-transparent placeholder:text-TEXT_500 text-white"
+					/>
+				</fieldset>
+
+				<Button
+					className="bg-BUTTON_COLOR_100 w-full mb-8"
+					loading={loading}
+					onClick={handleSignIn}>
+					Entrar
+				</Button>
+
+				<Link
+					className="flex justify-center"
+					to="/register">
+					<Button
+						variant="link no-underline"
+						className="text-white">
+						Criar uma conta
+					</Button>
+				</Link>
+			</form>
+		</main>
 	);
 }
 

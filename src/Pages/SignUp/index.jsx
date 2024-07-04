@@ -1,16 +1,14 @@
-// Imports Global
-import { Container, Content } from "./styles";
-import React, { useState, useEffect } from "react";
-import validator from "validator";
-import { api } from "../../services/api.js";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import validator from "validator";
 
-// Imports of Components
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+
 import Logo from "../../components/Logo";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import ButtonText from "../../components/ButtonText";
+import { api } from "../../services/api.js";
 
 function SignUp() {
 	const [name, setName] = useState("");
@@ -76,56 +74,73 @@ function SignUp() {
 	}
 
 	return (
-		<Container>
-			<Content>
-				<Logo className="animate__animated animate__backInLeft" />
+		<main className="px-14 h-screen flex flex-col justify-center lg:flex-row lg:justify-center lg:items-center lg:gap-20 xl:gap-72">
+			<Logo />
 
-				<form className="animate__animated animate__backInRight">
-					<fieldset>
-						<legend>Crie sua conta</legend>
+			<form className="animate__animated animate__backInRight shrink-0 lg:bg-BG_700 lg:w-[476px] lg:h-auto lg:rounded-2xl lg:p-16">
+				<fieldset>
+					<legend className="hidden font-poppins font-medium  lg:block lg:mb-8 lg:text-4xl lg:text-center lg:text-white">
+						Crie sua conta
+					</legend>
 
-						<label>Seu nome</label>
-						<Input
-							type="text"
-							placeholder="Exemplo: Maria da Silva"
-							required
-							onChange={(e) => setName(e.target.value)}
-						/>
-
-						<label>Email</label>
-						<Input
-							type="email"
-							placeholder="Exemplo: exemplo@exemplo.com.br"
-							required
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-
-						<label>Senha</label>
-						<Input
-							type="password"
-							placeholder="No mínimo 6 caracteres"
-							minLength={6}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</fieldset>
-
-					<Button
-						id="createAccount"
-						title="Criar conta"
-						onClick={handleSignUp}
+					<Label
+						htmlFor="text"
+						className="text-TEXT_400">
+						Seu nome
+					</Label>
+					<Input
+						type="text"
+						placeholder="Exemplo: Maria da Silva"
+						required
+						onChange={(e) => setName(e.target.value)}
+						className="mb-8 bg-transparent placeholder:text-TEXT_500 text-white"
 					/>
 
-					<Link
-						id="linkMyAccount"
-						to="/">
-						<ButtonText
-							id="myAccount"
-							title="Já tenho uma conta"
-						/>
-					</Link>
-				</form>
-			</Content>
-		</Container>
+					<Label
+						htmlFor="email"
+						className="text-TEXT_400">
+						E-mail
+					</Label>
+					<Input
+						type="email"
+						placeholder="Exemplo: exemplo@exemplo.com.br"
+						required
+						onChange={(e) => setEmail(e.target.value)}
+						className="mb-8 bg-transparent placeholder:text-TEXT_500 text-white"
+					/>
+
+					<Label
+						htmlFor="password"
+						className="text-TEXT_400">
+						Senha
+					</Label>
+					<Input
+						type="password"
+						placeholder="No mínimo 6 caracteres"
+						minLength={6}
+						required
+						onChange={(e) => setPassword(e.target.value)}
+						className="mb-8 bg-transparent placeholder:text-TEXT_500 text-white"
+					/>
+				</fieldset>
+
+				<Button
+					className="bg-BUTTON_COLOR_100 w-full mb-8"
+					onClick={handleSignUp}>
+					Criar conta
+				</Button>
+
+				<Link
+					to="/"
+					className="flex justify-center">
+					<Button
+						variant="link no-underline"
+						className="text-white">
+						Já tenho uma conta
+					</Button>
+				</Link>
+			</form>
+		</main>
 	);
 }
 

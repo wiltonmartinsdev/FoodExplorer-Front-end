@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.header`
-	width: 31.6rem;
+	/* width: 31.6rem;
 
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
 
-	margin-bottom: 7.3rem;
+	margin-bottom: 7.3rem; */
 
 	img {
 		width: 4.331rem;
