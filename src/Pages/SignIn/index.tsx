@@ -1,14 +1,38 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { z } from "zod";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
-
 import Logo from "../../components/Logo";
 import { useAuth } from "../../hooks/auth";
+
+const signInSchema = z.object({
+	email: z
+		.string()
+		.min(1, {
+			message:
+				"Ops! Parece que você ainda não inseriu seu e-mail! Insira-o para realizar seu login com sucesso no sistema.",
+		})
+		.email({
+			message:
+				"Ops! Parece que você adicionou um endereço inválido! Por favor, insira um e-mail válido para realizar seu login com sucesso no sistema.",
+		}),
+
+	password: z
+		.string()
+		.min(1, {
+			message:
+				"Ops! Parece que você ainda não inseriu sua senha! Insira-a para realizar seu login com sucesso no sistema.",
+		})
+		.min(6, {
+			message:
+				"Ops! Escolha uma senha segura com pelo menos 6 caracteres!",
+		}),
+});
 
 function SignIn() {
 	const [email, setEmail] = useState("");
@@ -20,20 +44,15 @@ function SignIn() {
 	const { signIn } = useAuth();
 
 	function handleSignIn() {
-		if (email === "" && password === "") {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu seu email e senha! Por favor, insira seu email e senha para fazer login no sistema."
-			);
-		}
+		const result = signInSchema.safeParse({
+			email,
+			password,
+		});
 
-		if (!email) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para realizar seu login com sucesso no sistema."
-			);
-		} else if (!password) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para realizar seu login com sucesso no sistema."
-			);
+		if (!result.success) {
+			// Exibe a primeira mensagem de erro se houver múltiplos erros
+			toast.error(result.error.errors[0].message);
+			return;
 		}
 
 		setLoading(true);

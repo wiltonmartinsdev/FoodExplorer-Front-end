@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import validator from "validator";
+import { z } from "zod";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,6 +9,34 @@ import { Button } from "@/components/ui/button";
 
 import Logo from "../../components/Logo/index.js";
 import { api } from "../../services/api.js";
+
+const signOutSchema = z.object({
+	name: z.string().min(1, {
+		message:
+			"Ops! Parece que você ainda não inseriu seu nome! Por favor, insira seu nome para que possamos criar sua conta com sucesso no sistema.",
+	}),
+	email: z
+		.string()
+		.min(1, {
+			message:
+				"Ops! Parece que você ainda não inseriu seu e-mail! Insira-o para realizar seu login com sucesso no sistema.",
+		})
+		.email({
+			message:
+				"Ops! Parece que você adicionou um endereço inválido! Por favor, insira um e-mail válido para realizar seu login com sucesso no sistema.",
+		}),
+
+	password: z
+		.string()
+		.min(1, {
+			message:
+				"Ops! Parece que você ainda não inseriu sua senha! Insira-a para realizar seu login com sucesso no sistema.",
+		})
+		.min(6, {
+			message:
+				"Ops! Escolha uma senha segura com pelo menos 6 caracteres!",
+		}),
+});
 
 function SignUp() {
 	const [name, setName] = useState("");
@@ -20,36 +48,14 @@ function SignUp() {
 	const navigate = useNavigate();
 
 	function handleSignUp() {
-		if (!name && !email && !password) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu seu nome, email e senha! Por favor, lembre-se de inserir todos os campos para que possamos criar sua conta com sucesso no sistema."
-			);
-		}
+		const result = signOutSchema.safeParse({
+			name,
+			email,
+			password,
+		});
 
-		if (!name) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu seu nome! Por favor, insira seu nome para que possamos criar sua conta com sucesso no sistema."
-			);
-		} else if (!email) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu seu email! Por favor, insira seu email para que possamos criar sua conta com sucesso no sistema."
-			);
-		} else if (!password) {
-			return toast.warning(
-				"Ops! Parece que você ainda não inseriu sua senha! Por favor, insira sua senha para que possamos criar sua conta com sucesso no sistema."
-			);
-		}
-
-		if (!validator.isEmail(email)) {
-			return toast.warning(
-				"Ops! Parece que o endereço de email que você inseriu não é válido. Por favor, verifique e insira um endereço de email válido."
-			);
-		}
-
-		if (!validator.isLength(password, { min: 6 })) {
-			return toast.warning(
-				"Ops! Lembre-se de que a sua senha deve conter pelo menos 6 caracteres. Isso ajudará a manter a sua conta segura!"
-			);
+		if (!result.success) {
+			toast.error(result.error.errors[0].message);
 		}
 
 		api.post("/users", { name, email, password })
