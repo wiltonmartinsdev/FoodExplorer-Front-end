@@ -10,7 +10,7 @@ function Logo() {
 				className="xsm:w-8 xsm:h-8  w-11 h-11"
 			/>
 
-			<h1 className=" xsm:text-xl text-3xl font-black text-white">food explorer</h1>
+			<h1 className=" xsm:text-xl text-3xl font-black text-white ">food explorer</h1>
 		</div>
 	);
 }

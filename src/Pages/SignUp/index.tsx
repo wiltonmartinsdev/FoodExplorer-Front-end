@@ -140,7 +140,7 @@ function SignUp() {
 					to="/"
 					className="flex justify-center">
 					<Button
-						variant="link no-underline"
+						variant="link"
 						className="text-white">
 						Já tenho uma conta
 					</Button>

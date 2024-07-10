@@ -129,7 +129,7 @@ function SignIn() {
 					to="/register">
 					<Button
 						variant="link"
-						className="text-white ">
+						className="text-white">
 						Criar uma conta
 					</Button>
 				</Link>
