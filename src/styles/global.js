@@ -21,8 +21,6 @@ export default createGlobalStyle`
    
         -webkit-font-smoothing: antialiased;
 
-        overflow-x: hidden;
-
     }
 
     body, input, textarea{

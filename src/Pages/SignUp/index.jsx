@@ -1,16 +1,14 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
-import validator from "validator";
-import { api } from "../../services/api.js";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import validator from "validator";
 
-// Imports of Components
-import Logo from "../../components/Logo";
-import Input from "../../components/Input";
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
+import Input from "../../components/Input";
+import Logo from "../../components/Logo";
+import { api } from "../../services/api.js";
+import { Container, Content } from "./styles";
 
 function SignUp() {
 	const [name, setName] = useState("");

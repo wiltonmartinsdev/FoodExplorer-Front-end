@@ -1,31 +1,18 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 43rem;
-	height: 100vh;
+	min-width: 4rem;
+	min-height: 100vh;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-	padding-top: 15.8rem;
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		width: 192rem;
-	}
-
-	@media screen and (min-width: 1921px) {
-		width: 384rem;
-	}
-`;
-
-const Content = styled.main`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+`;
 
+const Content = styled.main`
 	form {
 		display: flex;
 		flex-direction: column;
@@ -36,7 +23,6 @@ const Content = styled.main`
 			legend {
 				display: none;
 			}
-
 			width: 31.6rem;
 
 			display: flex;
@@ -65,18 +51,14 @@ const Content = styled.main`
 
 		#linkMyAccount {
 			text-align: center;
-
-			button#myAccount {
-				font-size: 1.4rem;
-			}
 		}
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
+	@media screen and (min-width: 1024px) {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		gap: 37rem;
+		gap: 15rem;
 
 		header {
 			margin: 0;
@@ -84,48 +66,13 @@ const Content = styled.main`
 
 		form {
 			width: 44.4rem;
-			height: 4.4;
+
 			padding: 6.4rem;
 
 			border-radius: 1.6rem;
 
-			fieldset {
-				border: none;
-
-				legend {
-					display: block;
-
-					font-family: Poppins, sans-serif;
-					font-size: 3.2rem;
-					font-weight: 500;
-
-					text-align: center;
-					margin-bottom: 3.2rem;
-				}
-			}
-
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-
-			margin: 0;
-		}
-	}
-
-	@media screen and (min-width: 1921px) {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 37rem;
-
-		header {
-			margin: 0;
-		}
-
-		form {
-			width: 44.4rem;
-			height: 4.4;
-			padding: 6.4rem;
-
-			border-radius: 1.6rem;
+			justify-content: center;
+			align-items: center;
 
 			fieldset {
 				border: none;

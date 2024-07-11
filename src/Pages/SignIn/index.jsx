@@ -1,15 +1,13 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { toast } from "react-toastify";
 
-// Imports of Components
-import Logo from "../../components/Logo";
-import Input from "../../components/Input";
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
+import Input from "../../components/Input";
+import Logo from "../../components/Logo";
+import { useAuth } from "../../hooks/auth";
+import { Container, Content } from "./styles";
 
 function SignIn() {
 	const [email, setEmail] = useState("");
