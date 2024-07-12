@@ -1,19 +1,17 @@
-// Imports Global
-import Container from "./styles";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
-import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 
-// Imports of Components
-import Input from "../Input";
+import { useAuth } from "../../hooks/auth";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
+import Input from "../Input";
+import Container from "./styles";
 
 function MobileUserMenu({ onChange }) {
 	const { signOut } = useAuth();
 
-    const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,7 +36,9 @@ function MobileUserMenu({ onChange }) {
 			</div>
 
 			<div className={`menu ${menuOpen ? "open" : ""}`}>
-				<p id="titleMenuOpen">Menu</p>
+				<span id="titleMenu">
+					<p id="titleMenuOpen">Menu</p>
+				</span>
 
 				<Input
 					id="dishSearch"

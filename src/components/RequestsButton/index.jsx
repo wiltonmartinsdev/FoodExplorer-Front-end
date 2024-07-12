@@ -1,4 +1,3 @@
-// Imports Global
 import Container from "./styles";
 
 function RequestsButton({ image, ...rest }) {

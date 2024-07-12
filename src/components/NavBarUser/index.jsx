@@ -1,19 +1,15 @@
-// Imports Global
-import { Container, Content, Brand } from "./styles";
-import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
-import { useAuth } from "../../hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 
-// Imports of Components
-import MobileUserMenu from "../MobileUserMenu";
-import Input from "../Input";
-import RequestsButton from "../RequestsButton";
-
-// Imports of Images
-import Polygon from "../../assets/polygon.svg";
-import NotificationIcon from "../../assets/notificationIcon.svg";
 import IconSignOut from "../../assets/iconSignOut.svg";
+import NotificationIcon from "../../assets/notificationIcon.svg";
+import Polygon from "../../assets/polygon.svg";
 import RequestsIcon from "../../assets/requestsIcon.svg";
+import { useAuth } from "../../hooks/auth";
+import Input from "../Input";
+import MobileUserMenu from "../MobileUserMenu";
+import RequestsButton from "../RequestsButton";
+import { Container, Content, Brand } from "./styles";
 
 function NavBarUser({ onChange }) {
 	const { signOut } = useAuth();

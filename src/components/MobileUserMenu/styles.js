@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: 3rem;
 
 	margin-top: 0.5rem;
 
@@ -15,8 +13,7 @@ const Container = styled.div`
 		justify-content: center;
 		align-items: center;
 
-		width: 3rem;
-		height: 2.5rem;
+		margin-top: 0.3rem;
 
 		cursor: pointer;
 	}
@@ -38,18 +35,24 @@ const Container = styled.div`
 		transform: translateY(7px) rotate(45deg);
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.open .menuIconLine:nth-child(2) {
 		opacity: 0;
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.open .menuIconLine:last-child {
 		transform: translateY(-7px) rotate(-45deg);
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.menu {
@@ -57,13 +60,17 @@ const Container = styled.div`
 		list-style: none;
 
 		position: absolute;
-		top: 6.7rem;
+		top: -4.6rem;
 		left: -2.9rem;
 
-		width: 43rem;
-		height: 129rem;
+		height: 100vh;
+		width: 100vw;
 
 		padding: 3.6rem 2.8rem 1.357rem;
+
+		div#dishSearch {
+			margin-top: 11.2rem;
+		}
 	}
 
 	.open + .menu {
@@ -72,12 +79,28 @@ const Container = styled.div`
 		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 	}
 
-	p#titleMenuOpen {
+	.open + .menu::before {
+		content: "";
 		position: absolute;
-		top: -6.4rem;
-		left: 6.6rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 11.4rem;
+		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+	}
 
-		font-size: 2.1rem;
+	span#titleMenu {
+		display: flex;
+		justify-content: center;
+
+		p#titleMenuOpen {
+			position: absolute;
+			top: 5rem;
+
+			font-size: 2.1rem;
+
+			z-index: 9999;
+		}
 	}
 
 	div#buttonTextWrapper {
@@ -85,7 +108,7 @@ const Container = styled.div`
 		flex-direction: column;
 		gap: 1.5rem;
 
-		margin-top: 5rem;
+		margin-top: 4.5rem;
 
 		.menuOptions {
 			text-align: left;
@@ -99,19 +122,16 @@ const Container = styled.div`
 
 	#footer {
 		position: absolute;
-		top: 121.3rem;
+		top: calc(100% - 7.7rem);
+		width: 100%;
 		left: 0;
+
+		padding: 1rem;
 
 		height: 7.7rem;
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		.menu {
-			width: 76.8rem;
-		}
-	}
-
-	@media screen and (min-width: 769px) {
+	@media screen and (min-width: 1024px) {
 		display: none;
 	}
 `;

@@ -1,8 +1,5 @@
-// Imports Global
-import Container from "./styles";
-
-// Imports of Images
 import PolygonFooter from "../../assets/polygonFooter.svg";
+import Container from "./styles";
 
 function Footer({ ...rest }) {
 	return (

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.footer`
-	width: 100%;
+	min-width: 9.3rem;
 	height: 7.7rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
@@ -13,24 +13,6 @@ const Container = styled.footer`
 
 	position: relative;
 
-	@media screen and (min-width: 1921px) {
-		top: 0;
-
-		z-index: 9999;
-
-		::before {
-			content: "";
-
-			width: 384rem;
-			height: 7.7rem;
-
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-
-			position: absolute;
-			top: 0;
-			z-index: -1;
-		}
-	}
 
 	#logo {
 		display: flex;

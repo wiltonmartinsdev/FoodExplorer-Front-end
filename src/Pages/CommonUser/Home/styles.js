@@ -1,30 +1,34 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 43rem;
 
-	margin: auto;
+	min-width: 9.3rem;
+
+    /* min-height: 100vh; */
+
+
+	/* margin: 0 auto; */
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
 	display: grid;
-	justify-content: center;
+	/* justify-content: center; */
 	grid-template-areas: "navbar" "main" "footer";
 	grid-template-rows: 11.4rem auto 7.7rem;
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
+	/* @media screen and (min-width: 430px) and (max-width: 768px) {
 		width: 76.8rem;
-	}
+	} */
 
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
+	/* @media screen and (min-width: 769px) and (max-width: 1920px) {
 		grid-template-rows: 11.4rem 160rem 7.7rem;
 
 		width: 192rem;
-	}
+	} */
 
-	@media screen and (min-width: 1921px) {
-		width: 384rem;
-		height: 170rem;
+	@media screen and (min-width: 1024px) {
+		/* width: 384rem; */
+		/* height: 170rem; */
 	}
 `;
 
@@ -59,7 +63,7 @@ const Content = styled.main`
 			line-height: 1.68rem;
 		}
 
-		@media screen and (min-width: 430px) and (max-width: 768px) {
+		/* @media screen and (min-width: 430px) and (max-width: 768px) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -85,14 +89,16 @@ const Content = styled.main`
 				font-size: 1.3rem;
 				line-height: 1.68rem;
 			}
-		}
+		} */
 
-		@media screen and (min-width: 769px) and (max-width: 1920px) {
+		/* @media screen and (min-width: 769px) and (max-width: 1920px) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			gap: 4rem;
+
+            border: 1px solid red;
 
 			width: 128rem;
 			height: 22rem;
@@ -115,10 +121,10 @@ const Content = styled.main`
 				font-size: 2.3rem;
 				line-height: 1.68rem;
 			}
-		}
+		} */
 
-		@media screen and (min-width: 1921px) {
-			display: flex;
+		@media screen and (min-width: 1024px) {
+			/* display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
@@ -126,6 +132,8 @@ const Content = styled.main`
 
 			width: 128rem;
 			height: 22rem;
+
+            border: 1px solid red;
 
 			padding: 2.2rem 0.8rem 2.2rem 22rem;
 			margin: 8.4rem auto;
@@ -144,7 +152,7 @@ const Content = styled.main`
 				font-weight: 500;
 				font-size: 2.3rem;
 				line-height: 1.68rem;
-			}
+			} */
 		}
 	}
 
@@ -153,21 +161,21 @@ const Content = styled.main`
 		top: 1.5rem;
 		left: 0.6rem;
 
-		@media screen and (min-width: 769px) and (max-width: 1920px) {
+		/* @media screen and (min-width: 769px) and (max-width: 1920px) {
 			width: 63.2rem;
 			height: 26.4rem;
 
 			top: 6.6rem;
 			left: 11.7rem;
-		}
+		} */
 
-		@media screen and (min-width: 1921px) {
+		/* @media screen and (min-width: 1921px) {
 			width: 33.8rem;
 			height: 26.4rem;
 
 			top: 3.9rem;
 			left: 26.5rem;
-		}
+		} */
 	}
 
 	div#carousel {

@@ -1,24 +1,18 @@
-// Imports Global
 import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
 import { api } from "../../../services/api";
 
-// Imports of Components
 import NavBar from "../../../components/NavBarUser";
 import CardsSection from "../../../components/UserCards";
 import Footer from "../../../components/Footer";
 
-// Imports External
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Swiper Style Import
 import "swiper/css";
 import "swiper/css/navigation";
 
-// Import of Required Swiper Modules
 import { Autoplay, Navigation } from "swiper";
 
-// Imports of Images
 import ImgDescription from "../../../assets/imgDescription.svg";
 
 function Home() {
