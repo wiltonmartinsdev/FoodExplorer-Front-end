@@ -13,9 +13,9 @@ import "swiper/css/navigation";
 
 import { Autoplay, Navigation } from "swiper";
 
-import ImgDescription from "../../../assets/ImgDescription.svg";
+import ImgDescription from "../../../assets/imgDescription.svg";
 
-import ImgDescriptionLg from "../../../assets/ImgDescriptionLg.svg";
+import ImgDescriptionLg from "../../../assets/imgDescriptionLg.svg";
 
 function Home() {
 	const [slidesPerView, setSlidesPerView] = useState(4);
