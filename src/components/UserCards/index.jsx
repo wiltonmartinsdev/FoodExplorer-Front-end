@@ -1,12 +1,10 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
 
-// Imports of Components
-import QuantifySelection from "../QuantitySelection";
+import { api } from "../../services/api";
 import Button from "../Button";
+import QuantifySelection from "../QuantitySelection";
+import { Container, Content } from "./styles";
 
 function UserCards({ data, isFavorite, updateFavorite, ...rest }) {
 	const [number, setNumber] = useState(1);

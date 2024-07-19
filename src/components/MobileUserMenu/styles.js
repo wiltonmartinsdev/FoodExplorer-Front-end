@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 3rem;
-
-	margin-top: 0.5rem;
-
 	position: relative;
 
 	.menuIcon {
@@ -60,11 +56,12 @@ const Container = styled.div`
 		list-style: none;
 
 		position: absolute;
-		top: -4.6rem;
-		left: -2.9rem;
+		top: -4.2rem;
+		left: -2.8rem;
 
-		height: 100vh;
+		height: 173.2rem;
 		width: 100vw;
+		min-width: 32rem;
 
 		padding: 3.6rem 2.8rem 1.357rem;
 
@@ -95,7 +92,7 @@ const Container = styled.div`
 
 		p#titleMenuOpen {
 			position: absolute;
-			top: 5rem;
+			top: 4.6rem;
 
 			font-size: 2.1rem;
 
@@ -125,8 +122,6 @@ const Container = styled.div`
 		top: calc(100% - 7.7rem);
 		width: 100%;
 		left: 0;
-
-		padding: 1rem;
 
 		height: 7.7rem;
 	}

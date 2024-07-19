@@ -62,7 +62,7 @@ function SignIn() {
 					<fieldset>
 						<legend>Faça login</legend>
 
-						<label>Email</label>
+						<label>E-mail</label>
 						<Input
 							type="email"
 							placeholder="Exemplo: exemplo@exemplo.com.br"

@@ -13,7 +13,9 @@ import "swiper/css/navigation";
 
 import { Autoplay, Navigation } from "swiper";
 
-import ImgDescription from "../../../assets/imgDescription.svg";
+import ImgDescription from "../../../assets/ImgDescription.svg";
+
+import ImgDescriptionLg from "../../../assets/ImgDescriptionLg.svg";
 
 function Home() {
 	const [slidesPerView, setSlidesPerView] = useState(4);
@@ -39,15 +41,19 @@ function Home() {
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth <= 430) {
+			if (window.innerWidth <= 600) {
 				setSlidesPerView(2);
 				setSpaceBetween(10);
-			} else if (window.innerWidth > 431 && window.innerWidth <= 769) {
+			} 
+            
+            else if (window.innerWidth >= 601 && window.innerWidth <= 899) {
 				setSlidesPerView(3);
-				setSpaceBetween(50);
-			} else if (window.innerWidth > 769) {
+				setSpaceBetween(10);
+			} 
+            
+            else if (window.innerWidth >= 900) {
 				setSlidesPerView(4);
-				setSpaceBetween(-100);
+				setSpaceBetween(10);
 			}
 		};
 
@@ -100,26 +106,32 @@ function Home() {
 			<NavBar onChange={(e) => setSearch(e.target.value)} />
 
 			<Content>
-				<div id="descriptionOfFlavors">
-					<h1>Sabores inigualáveis</h1>
+				<div id="descriptionOfFlavors">	
+                    <img
+                        id="imgDescription"
+                        src={ImgDescription}
+                        alt="Imagens de sanduíches coloridos e alguma frutas ao redor."/>
 
-					<p>
-						Sinta o cuidado do preparo com ingredientes
-						selecionados.
-					</p>
+                    <img
+                        id="imgDescriptionLg"
+                        src={ImgDescriptionLg}
+                        alt="Imagens de sanduíches coloridos e alguma frutas ao redor."/>
+
+                    <div id="wrapperDescription">
+                        <h1>Sabores inigualáveis</h1>
+
+                        <p>
+                            Sinta o cuidado do preparo com ingredientes
+                            selecionados.
+                        </p>
+                    </div>
 				</div>
-
-				<img
-					id="imgDescription"
-					src={ImgDescription}
-					alt="Imagens de sanduíches coloridos e alguma frutas ao redor."
-				/>
 
 				<div id="carousel">
 					<p className="carousel">Refeições</p>
 
 					<Swiper
-						className="mySwiper"
+                        className="mySwiper"
 						navigation={true}
 						modules={[Navigation, Autoplay]}
 						slidesPerView={slidesPerView}
@@ -143,6 +155,8 @@ function Home() {
 											)}
 											updateFavorite={updateFavorite}
 										/>
+
+
 									</SwiperSlide>
 								);
 							})}

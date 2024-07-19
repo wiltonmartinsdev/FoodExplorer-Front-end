@@ -1,6 +1,6 @@
-// Imports Global
-import Container from "./styles";
 import { ThreeDots } from "react-loader-spinner";
+
+import Container from "./styles";
 
 function Button({ title, loading = false, ...rest }) {
 	return (

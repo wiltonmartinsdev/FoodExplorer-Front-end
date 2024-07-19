@@ -90,7 +90,7 @@ function SignUp() {
 							onChange={(e) => setName(e.target.value)}
 						/>
 
-						<label>Email</label>
+						<label>E-mail</label>
 						<Input
 							type="email"
 							placeholder="Exemplo: exemplo@exemplo.com.br"

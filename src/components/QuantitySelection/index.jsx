@@ -1,9 +1,6 @@
-// Imports Global
-import Container from "./styles";
-
-// Imports of Images
 import Minus from "../../assets/minus.svg";
 import Plus from "../../assets/plus.svg";
+import Container from "./styles";
 
 function QuantifySelection({ number, setNumber }) {
 	function handleNumberIncrement() {

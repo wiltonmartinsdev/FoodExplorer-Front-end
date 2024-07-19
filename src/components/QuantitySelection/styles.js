@@ -32,13 +32,6 @@ const Container = styled.div`
 
 		cursor: pointer;
 	}
-
-	@media screen and (min-width: 769px) {
-		span {
-			position: relative;
-			left: 0.2rem;
-		}
-	}
 `;
 
 export default Container;
