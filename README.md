@@ -96,7 +96,7 @@ Para o Admin:
 
 <h2 id="projectStatus"> Status do Projeto</h2>
 
-- No momento, o projeto, encontra-se em manutenção. Recentemente detectei problemas na responsividade do projeto e no momento atual estou trabalhando para o correto funcionamento da responsividade e assim entragar uma melhor experiência do projeto em qualquer tamanho de tela.
+- No momento, o projeto, encontra-se em manutenção. Recentemente detectei problemas na responsividade do projeto e no momento atual estou trabalhando para o correto funcionamento da responsividade e assim entregar uma melhor experiência do projeto em qualquer tamanho de tela.
 
 
 <h2 id="learnings">Aprendizados </h2>
