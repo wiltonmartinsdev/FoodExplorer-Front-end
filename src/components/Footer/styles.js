@@ -2,17 +2,22 @@ import styled from "styled-components";
 
 const Container = styled.footer`
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
+
+	min-width: 32rem;
+	height: 7.7rem;
+
+	display: flex;
 `;
 
 const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 0.8rem;
 
+	width: 100%;
 	max-width: 102.4rem;
 
-	margin: 2.6rem auto;
+	margin: 0 auto;
 	padding: 0 2.8rem;
 
 	div#logo {
@@ -54,14 +59,6 @@ const Content = styled.div`
 		@media screen and (max-width: 402px) {
 			text-align: center;
 		}
-	}
-
-	@media screen and (max-width: 402px) {
-		margin: 1.9rem auto;
-	}
-
-	@media screen and (min-width: 1024px) {
-		padding: 0;
 	}
 `;
 

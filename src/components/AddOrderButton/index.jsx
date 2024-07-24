@@ -1,18 +1,14 @@
-// Imports Global
-import Container from "./styles";
 import { useState, useEffect } from "react";
 
-// Imports of Images
-import Minus from "../../assets/minus.svg";
-import Plus from "../../assets/plus.svg";
 import RequestsIcon from "../../assets/requestsIcon.svg";
+import Container from "./styles";
 
-function AddRequest() {
+function AddOrderButton() {
 	const [buttonContent, setButtonContent] = useState("pedir");
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth > 769) {
+			if (window.innerWidth >= 1024) {
 				setButtonContent("incluir");
 			} else {
 				setButtonContent("pedir");
@@ -30,18 +26,6 @@ function AddRequest() {
 
 	return (
 		<Container>
-			<img
-				src={Minus}
-				alt="Ícone de menos para tirar um prato"
-			/>
-
-			<span>01</span>
-
-			<img
-				src={Plus}
-				alt="Ícone de menos para adicionar um prato"
-			/>
-
 			<button>
 				<img
 					src={RequestsIcon}
@@ -54,4 +38,4 @@ function AddRequest() {
 	);
 }
 
-export default AddRequest;
+export default AddOrderButton;

@@ -8,6 +8,12 @@ const Container = styled.section`
 		font-weight: 500;
 		font-size: 2.704rem;
 		line-height: 2.768rem;
+
+		@media screen and (min-width: 1024px) {
+			text-align: left;
+
+			margin-bottom: 2.4rem;
+		}
 	}
 
 	p {
@@ -16,48 +22,45 @@ const Container = styled.section`
 		font-size: 1.622rem;
 		line-height: 2.271rem;
 
+		max-width: 42.5rem;
 		height: 6.8rem;
 
-		margin: 2.4rem 0 1.5rem;
+		margin: 0.5rem auto 1.5rem;
 
 		overflow: auto;
+
+		@media screen and (min-width: 1024px) {
+			text-align: left;
+
+			margin: 0;
+
+			max-width: 54.7rem;
+
+			height: auto;
+			max-height: 20rem;
+		}
 	}
 
 	div#tags {
+		max-width: 42.5rem;
+		margin: 0 auto;
+
 		display: flex;
-		gap: 2.4rem;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 		flex-wrap: wrap;
+		gap: 2.4rem;
 
 		height: 10.8rem;
 
 		overflow-y: auto;
 		overflow-x: hidden;
-	}
 
-	@media screen and (min-width: 769px) {
-		text-align: left;
-
-		div#tags {
-			display: flex;
-			gap: 2.4rem;
+		@media screen and (min-width: 1024px) {
 			justify-content: start;
-			align-items: center;
-			flex-wrap: wrap;
 
-			height: 10.8rem;
-
-			position: absolute;
-			left: 1.9rem;
-
-			overflow-y: auto;
-			overflow-x: hidden;
-		}
-
-		h1,
-		p {
-			margin-left: 1.8rem;
+			max-width: none;
+			width: 54.7rem;
 		}
 	}
 `;

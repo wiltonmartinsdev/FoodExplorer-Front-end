@@ -2,16 +2,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	min-width: 32rem;
+	min-height: 100vh;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
-
-	display: grid;
-	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
 `;
 
 const Content = styled.main`
-	grid-area: main;
+	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
 	min-width: 32rem;
 

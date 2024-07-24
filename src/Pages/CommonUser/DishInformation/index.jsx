@@ -1,21 +1,20 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { api } from "../../../services/api";
 
-// Imports of Components
-import NavBar from "../../../components/NavBarUser";
-import ButtonText from "../../../components/ButtonText";
-import AddRequest from "../../../components/AddRequest";
-import DishDescriptionSection from "../../../components/DishDescriptionSection";
-import Tags from "../../../components/Tags";
-import Footer from "../../../components/Footer";
-
-// Imports of Images
 import leftArrow from "../../../assets/leftArrow.svg";
+import AddOrderButton from "../../../components/AddOrderButton";
+import ButtonText from "../../../components/ButtonText";
+import DishDescriptionSection from "../../../components/DishDescriptionSection";
+import Footer from "../../../components/Footer";
+import NavBar from "../../../components/NavBarUser";
+import QuantifySelection from "../../../components/QuantitySelection";
+import Tags from "../../../components/Tags";
+import { api } from "../../../services/api";
+import { Container, Content } from "./styles";
 
 function DishInformation() {
+	const [number, setNumber] = useState(1);
+
 	const params = useParams();
 
 	const [dishes, setDishes] = useState(null);
@@ -36,52 +35,61 @@ function DishInformation() {
 	}, []);
 
 	return (
-		<Container>
+		<>
 			<NavBar />
-
-			{dishes && (
+			<Container>
 				<Content>
-					<div id="wrapper">
-						<div id="containerDish">
-							<div id="backButton">
+					{dishes && (
+						<>
+							<div id="containerDish">
+								<div id="backButton">
+									<Link to="/">
+										<img
+											id="leftArrow"
+											src={leftArrow}
+											alt="Seta apontando para esquerda"
+										/>
+									</Link>
+									<Link to="/">
+										<ButtonText title="voltar" />
+									</Link>
+								</div>
+
 								<img
-									id="leftArrow"
-									src={leftArrow}
-									alt="Seta apontando para esquerda"
+									id="dish"
+									src={`${api.defaults.baseURL}/files/${dishes.Image}`}
+									alt={dishes.Name}
 								/>
-								<Link to="/">
-									<ButtonText title="voltar" />
-								</Link>
 							</div>
 
-							<img
-								id="dish"
-								src={`${api.defaults.baseURL}/files/${dishes.Image}`}
-								alt={dishes.Name}
-							/>
-						</div>
-
-						<div id="dishDescriptionSection">
-							<DishDescriptionSection
-								title={dishes.Name}
-								description={dishes.Description}>
-								{ingredients.map((ingredient) => {
-									return (
-										<Tags
-											key={ingredient.Id}
-											name={ingredient.Name}
-										/>
-									);
-								})}
-							</DishDescriptionSection>
-						</div>
-					</div>
-					<AddRequest />
+							<div id="dishDescriptionSection">
+								<DishDescriptionSection
+									title={dishes.Name}
+									description={dishes.Description}>
+									{ingredients.map((ingredient) => {
+										return (
+											<Tags
+												key={ingredient.Id}
+												name={ingredient.Name}
+											/>
+										);
+									})}
+								</DishDescriptionSection>
+							</div>
+						</>
+					)}
 				</Content>
-			)}
 
+				<div id="wrapperAddOrder">
+					<QuantifySelection
+						number={number}
+						setNumber={setNumber}
+					/>
+					<AddOrderButton />
+				</div>
+			</Container>
 			<Footer />
-		</Container>
+		</>
 	);
 }
 

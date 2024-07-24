@@ -95,14 +95,12 @@ const Content = styled.div`
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			gap: 1rem;
-
-			width: 16.2rem;
-
-			padding: 0 1rem;
+			justify-content: center;
 
 			button#include {
 				height: 3.3rem;
+
+				width: 30%;
 
 				font-size: 1.1rem;
 

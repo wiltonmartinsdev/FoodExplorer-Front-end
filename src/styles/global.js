@@ -15,12 +15,11 @@ export default createGlobalStyle`
     body{
         font-size: 1.6rem;
 
-        background-color: #1E1E1E;
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
         color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
    
         -webkit-font-smoothing: antialiased;
-
     }
 
     body, input, textarea{

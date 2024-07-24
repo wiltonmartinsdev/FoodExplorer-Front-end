@@ -3,7 +3,11 @@ import styled from "styled-components";
 const Container = styled.nav`
 	position: relative;
 
+	min-width: 32rem;
 	height: 11.4rem;
+
+	display: flex;
+	align-items: center;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
@@ -18,6 +22,8 @@ const Container = styled.nav`
 	}
 
 	@media screen and (min-width: 1024px) {
+		height: 10.4rem;
+
 		.input,
 		.button,
 		img#iconSignOut {
@@ -30,6 +36,8 @@ const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	width: 102.4rem;
 
 	padding: 0 2.8rem;
 

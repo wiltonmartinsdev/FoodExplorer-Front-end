@@ -59,7 +59,7 @@ const Container = styled.div`
 		top: -4.2rem;
 		left: -2.8rem;
 
-		height: 173.2rem;
+		height: 155.3rem;
 		width: 100vw;
 		min-width: 32rem;
 

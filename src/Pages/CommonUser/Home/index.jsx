@@ -1,5 +1,5 @@
 import { Container, Content } from "./styles";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { api } from "../../../services/api";
 
 import NavBar from "../../../components/NavBarUser";
@@ -44,14 +44,10 @@ function Home() {
 			if (window.innerWidth <= 600) {
 				setSlidesPerView(2);
 				setSpaceBetween(10);
-			} 
-            
-            else if (window.innerWidth >= 601 && window.innerWidth <= 899) {
+			} else if (window.innerWidth >= 601 && window.innerWidth <= 899) {
 				setSlidesPerView(3);
 				setSpaceBetween(10);
-			} 
-            
-            else if (window.innerWidth >= 900) {
+			} else if (window.innerWidth >= 900) {
 				setSlidesPerView(4);
 				setSpaceBetween(10);
 			}
@@ -102,134 +98,136 @@ function Home() {
 	};
 
 	return (
-		<Container>
+		<>
 			<NavBar onChange={(e) => setSearch(e.target.value)} />
 
-			<Content>
-				<div id="descriptionOfFlavors">	
-                    <img
-                        id="imgDescription"
-                        src={ImgDescription}
-                        alt="Imagens de sanduíches coloridos e alguma frutas ao redor."/>
+			<Container>
+				<Content>
+					<div id="descriptionOfFlavors">
+						<img
+							id="imgDescription"
+							src={ImgDescription}
+							alt="Imagens de sanduíches coloridos e alguma frutas ao redor."
+						/>
 
-                    <img
-                        id="imgDescriptionLg"
-                        src={ImgDescriptionLg}
-                        alt="Imagens de sanduíches coloridos e alguma frutas ao redor."/>
+						<img
+							id="imgDescriptionLg"
+							src={ImgDescriptionLg}
+							alt="Imagens de sanduíches coloridos e alguma frutas ao redor."
+						/>
 
-                    <div id="wrapperDescription">
-                        <h1>Sabores inigualáveis</h1>
+						<div id="wrapperDescription">
+							<h1>Sabores inigualáveis</h1>
 
-                        <p>
-                            Sinta o cuidado do preparo com ingredientes
-                            selecionados.
-                        </p>
-                    </div>
-				</div>
+							<p>
+								Sinta o cuidado do preparo com ingredientes
+								selecionados.
+							</p>
+						</div>
+					</div>
 
-				<div id="carousel">
-					<p className="carousel">Refeições</p>
+					<div id="carousel">
+						<p className="carousel">Refeições</p>
 
-					<Swiper
-                        className="mySwiper"
-						navigation={true}
-						modules={[Navigation, Autoplay]}
-						slidesPerView={slidesPerView}
-						spaceBetween={spaceBetween}
-						grabCursor={true}
-						autoplay={{
-							delay: 3000000,
-							disableOnInteraction: false,
-						}}>
-						{dishes
-							.filter((dish) => {
-								return dish.Category === "Refeições";
-							})
-							.map((dish) => {
-								return (
-									<SwiperSlide key={String(dish.Id)}>
-										<CardsSection
-											data={dish}
-											isFavorite={favorites.includes(
-												dish.Id
-											)}
-											updateFavorite={updateFavorite}
-										/>
+						<Swiper
+							className="mySwiper"
+							navigation={true}
+							modules={[Navigation, Autoplay]}
+							slidesPerView={slidesPerView}
+							spaceBetween={spaceBetween}
+							grabCursor={true}
+							autoplay={{
+								delay: 3000,
+								disableOnInteraction: false,
+							}}>
+							{dishes
+								.filter((dish) => {
+									return dish.Category === "Refeições";
+								})
+								.map((dish) => {
+									return (
+										<SwiperSlide key={String(dish.Id)}>
+											<CardsSection
+												data={dish}
+												isFavorite={favorites.includes(
+													dish.Id
+												)}
+												updateFavorite={updateFavorite}
+											/>
+										</SwiperSlide>
+									);
+								})}
+						</Swiper>
 
+						<p className="carousel">Sobremesas</p>
 
-									</SwiperSlide>
-								);
-							})}
-					</Swiper>
+						<Swiper
+							className="mySwiper"
+							navigation={true}
+							modules={[Navigation, Autoplay]}
+							slidesPerView={slidesPerView}
+							spaceBetween={spaceBetween}
+							grabCursor={true}
+							autoplay={{
+								delay: 3000,
+								disableOnInteraction: false,
+							}}>
+							{dishes
+								.filter((dish) => {
+									return dish.Category === "Sobremesas";
+								})
+								.map((dish, index) => {
+									return (
+										<SwiperSlide key={String(index)}>
+											<CardsSection
+												data={dish}
+												isFavorite={favorites.includes(
+													dish.Id
+												)}
+												updateFavorite={updateFavorite}
+											/>
+										</SwiperSlide>
+									);
+								})}
+						</Swiper>
 
-					<p className="carousel">Sobremesas</p>
+						<p className="carousel">Bebidas</p>
 
-					<Swiper
-						className="mySwiper"
-						navigation={true}
-						modules={[Navigation, Autoplay]}
-						slidesPerView={slidesPerView}
-						spaceBetween={spaceBetween}
-						grabCursor={true}
-						autoplay={{
-							delay: 3000000,
-							disableOnInteraction: false,
-						}}>
-						{dishes
-							.filter((dish) => {
-								return dish.Category === "Sobremesas";
-							})
-							.map((dish, index) => {
-								return (
-									<SwiperSlide key={String(index)}>
-										<CardsSection
-											data={dish}
-											isFavorite={favorites.includes(
-												dish.Id
-											)}
-											updateFavorite={updateFavorite}
-										/>
-									</SwiperSlide>
-								);
-							})}
-					</Swiper>
-
-					<p className="carousel">Bebidas</p>
-
-					<Swiper
-						className="mySwiper"
-						navigation={true}
-						modules={[Navigation, Autoplay]}
-						slidesPerView={slidesPerView}
-						spaceBetween={spaceBetween}
-						grabCursor={true}
-						autoplay={{
-							delay: 3000000,
-							disableOnInteraction: false,
-						}}>
-						{dishes
-							.filter((dish) => {
-								return dish.Category === "Bebidas";
-							})
-							.map((dish) => {
-								return (
-									<SwiperSlide key={dish.Id}>
-										<CardsSection
-											data={dish}
-											isFavorite={favorites.includes(
-												dish.Id
-											)}
-											updateFavorite={updateFavorite}
-										/>
-									</SwiperSlide>
-								);
-							})}
-					</Swiper>
-				</div>
-			</Content>
+						<Swiper
+							className="mySwiper"
+							navigation={true}
+							modules={[Navigation, Autoplay]}
+							slidesPerView={slidesPerView}
+							spaceBetween={spaceBetween}
+							grabCursor={true}
+							autoplay={{
+								delay: 3000,
+								disableOnInteraction: false,
+							}}>
+							{dishes
+								.filter((dish) => {
+									return dish.Category === "Bebidas";
+								})
+								.map((dish) => {
+									return (
+										<SwiperSlide key={dish.Id}>
+											<CardsSection
+												data={dish}
+												isFavorite={favorites.includes(
+													dish.Id
+												)}
+												updateFavorite={updateFavorite}
+											/>
+										</SwiperSlide>
+									);
+								})}
+						</Swiper>
+					</div>
+				</Content>
+			</Container>
 
 			<Footer />
-		</Container>
+		</>
 	);
 }
 

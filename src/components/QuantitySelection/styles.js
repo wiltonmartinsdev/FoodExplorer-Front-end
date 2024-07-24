@@ -2,21 +2,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
-	gap: 0.5rem;
 
 	width: 10rem;
-	height: 3.2rem;
+	height: 4rem;
 
 	img#Minus {
-		width: 1.8rem;
-		height: 0.4rem;
-
-		margin: 0;
-
-		border-radius: 1rem;
-
 		cursor: pointer;
 	}
 
@@ -25,11 +17,6 @@ const Container = styled.div`
 	}
 
 	img#Plus {
-		width: 2rem;
-		height: 2rem;
-
-		margin: 0;
-
 		cursor: pointer;
 	}
 `;
