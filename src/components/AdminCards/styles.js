@@ -1,102 +1,103 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-	margin-left: 1.7rem;
-	margin-top: 2.4rem;
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		margin-left: 0.8rem;
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		margin-left: 10.5rem;
-	}
-
-	@media screen and (min-width: 1921px) {
-		margin-left: 10.5rem;
-	}
+	max-width: 32rem;
 `;
 
 const Content = styled.div`
-	width: 17.8rem;
-	height: 29.2rem;
-
-	position: relative;
-
-	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
-
-	border-radius: 0.8rem;
-	border: 1px solid #000204;
+	max-width: 18.5rem;
+	height: 25rem;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 1.5rem;
+
+	border: 1px solid #000204;
+	border-radius: 1rem;
+
+	position: relative;
+
+	margin: 0 auto;
+	padding: 0 1rem;
+
+	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
 	img#dishImage {
 		width: 8.8rem;
-		height: 8.8rem;
 
-		border-radius: 50%;
+		margin: 0 auto;
 
-		margin: 2.4rem auto 0;
-
-		position: relative;
-		top: 1rem;
+		transition: transform 0.5s ease;
 
 		cursor: pointer;
-
-		transform: scale(1.3);
-		transition: transform 0.5s ease;
 	}
 
 	img#dishImage:hover {
-		transform: scale(1.6);
+		transform: scale(1.3);
+
+		@media screen and (min-width: 1024px) {
+			transform: scale(1.4);
+		}
 	}
 
 	h1#cardsH1 {
 		font-family: Poppins, sans-serif;
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 1.3rem;
 		line-height: 2.4rem;
 
-		margin: 3.3rem auto 0;
-		
-        text-align: center;
+		text-align: center;
 
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-line-clamp: 1;
 		-webkit-box-orient: vertical;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 1.9rem;
+		}
 	}
 
 	p#description {
 		display: none;
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			flex-direction: column;
+
+			width: 16.6rem;
+			height: 4.7rem;
+			font-size: 1.2rem;
+			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
+
+			text-align: center;
+
+			position: relative;
+
+			/* Limitar o número de linhas de texto a 3 */
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
 	}
 
 	p#price {
 		color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
 		text-align: center;
-
-		position: relative;
-		top: 1rem;
 	}
 
 	div#pencilIcon {
-		width: 2.4rem;
-		height: 2.2rem;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		position: absolute;
-		top: 1.6rem;
-		right: 1.6rem;
+		top: 1rem;
+		right: 1rem;
 
-		img#heart {
-			width: 2.4rem;
-			height: 2.4rem;
-
+		img#pencil {
 			position: relative;
 			margin: 0;
 
@@ -105,37 +106,34 @@ const Content = styled.div`
 			cursor: pointer;
 		}
 
-		img#heart:hover {
+		img#pencil:hover {
 			transform: scale(1.4);
+		}
+
+		@media screen and (min-width: 1024px) {
+			top: 1.6rem;
+			right: 1.6rem;
+
+			img#pencil {
+				position: relative;
+				margin: 0;
+
+				transition: transform 0.5s ease;
+
+				cursor: pointer;
+			}
+
+			img#pencil:hover {
+				transform: scale(1.6);
+			}
 		}
 	}
 
-	@media screen and (min-width: 769px) {
-		p#description {
-			display: flex;
-			flex-direction: column;
-			width: 16.6rem;
+	@media screen and (min-width: 1024px) {
+		max-width: 23rem;
+		height: 32rem;
 
-			font-size: 1.2rem;
-			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
-
-			text-align: center;
-
-			margin: 1.5rem 0.5rem;
-
-			position: relative;
-			bottom: 0.5rem;
-
-			/* Limitar o número de linhas de texto a 3 */
-			overflow: hidden;
-			display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
-		}
-
-		p#price {
-			top: -0.5rem;
-		}
+		align-items: center;
 	}
 `;
 

@@ -1,10 +1,8 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
 
-// Imports of Images
 import PencilIcon from "../../assets/pencilIcon.svg";
+import { api } from "../../services/api";
+import { Container, Content } from "./styles";
 
 function AdminCards({ data, ...rest }) {
 	const navigate = useNavigate();
@@ -40,7 +38,7 @@ function AdminCards({ data, ...rest }) {
 
 					<div id="pencilIcon">
 						<img
-							id="heart"
+							id="pencil"
 							src={PencilIcon}
 							alt="Ícone de um lápis para editar os pratos cadastrados"
 							onClick={() => {

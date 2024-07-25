@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	margin-top: 0.5rem;
-
 	position: relative;
 
 	.menuIcon {
@@ -15,8 +9,7 @@ const Container = styled.div`
 		justify-content: center;
 		align-items: center;
 
-		width: 3rem;
-		height: 2.5rem;
+		margin-top: 0.3rem;
 
 		cursor: pointer;
 	}
@@ -38,18 +31,24 @@ const Container = styled.div`
 		transform: translateY(7px) rotate(45deg);
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.open .menuIconLine:nth-child(2) {
 		opacity: 0;
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.open .menuIconLine:last-child {
 		transform: translateY(-7px) rotate(-45deg);
 
 		border-radius: 0.5rem;
+
+		z-index: 9999;
 	}
 
 	.menu {
@@ -57,13 +56,18 @@ const Container = styled.div`
 		list-style: none;
 
 		position: absolute;
-		top: 10.9rem;
-		left: -2.9rem;
+		top: -4.5rem;
+		left: -2.8rem;
 
-		width: 43rem;
-		height: 140.9rem;
+		height: 141.9rem;
+		width: 100vw;
+		min-width: 32rem;
 
 		padding: 3.6rem 2.8rem 1.357rem;
+
+		div#dishSearch {
+			margin-top: 11.2rem;
+		}
 	}
 
 	.open + .menu {
@@ -72,12 +76,28 @@ const Container = styled.div`
 		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 	}
 
-	p#titleMenuOpen {
+	.open + .menu::before {
+		content: "";
 		position: absolute;
-		top: -6.4rem;
-		left: 5.6rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 11.4rem;
+		background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+	}
 
-		font-size: 2.1rem;
+	span#titleMenu {
+		display: flex;
+		justify-content: center;
+
+		p#titleMenuOpen {
+			position: absolute;
+			top: 4.6rem;
+
+			font-size: 2.1rem;
+
+			z-index: 9999;
+		}
 	}
 
 	div#buttonTextWrapper {
@@ -104,19 +124,14 @@ const Container = styled.div`
 
 	#footer {
 		position: absolute;
-		top: 133.2rem;
+		top: calc(100% - 7.7rem);
 		left: 0;
 
+		width: 100%;
 		height: 7.7rem;
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		.menu {
-			width: 76.8rem;
-		}
-	}
-
-	@media screen and (min-width: 769px) {
+	@media screen and (min-width: 1024px) {
 		display: none;
 	}
 `;

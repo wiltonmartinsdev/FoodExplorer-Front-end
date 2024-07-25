@@ -1,17 +1,13 @@
-// Imports Global
-import { Container, Content, Brand } from "./styles";
-import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
-import { useAuth } from "../../hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 
-// Imports of Components
-import Input from "../Input";
-import Button from "../Button";
-
-// Imports of Images
-import MobileUserAdmin from "../MobileAdminMenu";
-import Polygon from "../../assets/polygon.svg";
 import IconSignOut from "../../assets/iconSignOut.svg";
+import Polygon from "../../assets/polygon.svg";
+import { useAuth } from "../../hooks/auth";
+import Button from "../Button";
+import Input from "../Input";
+import MobileUserAdmin from "../MobileAdminMenu";
+import { Container, Content, Brand } from "./styles";
 
 function NavBarAdmin({ onChange }) {
 	const { signOut } = useAuth();
@@ -26,19 +22,23 @@ function NavBarAdmin({ onChange }) {
 
 	return (
 		<Container>
-			<MobileUserAdmin onChange={onChange} />
-
 			<Content>
+				<MobileUserAdmin onChange={onChange} />
+
 				<Link to="/">
 					<Brand>
-						<img
-							src={Polygon}
-							alt="Ícone de um polígono na cor azul"
-						/>
+						<div id="wrapperBrand">
+							<img
+								src={Polygon}
+								alt="Ícone de um polígono na cor azul"
+							/>
 
-						<h1>food explorer</h1>
+							<h1>food explorer</h1>
+						</div>
 
-						<p>admin</p>
+						<div id="admin">
+							<p>admin</p>
+						</div>
 					</Brand>
 				</Link>
 

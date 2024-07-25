@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 const Container = styled.nav`
+	position: relative;
+
+	min-width: 32rem;
 	height: 11.4rem;
+
+	display: flex;
+	align-items: center;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-	padding-right: 2.8rem;
-	padding-left: 2.8rem;
-
-	position: relative;
+	padding: 3.5rem 0;
 
 	z-index: 9999;
-
-	display: flex;
-	justify-content: flex-start;
 
 	.input,
 	.button,
@@ -21,69 +21,49 @@ const Container = styled.nav`
 		display: none;
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		.input,
-		.button,
-		img#iconSignOut {
-			display: block;
-		}
-
-		width: 192rem;
-	}
-
-	@media screen and (min-width: 1921px) {
-		::before {
-			content: "";
-			width: 384rem;
-			height: 11.4rem;
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-
-			position: absolute;
-			top: 0;
-			left: -96rem;
-			z-index: -1;
-		}
+	@media screen and (min-width: 1024px) {
+		height: 10.4rem;
 
 		.input,
 		.button,
 		img#iconSignOut {
 			display: block;
 		}
-
-		width: 192rem;
 	}
 `;
 
 const Content = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	gap: 4rem;
 
-	margin: auto;
+	width: 102.4rem;
+
+	padding: 0 2.8rem;
+
+	img.menu {
+		cursor: pointer;
+	}
 
 	img#iconSignOut {
 		cursor: pointer;
 	}
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 71rem;
+	@media screen and (min-width: 1024px) {
+		max-width: 102.4rem;
 
-		justify-content: center;
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		justify-content: center;
+		margin: 0 auto;
+		padding: 0 1rem;
 
 		img.menu {
 			display: none;
 		}
 
 		div[typeof="input"] {
+			width: 50%;
+
+			padding-left: 14rem;
+
 			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 		}
 
@@ -91,67 +71,20 @@ const Content = styled.div`
 			padding: 0;
 		}
 
-		.input {
-			width: 70rem;
-
-			padding-left: 22.5rem;
-		}
-
 		.input svg {
 			position: absolute;
-			top: 1.6rem;
-			left: 18.5rem;
+			top: 1.7rem;
+
+			margin-left: -2.4rem;
 		}
 
 		.button {
 			width: 22.2rem;
-			height: 5.6rem;
-
-			position: relative;
 		}
 
 		img#iconSignOut {
 			width: 3.2rem;
 		}
-	}
-
-	@media screen and (min-width: 1921px) {
-		img.menu {
-			display: none;
-		}
-
-		div[typeof="input"] {
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-		}
-
-		.input input {
-			padding: 0;
-		}
-
-		.input {
-			width: 70rem;
-
-			padding-left: 22.5rem;
-		}
-
-		.input svg {
-			position: absolute;
-			top: 1.6rem;
-			left: 18.5rem;
-		}
-
-		.button {
-			width: 22.2rem;
-			height: 5.6rem;
-
-			position: relative;
-		}
-
-		img#iconSignOut {
-			width: 3.2rem;
-		}
-
-		width: 150rem;
 	}
 `;
 
@@ -159,54 +92,37 @@ const Brand = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 0.8rem;
+	gap: 1rem;
 
-	position: relative;
-	left: 0.5rem;
+	div#wrapperBrand {
+		display: flex;
+		gap: 1rem;
 
-	img {
-		width: 2.4rem;
-	}
+		> h1 {
+			font-size: 2.116rem;
+			font-weight: 700;
+			line-height: 2.48rem;
 
-	h1 {
-		font-size: 2.116rem;
-		font-weight: 700;
-		line-height: 2.48rem;
-
-		color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
-	}
-
-	p {
-		font-size: 1.2rem;
-		line-height: 1.92rem;
-
-		color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		align-items: flex-start;
-
-		width: 17rem;
-		height: 4.5rem;
-
-		p {
-			position: absolute;
-			top: 50%;
-			right: 0.6rem;
+			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
 		}
 	}
 
-	@media screen and (min-width: 1921px) {
-		align-items: flex-start;
-
-		width: 17rem;
-		height: 4.5rem;
-
+	div#admin {
 		p {
-			position: absolute;
-			top: 50%;
-			right: 0.6rem;
+			color: ${({ theme }) => theme.COLORS.INFORMATION_COLOR};
 		}
+
+		@media screen and (min-width: 1024px) {
+			width: 100%;
+
+			display: flex;
+			justify-content: end;
+			align-items: start;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		display: block;
 	}
 `;
 

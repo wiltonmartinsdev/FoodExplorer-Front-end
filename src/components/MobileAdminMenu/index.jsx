@@ -1,19 +1,17 @@
-// Imports Global
-import Container from "./styles";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
-import { useAuth } from "../../hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 
-// Imports of Components
-import Input from "../Input";
+import { useAuth } from "../../hooks/auth";
 import ButtonText from "../ButtonText";
 import Footer from "../Footer";
+import Input from "../Input";
+import Container from "./styles";
 
 function MobileAdminMenu({ onChange }) {
 	const { signOut } = useAuth();
 
-    const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,7 +20,6 @@ function MobileAdminMenu({ onChange }) {
 	}
 
 	function handleSignOut() {
-
 		navigate("/");
 
 		signOut();
@@ -39,7 +36,9 @@ function MobileAdminMenu({ onChange }) {
 			</div>
 
 			<div className={`menu ${menuOpen ? "open" : ""}`}>
-				<p id="titleMenuOpen">Menu</p>
+				<span id="titleMenu">
+					<p id="titleMenuOpen">Menu</p>
+				</span>
 
 				<Input
 					id="dishSearch"
@@ -57,12 +56,12 @@ function MobileAdminMenu({ onChange }) {
 						/>
 					</Link>
 
-						<ButtonText
-							className="menuOptions"
-							id="logout"
-							title="Sair"
-							onClick={handleSignOut}
-						/>
+					<ButtonText
+						className="menuOptions"
+						id="logout"
+						title="Sair"
+						onClick={handleSignOut}
+					/>
 				</div>
 
 				<Footer id="footer" />
