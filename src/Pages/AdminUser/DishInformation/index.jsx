@@ -1,19 +1,15 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { api } from "../../../services/api";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-// Imports of Components
-import NavBar from "../../../components/NavBarAdmin";
+import leftArrow from "../../../assets/leftArrow.svg";
 import Button from "../../../components/Button";
 import ButtonText from "../../../components/ButtonText";
 import DishDescriptionSection from "../../../components/DishDescriptionSection";
-import Tags from "../../../components/Tags";
 import Footer from "../../../components/Footer";
-
-// Imports of Images
-import leftArrow from "../../../assets/leftArrow.svg";
+import NavBar from "../../../components/NavBarAdmin";
+import Tags from "../../../components/Tags";
+import { api } from "../../../services/api";
+import { Container, Content } from "./styles";
 
 function DishInformation() {
 	const params = useParams();
@@ -46,60 +42,62 @@ function DishInformation() {
 	}, []);
 
 	return (
-		<Container>
+		<>
 			<NavBar />
 
-			{dishes && (
+			<Container>
+				<Link to="/">
+					<div id="backButton">
+						<img
+							id="leftArrow"
+							src={leftArrow}
+							alt="Seta apontando para esquerda"
+						/>
+						<ButtonText
+							id="buttonText"
+							title="voltar"
+							onClick={handleBack}
+						/>
+					</div>
+				</Link>
 				<Content>
-					<div id="wrapper">
-						<div id="containerDish">
-							<div id="backButton">
+					{dishes && (
+						<>
+							<div id="containerDish">
 								<img
-									id="leftArrow"
-									src={leftArrow}
-									alt="Seta apontando para esquerda"
-								/>
-								<ButtonText
-									title="voltar"
-									onClick={handleBack}
+									id="dish"
+									src={`${api.defaults.baseURL}/files/${dishes.Image}`}
+									alt={dishes.Name}
 								/>
 							</div>
 
-							<img
-								id="dish"
-								src={`${api.defaults.baseURL}/files/${dishes.Image}`}
-								alt={dishes.Name}
-							/>
-						</div>
-
-						<div id="dishDescriptionSection">
-							<DishDescriptionSection
-								title={dishes.Name}
-								description={dishes.Description}>
-								{ingredients.map((ingredient) => {
-									return (
-										<Tags
-											key={ingredient.Id}
-											name={ingredient.Name}
-										/>
-									);
-								})}
-							</DishDescriptionSection>
-
-
-						</div>
-					</div>
-
-                    <Button
-						id="editDish"
-						title="Editar prato"
-						onClick={handleEditDish}
-					/>
+							<div id="dishDescriptionSection">
+								<DishDescriptionSection
+									title={dishes.Name}
+									description={dishes.Description}>
+									{ingredients.map((ingredient) => {
+										return (
+											<Tags
+												key={ingredient.Id}
+												name={ingredient.Name}
+											/>
+										);
+									})}
+								</DishDescriptionSection>
+							</div>
+						</>
+					)}
 				</Content>
-			)}
+
+				<Button
+					id="editDish"
+					title="Editar prato"
+					onClick={handleEditDish}
+				/>
+			</Container>
 
 			<Footer />
-		</Container>
+		</>
 	);
 }
 

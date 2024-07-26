@@ -1,195 +1,102 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 43rem;
+	min-width: 32rem;
+	min-height: 100vh;
 
-	margin: auto;
+	position: relative;
 
 	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-	display: grid;
-	justify-content: center;
-	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
+	padding: 3.8rem 2.8rem 0;
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
+	display: flex;
+	flex-direction: column;
 
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		width: 192rem;
+	div#backButton {
+		display: flex;
+		gap: 0.5rem;
 
-		grid-template-rows: 11.4rem 100vh 7.7rem;
-	}
+		max-width: 1024px;
 
-	@media screen and (min-width: 1921px) {
-		width: 384rem;
-		height: 100vh;
-	}
-`;
+		margin: 0 auto;
 
-const Content = styled.main`
-	grid-area: main;
-
-	margin: 3.2rem 5.6rem 0;
-
-	text-align: center;
-
-	div#wrapper {
-		div#containerDish {
-			div#backButton {
-				display: flex;
-				gap: 1.1rem;
-
-				img#leftArrow {
-					width: 1.2rem;
-					height: 2.2rem;
-
-					position: relative;
-					top: 0.2rem;
-				}
-			}
-
-			img#dish {
-				width: 26.4rem;
-				height: 26.4rem;
-
-				border-radius: 50%;
-
-				margin: 1.6rem 0;
-			}
+		button#buttonText {
+			position: relative;
+			bottom: 0.1rem;
 		}
 
-		div#dishDescriptionSection {
-			div#tags {
-				position: relative;
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+
+			padding-left: 1.1rem;
+
+			img#leftArrow {
+				width: 1.3rem;
+			}
+
+			button#buttonText {
+				transform: scale(1.8);
+
+				font-weight: 700;
+
+				bottom: 0.2rem;
 			}
 		}
 	}
 
 	button#editDish {
-		margin: 2rem 0 4.8rem;
-	}
+		margin: 4rem auto;
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		div#wrapper {
-			div#containerDish {
-				div#backButton {
-					position: absolute;
-					left: 7rem;
+		max-width: 31.6rem;
 
-					transform: scale(1.2);
-				}
-			}
+		@media screen and (min-width: 1024px) {
+			margin: 0 auto;
 
-			div#dishDescriptionSection {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-
-				width: 46.2rem;
-				margin: auto;
-
-				div#tags {
-					width: 41.5rem;
-
-					position: relative;
-					left: 2rem;
-				}
-			}
-		}
-
-		button#editDish {
-			width: 45rem;
-		}
-	}
-
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		div#wrapper {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 13.5rem;
+			max-width: 13rem;
 
 			position: relative;
-			top: 8.5rem;
-
-			div#containerDish {
-				transform: scale(1.5);
-
-				div#backButton {
-					position: relative;
-					right: 7rem;
-				}
-			}
-
-			div#dishDescriptionSection {
-				width: 48.2rem;
-
-				transform: scale(1.2);
-
-				div#tags {
-					width: 50.6rem;
-				}
-			}
+			right: 3.3rem;
 		}
+	}
+`;
 
-		button#editDish {
-			width: 9.5rem;
-			height: 3.5rem;
+const Content = styled.main`
+	max-width: 102.4rem;
 
-			position: relative;
-			top: 6.5rem;
-			right: 2rem;
+	margin: 0 auto;
 
-			font-size: 1.1rem;
+	text-align: center;
 
-			border-radius: 0.4rem;
+	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
+
+	div#containerDish {
+		position: relative;
+
+		img#dish {
+			width: 26rem;
+
+			margin: 1.6rem 0;
+
+			@media screen and (min-width: 1024px) {
+				position: relative;
+				top: 4.5rem;
+
+				transform: scale(1.4);
+			}
 		}
 	}
 
-	@media screen and (min-width: 1921px) {
-		div#wrapper {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 13.5rem;
+	@media screen and (min-width: 1024px) {
+		margin-top: 100px;
+		padding: 0;
 
-			position: relative;
-			top: 8.5rem;
-
-			div#containerDish {
-				transform: scale(1.5);
-
-				div#backButton {
-					position: relative;
-					right: 7rem;
-				}
-			}
-
-			div#dishDescriptionSection {
-				width: 48.2rem;
-
-				transform: scale(1.2);
-
-				div#tags {
-					width: 50.6rem;
-				}
-			}
-		}
-
-		button#editDish {
-			width: 9.5rem;
-			height: 3.5rem;
-
-			position: relative;
-			top: 6.5rem;
-			right: 2rem;
-
-			font-size: 1.1rem;
-
-			border-radius: 0.4rem;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 9rem;
 	}
 `;
 

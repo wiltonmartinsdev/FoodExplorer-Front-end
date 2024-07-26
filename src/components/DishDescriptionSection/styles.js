@@ -25,7 +25,7 @@ const Container = styled.section`
 		max-width: 42.5rem;
 		height: 6.8rem;
 
-		margin: 0.5rem auto 1.5rem;
+		margin: 1.5rem auto;
 
 		overflow: auto;
 
@@ -42,6 +42,7 @@ const Container = styled.section`
 	}
 
 	div#tags {
+
 		max-width: 42.5rem;
 		margin: 0 auto;
 
