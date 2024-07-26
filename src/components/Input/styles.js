@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
 	width: 100%;
 
-	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
 	border: none;
 	border-radius: 0.5rem;

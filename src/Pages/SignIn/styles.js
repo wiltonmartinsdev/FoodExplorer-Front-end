@@ -10,6 +10,8 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	padding: 5rem 20rem 0;
 `;
 const Content = styled.main`
 	display: flex;
@@ -34,9 +36,17 @@ const Content = styled.main`
 			}
 			div[typeof="input"] {
 				margin-bottom: 3.2rem;
+
 				input:focus {
 					outline: 1px solid;
 					color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+				}
+
+				@media screen and (min-width: 1024px) {
+					input:focus {
+						background-color: ${({ theme }) =>
+							theme.COLORS.BACKGROUND_700};
+					}
 				}
 			}
 		}
