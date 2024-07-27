@@ -18,6 +18,7 @@ const Content = styled.div`
 	position: relative;
 
 	margin: 0 auto;
+	padding: 0 1rem;
 
 	background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
@@ -47,6 +48,10 @@ const Content = styled.div`
 		display: -webkit-box;
 		-webkit-line-clamp: 1;
 		-webkit-box-orient: vertical;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 1.9rem;
+		}
 	}
 
 	p#description {
@@ -98,9 +103,8 @@ const Content = styled.div`
 			justify-content: center;
 
 			button#include {
-				height: 3.3rem;
-
 				width: 30%;
+				height: 3.3rem;
 
 				font-size: 1.1rem;
 

@@ -1,5 +1,5 @@
 import { Container, Content } from "./styles";
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { api } from "../../../services/api";
 
 import NavBar from "../../../components/NavBarUser";
@@ -137,7 +137,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000,
+								delay: 3000000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
@@ -169,7 +169,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000,
+								delay: 3000000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
@@ -201,7 +201,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000,
+								delay: 3000000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
