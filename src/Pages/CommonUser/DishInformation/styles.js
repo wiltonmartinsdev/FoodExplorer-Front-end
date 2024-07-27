@@ -2,32 +2,54 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	min-width: 32rem;
-
 	min-height: 100vh;
 
-	position: relative;
-
 	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
+
+	padding: 3.8rem 2.8rem 0;
+
+	div#backButton {
+		display: flex;
+		gap: 0.5rem;
+
+		max-width: 1024px;
+
+		margin: 0 auto;
+
+		button#buttonText {
+			position: relative;
+			bottom: 0.1rem;
+		}
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+
+			padding-left: 1.1rem;
+
+			img#leftArrow {
+				width: 1.3rem;
+			}
+
+			button#buttonText {
+				transform: scale(1.8);
+
+				font-weight: 700;
+
+				bottom: 0.2rem;
+			}
+		}
+	}
 
 	div#wrapperAddOrder {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-	}
 
-	@media screen and (min-width: 1024px) {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		div#wrapperAddOrder {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			position: relative;
-			left: 0.8rem;
+		@media screen and (min-width: 1024px) {
+			padding-left: 2.5rem;
 		}
 	}
 `;
@@ -43,52 +65,33 @@ const Content = styled.main`
 	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
 	div#containerDish {
-		position: relative;
-
-		div#backButton {
-			display: flex;
-			justify-content: center;
-			gap: 0.5rem;
-
-			width: 9.3rem;
-			height: 50px;
-
-			@media screen and (min-width: 1024px) {
-				position: relative;
-				left: -5.2rem;
-				bottom: 5.5rem;
-
-				transform: scale(1.8);
-			}
-		}
-
 		img#dish {
-			width: 26.4rem;
+			width: 26rem;
 
 			margin: 1.6rem 0;
 
 			@media screen and (min-width: 1024px) {
-				transform: scale(1.3);
+				position: relative;
+				top: 4.5rem;
+
+				transform: scale(1.2);
 			}
 		}
 	}
 
 	div#wrapperAddRequest {
-		border: 1px solid red;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 
 	@media screen and (min-width: 1024px) {
-		margin-top: 100px;
 		padding: 0;
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 7.5rem;
+		gap: 9rem;
 	}
 `;
 

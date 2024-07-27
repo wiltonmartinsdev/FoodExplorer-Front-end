@@ -35,15 +35,15 @@ const Container = styled.section`
 			margin: 0;
 
 			max-width: 54.7rem;
-
 			height: auto;
 			max-height: 20rem;
 		}
 	}
 
 	div#tags {
-
 		max-width: 42.5rem;
+		height: 10.8rem;
+
 		margin: 0 auto;
 
 		display: flex;
@@ -51,8 +51,6 @@ const Container = styled.section`
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 2.4rem;
-
-		height: 10.8rem;
 
 		overflow-y: auto;
 		overflow-x: hidden;

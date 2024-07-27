@@ -60,6 +60,7 @@ function DishInformation() {
 						/>
 					</div>
 				</Link>
+
 				<Content>
 					{dishes && (
 						<>

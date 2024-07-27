@@ -38,23 +38,25 @@ function DishInformation() {
 		<>
 			<NavBar />
 			<Container>
+				<Link to="/">
+					<div id="backButton">
+						<img
+							id="leftArrow"
+							src={leftArrow}
+							alt="Seta apontando para esquerda"
+						/>
+
+						<ButtonText
+							id="buttonText"
+							title="voltar"
+						/>
+					</div>
+				</Link>
+
 				<Content>
 					{dishes && (
 						<>
 							<div id="containerDish">
-								<div id="backButton">
-									<Link to="/">
-										<img
-											id="leftArrow"
-											src={leftArrow}
-											alt="Seta apontando para esquerda"
-										/>
-									</Link>
-									<Link to="/">
-										<ButtonText title="voltar" />
-									</Link>
-								</div>
-
 								<img
 									id="dish"
 									src={`${api.defaults.baseURL}/files/${dishes.Image}`}

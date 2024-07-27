@@ -4,8 +4,6 @@ const Container = styled.div`
 	min-width: 32rem;
 	min-height: 100vh;
 
-	position: relative;
-
 	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
 	padding: 3.8rem 2.8rem 0;
@@ -84,13 +82,12 @@ const Content = styled.main`
 				position: relative;
 				top: 4.5rem;
 
-				transform: scale(1.4);
+				transform: scale(1.2);
 			}
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
-		margin-top: 100px;
 		padding: 0;
 
 		display: flex;
