@@ -58,7 +58,6 @@ const Content = styled.main`
 	max-width: 102.4rem;
 
 	margin: 0 auto;
-	padding: 3.8rem 3.2rem 0;
 
 	text-align: center;
 

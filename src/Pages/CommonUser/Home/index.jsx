@@ -137,7 +137,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000000,
+								delay: 3000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
@@ -169,7 +169,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000000,
+								delay: 3000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
@@ -201,7 +201,7 @@ function Home() {
 							spaceBetween={spaceBetween}
 							grabCursor={true}
 							autoplay={{
-								delay: 3000000,
+								delay: 3000,
 								disableOnInteraction: false,
 							}}>
 							{dishes
