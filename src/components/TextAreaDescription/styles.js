@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.textarea`
-	width: 36.4rem;
+	width: 100%;
 	height: 17.2rem;
 
 	resize: none;

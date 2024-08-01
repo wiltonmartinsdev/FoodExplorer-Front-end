@@ -1,37 +1,59 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-	width: 43rem;
+	min-width: 32rem;
+	min-height: 100vh;
 
 	margin: auto;
 
 	background: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
-	display: grid;
-	justify-content: center;
-	grid-template-areas: "navbar" "main" "footer";
-	grid-template-rows: 11.4rem auto 7.7rem;
+	div#backButton {
+		display: flex;
+		gap: 0.5rem;
 
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		width: 76.8rem;
-	}
+		max-width: 1024px;
 
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		width: 192rem;
+		margin: 0 auto;
+		padding-left: 2.8rem;
 
-		grid-template-rows: 11.4rem 100vh 7.7rem;
-	}
+		position: relative;
+		top: 4rem;
 
-	@media screen and (min-width: 1921px) {
-		width: 384rem;
-		height: 100vh;
+		button#buttonText {
+			position: relative;
+			bottom: 0.1rem;
+		}
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+
+			top: 3.5rem;
+
+			padding-left: 1.1rem;
+
+			img#leftArrow {
+				width: 1.3rem;
+			}
+
+			button#buttonText {
+				transform: scale(1.8);
+
+				font-weight: 700;
+
+				bottom: 0.2rem;
+			}
+		}
 	}
 `;
 
 const Content = styled.main`
-	grid-area: main;
+	max-width: 60rem;
 
-	margin: 1.092rem 3.2rem 5.308rem;
+	margin: 1.092rem auto 5.308rem;
+	padding: 3.8rem 2.8rem 0;
 
 	div#backButton {
 		display: flex;
@@ -66,8 +88,8 @@ const Content = styled.main`
 	form {
 		display: flex;
 		flex-direction: column;
-
-		position: relative;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
 		label {
 			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
@@ -75,46 +97,139 @@ const Content = styled.main`
 			margin: 2.4rem 0 1.6rem;
 		}
 
-		label#upload {
-			position: relative;
+		div#wrapperUpload,
+		div#wrapperName,
+		div#wrapperCategory,
+		div#wrapperIngredients,
+		div#wrapperPrice,
+		div#wrapperTextAreaDescription {
+			display: flex;
+			flex-direction: column;
+		}
 
-			div#upload {
-				width: 28.2rem;
+		div#wrapperUpload {
+			label#upload {
+				position: relative;
 
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 0.8rem;
+				input#img {
+					display: none;
+				}
 
-				position: absolute;
+				div#upload {
+					width: 25.6rem;
 
-				top: 4.3rem;
-				right: 10.5rem;
+					display: flex;
+					align-items: center;
+					gap: 0.8rem;
 
-				img#imageUpload {
 					position: absolute;
-					right: 21.9rem;
+					top: 4.5rem;
+
+					padding-left: 2.5rem;
+
+					img#imageUpload {
+						position: relative;
+						bottom: 0.1rem;
+					}
+
+					p {
+						font-family: Poppins, sans-serif;
+						font-weight: 500;
+						font-size: 1.4rem;
+						line-height: 2.4rem;
+
+						color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+					}
+
+					cursor: pointer;
+
+					@media screen and (min-width: 1024px) {
+						width: 22.9rem;
+					}
 				}
+			}
+		}
 
-				p {
-					font-family: Poppins, sans-serif;
-					font-weight: 500;
-					font-size: 1.4rem;
-					line-height: 2.4rem;
-
-					position: relative;
-					top: 0.2rem;
-					left: 0.6rem;
-
-					color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
+		div#wrapperName {
+			div#name {
+				@media screen and (min-width: 1024px) {
+					width: 45rem;
 				}
+			}
+		}
+
+		div#wrapperCategory {
+			select#category {
+				font-size: 1.4rem;
+				line-height: 2.24rem;
+
+				height: 5rem;
+
+				background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+				color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
+
+				border: none;
+				border-radius: 0.5rem;
+
+				padding: 0 1.6rem;
+
+				appearance: none;
+				-webkit-appearance: none;
+
+				background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.454505 0.753577C0.893845 0.314237 1.60616 0.314237 2.0455 0.753577L8 6.70808L13.9545 0.753577C14.3938 0.314237 15.1062 0.314237 15.5455 0.753577C15.9848 1.19292 15.9848 1.90523 15.5455 2.34457L8.7955 9.09457C8.35616 9.53391 7.64384 9.53391 7.2045 9.09457L0.454505 2.34457C0.015165 1.90523 0.015165 1.19292 0.454505 0.753577Z' fill='%23C4C4CC'/%3E%3C/svg%3E%0A");
+
+				background-repeat: no-repeat;
+				background-position: right 1.6rem top 50%;
 
 				cursor: pointer;
+
+				@media screen and (min-width: 1024px) {
+					width: 27.6rem;
+				}
+			}
+		}
+
+		div#wrapperIngredients {
+			div#ingredients {
+				display: flex;
+				flex-wrap: wrap;
+
+				padding-left: 0.8rem;
+
+				height: 5rem;
+
+				overflow-y: auto;
+
+				@media screen and (min-width: 1024px) {
+					width: 77rem;
+				}
+			}
+		}
+
+		div#wrapperPrice {
+			div[typeof="input"] {
+				input.no-arrows::-webkit-inner-spin-button,
+				input.no-arrows::-webkit-outer-spin-button {
+					-webkit-appearance: none;
+					appearance: none;
+					margin: 0;
+				}
+
+				input.no-arrows {
+					-moz-appearance: textfield;
+					appearance: textfield;
+				}
 			}
 
-			input#img {
-				display: none;
+			div#price {
+				@media screen and (min-width: 1024px) {
+					width: 21rem;
+				}
 			}
+		}
+
+		div#wrapperTextAreaDescription {
+			width: 100%;
 		}
 
 		div.input {
@@ -124,99 +239,40 @@ const Content = styled.main`
 
 			border: none;
 			border-radius: 0.5rem;
+
+			@media screen and (min-width: 1024px) {
+				width: 22.9rem;
+			}
 		}
 
-		select#category {
-			font-size: 1.4rem;
-			line-height: 2.24rem;
-
-			height: 5rem;
-
-			background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-			color: ${({ theme }) => theme.COLORS.TEXT_COLOR_400};
-
-			border: none;
-			border-radius: 0.5rem;
-
-			padding: 0 1.6rem;
-
-			appearance: none;
-			-webkit-appearance: none;
-
-			background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.454505 0.753577C0.893845 0.314237 1.60616 0.314237 2.0455 0.753577L8 6.70808L13.9545 0.753577C14.3938 0.314237 15.1062 0.314237 15.5455 0.753577C15.9848 1.19292 15.9848 1.90523 15.5455 2.34457L8.7955 9.09457C8.35616 9.53391 7.64384 9.53391 7.2045 9.09457L0.454505 2.34457C0.015165 1.90523 0.015165 1.19292 0.454505 0.753577Z' fill='%23C4C4CC'/%3E%3C/svg%3E%0A");
-
-			background-repeat: no-repeat;
-			background-position: right 1.6rem top 50%;
-
-			cursor: pointer;
-		}
-
-		div#ingredients {
+		@media screen and (min-width: 1024px) {
 			display: flex;
-
-			flex-wrap: wrap;
-
-			padding-left: 0.8rem;
-
-			height: 5rem;
-
-			overflow-y: auto;
+			flex-direction: row;
+			gap: 20px;
 		}
 
-		div[typeof="input"] {
-			input.no-arrows::-webkit-inner-spin-button,
-			input.no-arrows::-webkit-outer-spin-button {
-				-webkit-appearance: none;
-				appearance: none;
-				margin: 0;
-			}
+		div#saveButton {
+			width: 100%;
 
-			input.no-arrows {
-				-moz-appearance: textfield;
-				appearance: textfield;
-			}
-		}
-	}
-
-	button#save {
-		background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_400};
-	}
-
-	@media screen and (min-width: 430px) and (max-width: 768px) {
-		margin: 1.092rem 15rem 5.308rem;
-
-		div#backButton {
-			transform: scale(1.3);
-
-			position: absolute;
-			left: 4.3rem;
-		}
-
-		form {
-			label#upload {
-				div#upload {
-					position: absolute;
-					top: 4.3rem;
-					left: -2.3rem;
+			button#save {
+				@media screen and (min-width: 1024px) {
+					width: 17.2rem;
 				}
 			}
 
-			textarea {
-				width: 100%;
+			@media screen and (min-width: 1024px) {
+				display: flex;
+				justify-content: end;
+
+				margin-bottom: 11.6rem;
 			}
 		}
 	}
 
-	@media screen and (min-width: 769px) and (max-width: 1920px) {
-		margin: 1.092rem 35rem 5.308rem;
-
-		div#backButton {
-			transform: scale(1.2);
-
-			position: relative;
-			top: 1rem;
-			left: 12.4rem;
-		}
+	@media screen and (min-width: 1024px) {
+		max-width: 1024px;
+		margin: auto;
+		padding: 3.8rem 1rem 0;
 
 		h1#title1 {
 			display: none;
@@ -224,240 +280,6 @@ const Content = styled.main`
 
 		h1#title2 {
 			display: block;
-		}
-
-		form {
-			display: flex;
-			flex-direction: row;
-
-			label#upload,
-			label#name,
-			label#category {
-				margin-top: 0;
-			}
-
-			label#upload {
-				div#upload {
-					position: absolute;
-					top: 4.1rem;
-					left: -2.3rem;
-
-					z-index: 9999;
-				}
-			}
-
-			div.input {
-				width: 24rem;
-
-				position: absolute;
-				top: 3rem;
-			}
-
-			label#name,
-			label#category,
-			select#category,
-			label#ingredients,
-			label#price,
-			div#price,
-			label#textArea,
-			#textArea {
-				position: absolute;
-			}
-
-			label#name {
-				left: 34.5rem;
-			}
-
-			div[typeof="input"],
-			input#name {
-				width: 43.5rem;
-				top: 3rem;
-				left: 22.3rem;
-			}
-
-			label#category {
-				left: 88.6rem;
-			}
-
-			select#category {
-				width: 33.2rem;
-
-				top: 3rem;
-				left: 88.6rem;
-			}
-
-			label#ingredients,
-			label#price {
-				top: 7.5rem;
-			}
-
-			div#ingredients,
-			div#price {
-				top: 13rem;
-			}
-
-			div#ingredients {
-				width: 89.5rem;
-			}
-
-			label#price {
-				left: 99.4rem;
-			}
-
-			div#price {
-				left: 99.5rem;
-
-				width: 22.3rem;
-			}
-
-			label#textArea {
-				top: 17.4rem;
-			}
-
-			#textArea {
-				position: absolute;
-				top: 22.7rem;
-				left: 0;
-
-				width: 100%;
-			}
-		}
-
-		button#save {
-			position: absolute;
-			top: 42.5rem;
-			right: 0;
-
-			width: 17.5rem;
-
-			background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_400};
-		}
-	}
-
-	@media screen and (min-width: 1921px) {
-		margin: 1.092rem 35rem 5.308rem;
-
-		div#backButton {
-			transform: scale(1.2);
-
-			position: relative;
-			top: 1rem;
-			left: 12.4rem;
-		}
-
-		h1#title1 {
-			display: none;
-		}
-
-		h1#title2 {
-			display: block;
-		}
-
-		form {
-			display: flex;
-			flex-direction: row;
-
-			label#upload,
-			label#name,
-			label#category {
-				margin-top: 0;
-			}
-
-			label#upload {
-				div#upload {
-					position: absolute;
-					top: 4.1rem;
-					left: -2.3rem;
-
-					z-index: 9999;
-				}
-			}
-
-			div.input {
-				width: 24rem;
-
-				position: absolute;
-				top: 3rem;
-			}
-
-			label#name,
-			label#category,
-			select#category,
-			label#ingredients,
-			label#price,
-			div#price,
-			label#textArea,
-			#textArea {
-				position: absolute;
-			}
-
-			label#name {
-				left: 34.5rem;
-			}
-
-			div[typeof="input"],
-			input#name {
-				width: 43.5rem;
-				top: 3rem;
-				left: 22.3rem;
-			}
-
-			label#category {
-				left: 88.6rem;
-			}
-
-			select#category {
-				width: 33.2rem;
-
-				top: 3rem;
-				left: 88.6rem;
-			}
-
-			label#ingredients,
-			label#price {
-				top: 7.5rem;
-			}
-
-			div#ingredients,
-			div#price {
-				top: 13rem;
-			}
-
-			div#ingredients {
-				width: 89.5rem;
-			}
-
-			label#price {
-				left: 99.4rem;
-			}
-
-			div#price {
-				left: 99.5rem;
-
-				width: 22.3rem;
-			}
-
-			label#textArea {
-				top: 17.4rem;
-			}
-
-			#textArea {
-				position: absolute;
-				top: 22.7rem;
-				left: 0;
-
-				width: 100%;
-			}
-		}
-
-		button#save {
-			position: absolute;
-			right: 0;
-			top: 42.5rem;
-
-			width: 17.5rem;
-
-			background-color: ${({ theme }) => theme.COLORS.BUTTON_COLOR_400};
 		}
 	}
 `;

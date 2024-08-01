@@ -22,7 +22,7 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    body, input, textarea{
+    body, input, textarea, select{
         font-family: Roboto, sans-serif;
         font-weight: 400;
         font-size: 1.6rem;
