@@ -1,22 +1,18 @@
-// Imports Global
-import { Container, Content } from "./styles";
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { api } from "../../../services/api";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
-// Imports of Components
-import NavBar from "../../../components/NavBarAdmin";
-import ButtonText from "../../../components/ButtonText";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
-import AddIngredients from "../../../components/AddIngredients";
-import TextAreaDescription from "../../../components/TextAreaDescription";
-import Footer from "../../../components/Footer";
-
-// Imports of Images
 import leftArrow from "../../../assets/leftArrow.svg";
 import UploadImg from "../../../assets/uploadImg.svg";
+import AddIngredients from "../../../components/AddIngredients";
+import Button from "../../../components/Button";
+import ButtonText from "../../../components/ButtonText";
+import Footer from "../../../components/Footer";
+import Input from "../../../components/Input";
+import NavBar from "../../../components/NavBarAdmin";
+import TextAreaDescription from "../../../components/TextAreaDescription";
+import { api } from "../../../services/api";
+import { Container, Content } from "./styles";
 
 function EditDish() {
 	const [dish, setDish] = useState(null);
@@ -206,166 +202,186 @@ function EditDish() {
 	}, [dish]);
 
 	return (
-		<Container>
+		<>
 			<NavBar />
 
-			<Content>
-				<div id="backButton">
-					<img
-						id="leftArrow"
-						src={leftArrow}
-						alt="Seta apontando para esquerda"
-					/>
-					<ButtonText
-						title="voltar"
-						onClick={handleBack}
-					/>
-				</div>
-
-				<h1>Editar prato</h1>
-
-				<form>
-					<label
-						htmlFor="img"
-						id="upload">
-						Imagem do Prato
-						<div id="upload">
-							<img
-								id="imageUpload"
-								src={UploadImg}
-								alt="Ícone de uma seta para cima para fazer upload de uma imagem"
-							/>
-							<p id="description1">
-								{imageName || "Selecione a imagem"}
-							</p>
-							<p id="description2">
-								{imageName || "Selecione a imagem"}
-							</p>
-						</div>
-						<input
-							type="file"
-							accept="image/*"
-							multiple
-							id="img"
-							onChange={handleImage}
+			<Container>
+				<Link to="/">
+					<div id="backButton">
+						<img
+							id="leftArrow"
+							src={leftArrow}
+							alt="Seta apontando para esquerda"
 						/>
-					</label>
-					<div className="input"></div>
+						<ButtonText
+							id="buttonText"
+							title="voltar"
+							onClick={handleBack}
+						/>
+					</div>
+				</Link>
 
-					<label
-						id="name"
-						htmlFor="name">
-						Nome
-					</label>
-					<Input
-						id="name"
-						placeholder="Ex.: Salada Caesar"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-					/>
+				<Content>
+					<h1>Editar prato</h1>
 
-					<label
-						id="category"
-						htmlFor="category">
-						Categoria
-					</label>
-					<select
-						id="category"
-						value={category}
-						onChange={(e) => setCategory(e.target.value)}>
-						<option value="">Selecionar</option>
-						<option value="Refeições">Refeições</option>
-						<option value="Sobremesas"> Sobremesas</option>
-						<option value="Bebidas">Bebidas</option>
-					</select>
-
-					<label
-						id="ingredients"
-						htmlFor="ingredients">
-						Ingredientes
-					</label>
-					<div
-						id="ingredients"
-						className="input">
-						{ingredients.map((ingredient, index) => {
-							// Filtra o array de IDs de ingredientes para encontrar aqueles cujo nome corresponde ao nome do ingrediente atual.
-							const filteredIngredientId = ingredientId
-								.filter(
-									(ingredientName) =>
-										ingredientName.Name === ingredient
-								)
-
-								// Mapeia os IDs dos ingredientes filtrados para um novo array de IDs para serem utilizados na função de remoção dos ingredientes, onde irei passar o ID corresponde ao nome do ingrediente para ser removido.
-								.map((ingredientId) => {
-									return ingredientId.Id;
-								});
-
-							return (
-								<AddIngredients
-									key={String(index)}
-									value={ingredient}
-									onClick={() => {
-										handleRemoveIngredient(
-											filteredIngredientId,
-											ingredient
-										);
-									}}
+					<form>
+						<div id="wrapperUpload">
+							<label
+								htmlFor="img"
+								id="upload">
+								Imagem do Prato
+								<div id="upload">
+									<img
+										id="imageUpload"
+										src={UploadImg}
+										alt="Ícone de uma seta para cima para fazer upload de uma imagem"
+									/>
+									<p id="description1">
+										{imageName || "Selecione a imagem"}
+									</p>
+									<p id="description2">
+										{imageName || "Selecione a imagem"}
+									</p>
+								</div>
+								<input
+									type="file"
+									accept="image/*"
+									multiple
+									id="img"
+									onChange={handleImage}
 								/>
-							);
-						})}
-						<AddIngredients
-							isNew
-							placeholder="Adicionar"
-							value={newIngredients}
-							onChange={(e) => setNewIngredients(e.target.value)}
-							onClick={handleAddIngredient}
-						/>
-					</div>
+							</label>
+							<div className="input"></div>
+						</div>
 
-					<label
-						id="price"
-						htmlFor="price">
-						Preço
-					</label>
-					<Input
-						className="no-arrows"
-						id="price"
-						type="number"
-						placeholder="R$ 00,00"
-						value={price}
-						onChange={(e) => setPrice(e.target.value)}
-					/>
+						<div id="wrapperName">
+							<label
+								id="name"
+								htmlFor="name">
+								Nome
+							</label>
+							<Input
+								id="name"
+								placeholder="Ex.: Salada Caesar"
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</div>
 
-					<label
-						id="textArea"
-						htmlFor="textArea">
-						Descrição
-					</label>
-					<TextAreaDescription
-						id="textArea"
-						placeholder="A Salada César é uma opção refrescante para o verão."
-						defaultValue={description}
-						onChange={(e) => setDescription(e.target.value)}
-					/>
+						<div id="wrapperCategory">
+							<label
+								id="category"
+								htmlFor="category">
+								Categoria
+							</label>
+							<select
+								id="category"
+								value={category}
+								onChange={(e) => setCategory(e.target.value)}>
+								<option value="">Selecionar</option>
+								<option value="Refeições">Refeições</option>
+								<option value="Sobremesas"> Sobremesas</option>
+								<option value="Bebidas">Bebidas</option>
+							</select>
+						</div>
 
-					<div id="buttonOption">
-						<Button
-							id="delete"
-							title="Excluir prato"
-							onClick={handleDishDeletion}
-						/>
+						<div id="wrapperIngredients">
+							<label
+								id="ingredients"
+								htmlFor="ingredients">
+								Ingredientes
+							</label>
+							<div
+								id="ingredients"
+								className="input">
+								{ingredients.map((ingredient, index) => {
+									// Filtra o array de IDs de ingredientes para encontrar aqueles cujo nome corresponde ao nome do ingrediente atual.
+									const filteredIngredientId = ingredientId
+										.filter(
+											(ingredientName) =>
+												ingredientName.Name ===
+												ingredient
+										)
 
-						<Button
-							id="save"
-							title="Salvar alterações"
-							onClick={handleSaveDishEditChanges}
-						/>
-					</div>
-				</form>
-			</Content>
+										// Mapeia os IDs dos ingredientes filtrados para um novo array de IDs para serem utilizados na função de remoção dos ingredientes, onde irei passar o ID corresponde ao nome do ingrediente para ser removido.
+										.map((ingredientId) => {
+											return ingredientId.Id;
+										});
+
+									return (
+										<AddIngredients
+											key={String(index)}
+											value={ingredient}
+											onClick={() => {
+												handleRemoveIngredient(
+													filteredIngredientId,
+													ingredient
+												);
+											}}
+										/>
+									);
+								})}
+								<AddIngredients
+									isNew
+									placeholder="Adicionar"
+									value={newIngredients}
+									onChange={(e) =>
+										setNewIngredients(e.target.value)
+									}
+									onClick={handleAddIngredient}
+								/>
+							</div>
+						</div>
+
+						<div id="wrapperPrice">
+							<label
+								id="price"
+								htmlFor="price">
+								Preço
+							</label>
+							<Input
+								className="no-arrows"
+								id="price"
+								type="number"
+								placeholder="R$ 00,00"
+								value={price}
+								onChange={(e) => setPrice(e.target.value)}
+							/>
+						</div>
+
+						<div id="wrapperTextAreaDescription">
+							<label
+								id="textArea"
+								htmlFor="textArea">
+								Descrição
+							</label>
+							<TextAreaDescription
+								id="textArea"
+								placeholder="A Salada César é uma opção refrescante para o verão."
+								defaultValue={description}
+								onChange={(e) => setDescription(e.target.value)}
+							/>
+						</div>
+
+						<div id="buttonOption">
+							<Button
+								id="delete"
+								title="Excluir prato"
+								onClick={handleDishDeletion}
+							/>
+
+							<Button
+								id="save"
+								title="Salvar alterações"
+								onClick={handleSaveDishEditChanges}
+							/>
+						</div>
+					</form>
+				</Content>
+			</Container>
 
 			<Footer />
-		</Container>
+		</>
 	);
 }
 

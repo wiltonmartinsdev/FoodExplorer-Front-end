@@ -270,7 +270,7 @@ const Content = styled.main`
 	}
 
 	@media screen and (min-width: 1024px) {
-		max-width: 1024px;
+		max-width: 102.4rem;
 		margin: auto;
 		padding: 3.8rem 1rem 0;
 
