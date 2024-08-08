@@ -40,13 +40,9 @@ const Content = styled.main`
 				input:focus {
 					outline: 1px solid;
 					color: ${({ theme }) => theme.COLORS.TEXT_COLOR_100};
-				}
 
-				@media screen and (min-width: 1024px) {
-					input:focus {
-						background-color: ${({ theme }) =>
-							theme.COLORS.BACKGROUND_700};
-					}
+					background-color: ${({ theme }) =>
+						theme.COLORS.BACKGROUND_700};
 				}
 			}
 		}
