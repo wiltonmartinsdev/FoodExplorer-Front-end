@@ -40,19 +40,6 @@ function SignIn() {
 		signIn({ email, password }).finally(() => setLoading(false));
 	}
 
-	useEffect(() => {
-		const link = document.createElement("link");
-		link.rel = "icon";
-		link.href = "src/assets/polygon.svg";
-		link.type = "image/x-icon";
-
-		document.head.appendChild(link);
-
-		return () => {
-			document.head.removeChild(link);
-		};
-	}, []);
-
 	return (
 		<Container>
 			<Content>
